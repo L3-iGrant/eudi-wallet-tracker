@@ -68,6 +68,9 @@
     "satori": "^0.26.0",
     "typescript": "~5.5.0"
   },
+  "overrides": {
+    "d3-color": "^3.1.0"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
