@@ -172,6 +172,7 @@ slug: /tracker/${slugged}
 title: ${c.name}
 description: ${escapeMdx(description)}
 sidebar_label: ${c.name}
+image: /img/og/${c.isoAlpha2}.png
 keywords: [EUDI Wallet, ${c.name}, ${c.walletName ?? ''}, eIDAS 2]
 ---
 

@@ -27,8 +27,8 @@
     "docusaurus"
   ],
   "scripts": {
-    "prestart": "node scripts/generate-country-pages.mjs",
-    "prebuild": "node scripts/generate-country-pages.mjs",
+    "prestart": "node scripts/generate-country-pages.mjs && node scripts/generate-og-cards.mjs",
+    "prebuild": "node scripts/generate-country-pages.mjs && node scripts/generate-og-cards.mjs",
     "start": "docusaurus start --port 2025",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -60,15 +60,25 @@
     "@docusaurus/module-type-aliases": "^3.6.0",
     "@docusaurus/tsconfig": "^3.6.0",
     "@docusaurus/types": "^3.6.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@types/d3-geo": "^3.1.0",
     "@types/react": "^18.0.0",
     "@types/react-simple-maps": "^3.0.4",
     "@types/topojson-client": "^3.1.5",
+    "satori": "^0.26.0",
     "typescript": "~5.5.0"
   },
   "browserslist": {
-    "production": [">0.5%", "not dead", "not op_mini all"],
-    "development": ["last 3 chrome version", "last 3 firefox version", "last 5 safari version"]
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
   },
   "engines": {
     "node": ">=20.0"

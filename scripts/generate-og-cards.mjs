@@ -1,0 +1,240 @@
+#!/usr/bin/env node
+/**
+ * Build-time generator for per-country OG cards (1200x630 PNG).
+ * Runs after country MDX generation. Output: static/img/og/{ISO}.png.
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import satori from 'satori';
+import {Resvg} from '@resvg/resvg-js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, '..');
+const DATA = path.join(ROOT, 'data', 'eudi-status.json');
+const OUT_DIR = path.join(ROOT, 'static', 'img', 'og');
+const FONT_DIR = path.join(__dirname, 'fonts');
+
+const STATUS_COLOUR = {
+  'Launched in production': '#5bd0a6',
+  'Public pilot live': '#7fb7e5',
+  'Closed pilot or LSP only': '#f5c871',
+  'Notified eID, no wallet yet': '#ed9d63',
+  'No public plan': '#e37070',
+  Unknown: '#dce0e6',
+};
+
+const STATUS_FG = {
+  'Launched in production': '#166534',
+  'Public pilot live': '#1e40af',
+  'Closed pilot or LSP only': '#92400e',
+  'Notified eID, no wallet yet': '#9a3412',
+  'No public plan': '#991b1b',
+  Unknown: '#475569',
+};
+
+const STATUS_BG = {
+  'Launched in production': '#dcfce7',
+  'Public pilot live': '#dbeafe',
+  'Closed pilot or LSP only': '#fef3c7',
+  'Notified eID, no wallet yet': '#ffedd5',
+  'No public plan': '#fee2e2',
+  Unknown: '#f1f5f9',
+};
+
+function card(c, lastUpdated) {
+  const dot = STATUS_COLOUR[c.status] ?? '#94a3b8';
+  const fg = STATUS_FG[c.status] ?? '#475569';
+  const bg = STATUS_BG[c.status] ?? '#f1f5f9';
+  const since = c.launchOrPilotDate ?? lastUpdated;
+  return {
+    type: 'div',
+    props: {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '1200px',
+        height: '630px',
+        padding: '60px',
+        backgroundColor: '#ffffff',
+        backgroundImage:
+          'linear-gradient(135deg, #f4faf9 0%, #ffffff 60%)',
+        fontFamily: 'Geist',
+        color: '#0f172a',
+      },
+      children: [
+        // Brand row
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: '40px',
+            },
+            children: [
+              {
+                type: 'div',
+                props: {
+                  style: {
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '8px',
+                    backgroundColor: '#003399',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFCC00',
+                    fontSize: '20px',
+                    fontWeight: 700,
+                  },
+                  children: '★',
+                },
+              },
+              {
+                type: 'div',
+                props: {
+                  style: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    lineHeight: 1.1,
+                  },
+                  children: [
+                    {type: 'span', props: {style: {fontSize: '18px', fontWeight: 600}, children: 'iGrant.io'}},
+                    {type: 'span', props: {style: {fontSize: '12px', fontWeight: 500, color: '#64748b', letterSpacing: '0.4px', marginTop: '2px'}, children: 'EUDI WALLET STATUS TRACKER'}},
+                  ],
+                },
+              },
+            ],
+          },
+        },
+        // Status pill
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              alignSelf: 'flex-start',
+              padding: '6px 14px',
+              borderRadius: '999px',
+              backgroundColor: bg,
+              color: fg,
+              fontSize: '16px',
+              fontWeight: 600,
+              marginBottom: '24px',
+            },
+            children: [
+              {type: 'div', props: {style: {width: '8px', height: '8px', borderRadius: '999px', backgroundColor: dot}}},
+              c.status,
+            ],
+          },
+        },
+        // Country name (huge)
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '88px',
+              fontWeight: 700,
+              letterSpacing: '-2.5px',
+              lineHeight: 1.0,
+              marginBottom: '8px',
+            },
+            children: c.name,
+          },
+        },
+        // ISO + group
+        {
+          type: 'div',
+          props: {
+            style: {
+              fontSize: '18px',
+              fontWeight: 500,
+              color: '#64748b',
+              letterSpacing: '0.6px',
+              marginBottom: '36px',
+            },
+            children: `${c.isoAlpha2} · ${c.group ?? ''}`.trim(),
+          },
+        },
+        // Wallet block
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '6px',
+              marginBottom: '40px',
+            },
+            children: [
+              {type: 'span', props: {style: {fontSize: '12px', fontWeight: 600, letterSpacing: '0.8px', color: '#94a3b8'}, children: 'WALLET'}},
+              {type: 'span', props: {style: {fontSize: '24px', fontWeight: 600, color: '#0f172a'}, children: c.walletName ?? '-'}},
+              c.walletProvider ? {type: 'span', props: {style: {fontSize: '16px', fontWeight: 500, color: '#475569'}, children: c.walletProvider}} : null,
+            ].filter(Boolean),
+          },
+        },
+        // Spacer
+        {type: 'div', props: {style: {flex: 1, display: 'flex'}, children: ''}},
+        // Footer row
+        {
+          type: 'div',
+          props: {
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              paddingTop: '20px',
+              borderTop: '1px solid #e2e8f0',
+              fontSize: '14px',
+              color: '#64748b',
+            },
+            children: [
+              {
+                type: 'div',
+                props: {
+                  style: {display: 'flex', flexDirection: 'column', lineHeight: 1.3},
+                  children: [
+                    {type: 'span', props: {style: {fontSize: '16px', fontWeight: 600, color: '#0f172a'}, children: 'eudi-tracker.igrant.io'}},
+                    {type: 'span', props: {style: {marginTop: '2px'}, children: `Updated ${lastUpdated}${c.assuranceLevel ? ` · LoA ${c.assuranceLevel}` : ''}${since && c.launchOrPilotDate ? ` · since ${c.launchOrPilotDate}` : ''}`}},
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  };
+}
+
+async function main() {
+  const data = JSON.parse(fs.readFileSync(DATA, 'utf-8'));
+  const fontRegular = fs.readFileSync(path.join(FONT_DIR, 'Geist-Regular.ttf'));
+  const fontBold = fs.readFileSync(path.join(FONT_DIR, 'Geist-Bold.ttf'));
+  fs.mkdirSync(OUT_DIR, {recursive: true});
+
+  for (const c of data.countries) {
+    const tree = card(c, data.lastUpdated);
+    const svg = await satori(tree, {
+      width: 1200,
+      height: 630,
+      fonts: [
+        {name: 'Geist', data: fontRegular, weight: 500, style: 'normal'},
+        {name: 'Geist', data: fontBold, weight: 700, style: 'normal'},
+      ],
+    });
+    const png = new Resvg(svg, {fitTo: {mode: 'width', value: 1200}}).render().asPng();
+    fs.writeFileSync(path.join(OUT_DIR, `${c.isoAlpha2}.png`), png);
+  }
+  console.log(`Generated ${data.countries.length} country OG cards.`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
