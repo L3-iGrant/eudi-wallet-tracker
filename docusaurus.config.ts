@@ -1,10 +1,30 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import data from './data/eudi-status.json';
 
 const GITHUB_ORG = 'L3-iGrant';
 const GITHUB_REPO = 'eudi-wallet-tracker';
 const GITHUB_BRANCH = 'main';
+
+function slug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+// Most recent dated event per country, used as the sitemap lastmod for the
+// per-country tracker pages so search engines re-crawl only what has moved.
+const COUNTRY_LASTMOD = new Map<string, string>(
+  (data.countries as any[]).map((c) => {
+    const dates = [
+      c.launchOrPilotDate,
+      ...((c.sources ?? []) as any[]).map((s) => s.date),
+    ].filter(Boolean) as string[];
+    const latest = dates.length
+      ? dates.slice().sort().reverse()[0]
+      : data.lastUpdated;
+    return [`/tracker/${slug(c.name)}`, latest];
+  }),
+);
 
 const config: Config = {
   title: 'EUDI Wallet Tracker',
@@ -54,6 +74,23 @@ const config: Config = {
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
+          lastmod: 'date',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.map((item) => {
+              try {
+                const url = new URL(item.url);
+                const override = COUNTRY_LASTMOD.get(url.pathname.replace(/\/$/, ''));
+                if (override) {
+                  return {...item, lastmod: override};
+                }
+              } catch {
+                /* ignore malformed URLs */
+              }
+              return item;
+            });
+          },
         },
       } satisfies Preset.Options,
     ],
