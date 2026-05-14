@@ -1,0 +1,4 @@
+# Required reviewers for every change.
+# Branch protection on `main` enforces "Require review from Code Owners",
+# so a PR needs an approving review from one of these accounts to merge.
+* @georgepadayatti @lalc
