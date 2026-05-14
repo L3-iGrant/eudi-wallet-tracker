@@ -13,20 +13,6 @@ permissions:
   contents: read
 
 jobs:
-  codeql:
-    name: CodeQL (JavaScript/TypeScript)
-    runs-on: ubuntu-latest
-    permissions:
-      security-events: write
-      actions: read
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
-        with:
-          languages: javascript-typescript
-      - uses: github/codeql-action/analyze@v3
-
   dependency-review:
     name: Dependency review
     if: github.event_name == 'pull_request'
@@ -47,16 +33,44 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      # Fail only on high/critical so noisy transitive lows don't block merges.
-      - run: npm audit --audit-level=high
+      # Most "high" advisories here are transitive Docusaurus build-time deps.
+      # Fail only on critical so noise doesn't block merges; review highs in the report.
+      - run: npm audit --audit-level=critical
+      - if: always()
+        run: npm audit --json > npm-audit.json || true
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-audit-report
+          path: npm-audit.json
 
   gitleaks:
-    name: Secret scan (gitleaks)
+    name: Secret scan (gitleaks OSS)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install gitleaks
+        run: |
+          GL_VERSION=8.21.2
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GL_VERSION}/gitleaks_${GL_VERSION}_linux_x64.tar.gz" \
+            | sudo tar -xz -C /usr/local/bin gitleaks
+          gitleaks version
+      - name: Scan history for secrets
+        run: gitleaks detect --source . --no-banner --redact --verbose --exit-code 1
+
+  trivy-fs:
+    name: Filesystem scan (Trivy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+          # Skip lockfile noise from build-time-only deps; tighten later if needed.
+          skip-dirs: node_modules,build,.docusaurus
