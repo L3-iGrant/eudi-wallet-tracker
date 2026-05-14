@@ -9,7 +9,7 @@ import StatsGrid from '@site/src/components/StatsGrid';
  *
  * Strips all site chrome (navbar, footer) so the widget can be dropped onto
  * any third-party page via:
- *   <iframe src="https://eudi-tracker.igrant.io/embed?country=FR" ...></iframe>
+ *   <iframe src="https://eudi-wallet-tracker.igrant.io/embed?country=FR" ...></iframe>
  *
  * Supported query parameters (read by MapSection via existing URL state):
  *   ?country=FR       Pin a specific country in the detail panel.
@@ -67,7 +67,7 @@ export default function Embed() {
         <div className="embed-attribution">
           <span>EUDI Wallet Status Tracker</span>
           <a
-            href={`https://eudi-tracker.igrant.io${pinnedIso ? `/?pin=${pinnedIso}` : '/'}`}
+            href={`https://eudi-wallet-tracker.igrant.io${pinnedIso ? `/?pin=${pinnedIso}` : '/'}`}
             target="_blank"
             rel="noopener"
           >

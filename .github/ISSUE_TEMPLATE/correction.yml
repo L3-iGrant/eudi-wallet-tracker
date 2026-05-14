@@ -13,7 +13,7 @@ body:
     id: page_url
     attributes:
       label: Affected page URL on the tracker
-      placeholder: https://eudi-tracker.igrant.io/tracker/...
+      placeholder: https://eudi-wallet-tracker.igrant.io/tracker/...
     validations:
       required: true
   - type: textarea

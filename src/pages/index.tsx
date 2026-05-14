@@ -70,8 +70,8 @@ export default function Home() {
     alternateName: 'European Digital Identity Wallet Readiness Map',
     description:
       'Open, dated, source-backed editorial record of European Digital Identity (EUDI) Wallet rollout status across the EU 27, EEA (Norway, Iceland, Liechtenstein), the United Kingdom and Switzerland. One row per jurisdiction with status, wallet name, wallet provider, level of assurance, launch or pilot date and primary sources.',
-    url: 'https://eudi-tracker.igrant.io/',
-    identifier: 'https://eudi-tracker.igrant.io/',
+    url: 'https://eudi-wallet-tracker.igrant.io/',
+    identifier: 'https://eudi-wallet-tracker.igrant.io/',
     license: 'https://creativecommons.org/licenses/by/4.0/',
     isAccessibleForFree: true,
     creator: {
@@ -103,7 +103,7 @@ export default function Home() {
       {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: 'https://eudi-tracker.igrant.io/data/eudi-status.json',
+        contentUrl: 'https://eudi-wallet-tracker.igrant.io/data/eudi-status.json',
       },
     ],
     variableMeasured: [

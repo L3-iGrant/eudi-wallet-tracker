@@ -66,9 +66,9 @@ CODEOWNERS routes data changes to the editorial team automatically.
 Every page has a ShareBar with LinkedIn, X, Bluesky, Mastodon, Email, Web Share and Copy-link. Every country has an embeddable SVG badge under `/badge/{ISO}.svg`:
 
 ```html
-<a href="https://eudi-tracker.igrant.io/tracker/france">
+<a href="https://eudi-wallet-tracker.igrant.io/tracker/france">
   <img alt="France EUDI Wallet status"
-       src="https://eudi-tracker.igrant.io/badge/FR.svg" />
+       src="https://eudi-wallet-tracker.igrant.io/badge/FR.svg" />
 </a>
 ```
 
@@ -79,7 +79,7 @@ iframe pointing at `/embed`:
 
 ```html
 <iframe
-  src="https://eudi-tracker.igrant.io/embed?country=SE"
+  src="https://eudi-wallet-tracker.igrant.io/embed?country=SE"
   width="100%" height="520" frameborder="0"
   loading="lazy" allowfullscreen
   referrerpolicy="no-referrer-when-downgrade"

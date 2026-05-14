@@ -259,7 +259,7 @@ function card(c, lastUpdated, silhouetteUri) {
                 props: {
                   style: {display: 'flex', flexDirection: 'column', lineHeight: 1.3},
                   children: [
-                    {type: 'span', props: {style: {fontSize: '16px', fontWeight: 600, color: '#0f172a'}, children: 'eudi-tracker.igrant.io'}},
+                    {type: 'span', props: {style: {fontSize: '16px', fontWeight: 600, color: '#0f172a'}, children: 'eudi-wallet-tracker.igrant.io'}},
                     {type: 'span', props: {style: {marginTop: '2px'}, children: `Updated ${lastUpdated}${c.assuranceLevel ? ` · LoA ${c.assuranceLevel}` : ''}${since && c.launchOrPilotDate ? ` · since ${c.launchOrPilotDate}` : ''}`}},
                   ],
                 },

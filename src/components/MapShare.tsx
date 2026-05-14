@@ -12,7 +12,7 @@ type Props = {
 };
 
 const SHARE_URL =
-  typeof window !== 'undefined' ? window.location.origin + '/' : 'https://eudi-tracker.igrant.io/';
+  typeof window !== 'undefined' ? window.location.origin + '/' : 'https://eudi-wallet-tracker.igrant.io/';
 const SHARE_TITLE = 'EUDI Wallet Tracker';
 const SHARE_TEXT = `EUDI Wallet readiness across the EU, EEA, UK and Switzerland. Updated ${data.lastUpdated}.`;
 
@@ -308,7 +308,7 @@ async function generateMapPng(svg: SVGElement, pinned: Country | null): Promise<
       ctx.font = '500 11px -apple-system, "Inter", system-ui, sans-serif';
       ctx.textAlign = 'right';
       ctx.textBaseline = 'alphabetic';
-      ctx.fillText('eudi-tracker.igrant.io  ·  iGrant.io', mapX + mapW - 16, mapY + mapH - 12);
+      ctx.fillText('eudi-wallet-tracker.igrant.io  ·  iGrant.io', mapX + mapW - 16, mapY + mapH - 12);
       ctx.restore();
 
       canvas.toBlob((blob) => {

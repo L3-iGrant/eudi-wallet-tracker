@@ -172,7 +172,7 @@ function tree(data, silhouetteUri) {
                 props: {
                   style: {display: 'flex', flexDirection: 'column', lineHeight: 1.3},
                   children: [
-                    {type: 'span', props: {style: {fontSize: '17px', fontWeight: 600, color: '#0f172a'}, children: 'eudi-tracker.igrant.io'}},
+                    {type: 'span', props: {style: {fontSize: '17px', fontWeight: 600, color: '#0f172a'}, children: 'eudi-wallet-tracker.igrant.io'}},
                     {type: 'span', props: {style: {fontSize: '14px', fontWeight: 500, color: '#64748b', marginTop: '4px'}, children: `Updated ${data.lastUpdated} · ${data.countries.length} jurisdictions tracked`}},
                   ],
                 },

@@ -31,7 +31,7 @@ const config: Config = {
   tagline: 'Member State readiness for the European Digital Identity Wallet',
   favicon: 'img/favicon.ico',
 
-  url: 'https://eudi-tracker.igrant.io',
+  url: 'https://eudi-wallet-tracker.igrant.io',
   baseUrl: '/',
 
   organizationName: GITHUB_ORG,

@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 
-const FALLBACK_ORIGIN = 'https://eudi-tracker.igrant.io';
+const FALLBACK_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
 
 function buildSnippet(iso?: string): string {
   const origin =

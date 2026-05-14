@@ -25,6 +25,6 @@ _To be filled in before public launch._
 
 ## How to cite
 
-> iGrant.io EUDI Wallet Tracker. Accessed YYYY-MM-DD. https://eudi-tracker.igrant.io
+> iGrant.io EUDI Wallet Tracker. Accessed YYYY-MM-DD. https://eudi-wallet-tracker.igrant.io
 
 For per-country and per-history-entry citations, see the [methodology](/methodology).

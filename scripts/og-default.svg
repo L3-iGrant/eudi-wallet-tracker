@@ -81,7 +81,7 @@
 
   <!-- Footer -->
   <line x1="60" y1="540" x2="1140" y2="540" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="60" y="582" font-size="18" font-weight="600" fill="#0f172a" letter-spacing="-0.2">eudi-tracker.igrant.io</text>
+  <text x="60" y="582" font-size="18" font-weight="600" fill="#0f172a" letter-spacing="-0.2">eudi-wallet-tracker.igrant.io</text>
   <text x="60" y="606" font-size="14" font-weight="500" fill="#64748b">Updated 2026-05-14 · 32 jurisdictions tracked</text>
 
 </svg>

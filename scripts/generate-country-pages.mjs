@@ -147,9 +147,9 @@ function renderCountry(c) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://eudi-tracker.igrant.io/tracker/${slugged}`,
+      '@id': `https://eudi-wallet-tracker.igrant.io/tracker/${slugged}`,
     },
-    image: `https://eudi-tracker.igrant.io/badge/${c.isoAlpha2}.svg`,
+    image: `https://eudi-wallet-tracker.igrant.io/badge/${c.isoAlpha2}.svg`,
     about: {
       '@type': 'Place',
       name: c.name,
@@ -223,9 +223,9 @@ ${sources || '_No sources recorded yet._'}
 A tiny SVG you can drop into any site, README or slide deck.
 
 \`\`\`html
-<a href="https://eudi-tracker.igrant.io/tracker/${slugged}">
+<a href="https://eudi-wallet-tracker.igrant.io/tracker/${slugged}">
   <img alt="${c.name} EUDI Wallet status"
-       src="https://eudi-tracker.igrant.io/badge/${c.isoAlpha2}.svg" />
+       src="https://eudi-wallet-tracker.igrant.io/badge/${c.isoAlpha2}.svg" />
 </a>
 \`\`\`
 

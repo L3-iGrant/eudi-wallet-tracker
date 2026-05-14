@@ -22,7 +22,7 @@ The tracker must be dynamic, interactive, commentable, and openly editable throu
 ## Stack
 
 - **Framework**: Docusaurus 3, TypeScript template
-- **Hosting**: Cloudflare Pages with `eudi-tracker.igrant.io` or `igrant.io/eudi-wallet-tracker`
+- **Hosting**: Cloudflare Pages with `eudi-wallet-tracker.igrant.io` or `igrant.io/eudi-wallet-tracker`
 - **Comments**: Giscus, backed by GitHub Discussions
 - **Editorial workflow**: GitHub Issues and Pull Requests, with templates
 - **Search**: Algolia DocSearch (free for open source docs)
@@ -384,13 +384,13 @@ Total marginal cost: zero. Time cost: roughly four weeks of one developer to shi
 
 ## Cite this tracker
 
-> iGrant.io EUDI Wallet Tracker. Accessed YYYY-MM-DD. https://eudi-tracker.igrant.io/
+> iGrant.io EUDI Wallet Tracker. Accessed YYYY-MM-DD. https://eudi-wallet-tracker.igrant.io/
 
-Permalink format for country pages: `https://eudi-tracker.igrant.io/tracker/{country-slug}`
-Permalink format for individual history entries: `https://eudi-tracker.igrant.io/tracker/{country-slug}#{YYYY-MM-DD}`
+Permalink format for country pages: `https://eudi-wallet-tracker.igrant.io/tracker/{country-slug}`
+Permalink format for individual history entries: `https://eudi-wallet-tracker.igrant.io/tracker/{country-slug}#{YYYY-MM-DD}`
 
 ## Open decisions
 
-- Final domain: `eudi-tracker.igrant.io` (sub-domain) or `igrant.io/eudi-wallet-tracker` (path)?
+- Final domain: `eudi-wallet-tracker.igrant.io` (sub-domain) or `igrant.io/eudi-wallet-tracker` (path)?
 - Maintainer name listed on the methodology page?
 - Initial set of LSP page authors?
