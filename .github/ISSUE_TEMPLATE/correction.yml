@@ -1,0 +1,37 @@
+name: Report a correction
+description: Flag a factual error in an existing entry.
+title: "[correction] <country>: <one-line description>"
+labels: ["correction", "needs-triage"]
+body:
+  - type: input
+    id: country
+    attributes:
+      label: Country
+    validations:
+      required: true
+  - type: input
+    id: page_url
+    attributes:
+      label: Affected page URL on the tracker
+      placeholder: https://eudi-tracker.igrant.io/tracker/...
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source URL backing the correction
+      placeholder: https://...
+    validations:
+      required: true

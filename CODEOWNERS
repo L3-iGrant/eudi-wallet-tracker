@@ -1,0 +1,13 @@
+# Editorial review required for changes to the dataset and the methodology
+data/eudi-status.json    @L3-iGrant/tracker-editors
+docs/methodology.md      @L3-iGrant/tracker-editors
+docs/contribute.md       @L3-iGrant/tracker-editors
+
+# Code review required for site changes
+src/                     @L3-iGrant/tracker-engineers
+docusaurus.config.ts     @L3-iGrant/tracker-engineers
+sidebars.ts              @L3-iGrant/tracker-engineers
+scripts/                 @L3-iGrant/tracker-engineers
+
+# Default owner
+*                        @L3-iGrant/tracker-editors

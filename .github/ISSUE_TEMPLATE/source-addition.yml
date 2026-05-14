@@ -1,0 +1,40 @@
+name: Add or update a source
+description: Suggest a new source link for an existing country entry.
+title: "[source] <country>: <short description>"
+labels: ["source", "needs-triage"]
+body:
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      placeholder: France
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      placeholder: https://...
+    validations:
+      required: true
+  - type: input
+    id: source_title
+    attributes:
+      label: Source title
+      placeholder: Ministerial press release on EUDI Wallet rollout
+    validations:
+      required: true
+  - type: input
+    id: source_date
+    attributes:
+      label: Source date (YYYY-MM-DD)
+      placeholder: 2026-04-09
+    validations:
+      required: true
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why this source matters
+      description: One or two sentences. Helps the maintainer triage.
+    validations:
+      required: true

@@ -1,0 +1,85 @@
+name: Propose a status change
+description: Suggest moving a country to a different status category.
+title: "[status] <country> → <new status>"
+labels: ["status-change", "needs-triage"]
+body:
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      description: Which country is changing?
+      options:
+        - Austria
+        - Belgium
+        - Bulgaria
+        - Croatia
+        - Cyprus
+        - Czechia
+        - Denmark
+        - Estonia
+        - Finland
+        - France
+        - Germany
+        - Greece
+        - Hungary
+        - Ireland
+        - Italy
+        - Latvia
+        - Lithuania
+        - Luxembourg
+        - Malta
+        - Netherlands
+        - Poland
+        - Portugal
+        - Romania
+        - Slovakia
+        - Slovenia
+        - Spain
+        - Sweden
+        - Norway
+        - Iceland
+        - Liechtenstein
+        - United Kingdom
+        - Switzerland
+    validations:
+      required: true
+  - type: dropdown
+    id: new_status
+    attributes:
+      label: Proposed new status
+      options:
+        - Launched in production
+        - Public pilot live
+        - Closed pilot or LSP only
+        - Notified eID, no wallet yet
+        - No public plan
+        - Unknown
+    validations:
+      required: true
+  - type: input
+    id: effective_date
+    attributes:
+      label: Effective date (YYYY-MM-DD)
+      placeholder: 2026-05-13
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      description: Ideally a Member State ministry, agency, LSP or Commission page.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: One-line summary
+      description: What happened? Plain English.
+      placeholder: "France Identité opened to relying parties for production tests."
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes (optional)

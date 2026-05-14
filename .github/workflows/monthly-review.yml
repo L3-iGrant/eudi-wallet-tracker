@@ -1,0 +1,32 @@
+name: Monthly review
+
+on:
+  schedule:
+    - cron: "0 9 1 * *"  # 09:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+jobs:
+  open-review-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - id: today
+        run: echo "ym=$(date -u +'%Y-%m')" >> "$GITHUB_OUTPUT"
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const ym = '${{ steps.today.outputs.ym }}';
+            const data = JSON.parse(require('fs').readFileSync('data/eudi-status.json', 'utf-8'));
+            const checklist = data.countries
+              .map(c => `- [ ] ${c.name} (last source: ${(c.sources || [])[0]?.date ?? 'n/a'})`)
+              .join('\n');
+            const body = `Monthly editorial review for ${ym}.\n\nCheck each country against the [methodology](../blob/main/docs/methodology.md). Append a history entry to \`data/eudi-status.json\` for any change. Mark this checklist as you go.\n\n${checklist}`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Monthly review ${ym}`,
+              body,
+              labels: ['monthly-review'],
+            });

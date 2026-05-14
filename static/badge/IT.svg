@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="22" role="img" aria-label="IT: Launched in production">
+  <title>Italy: Launched in production</title>
+  <linearGradient id="g" x2="0" y2="100%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <rect width="192" height="22" rx="3" fill="#111827"/>
+  <rect x="24" width="168" height="22" rx="3" fill="#15803d"/>
+  <rect width="192" height="22" rx="3" fill="url(#g)"/>
+  <g fill="#fff" font-family="Verdana,Geneva,sans-serif" font-size="11" text-anchor="middle">
+    <text x="12" y="15">IT</text>
+    <text x="108" y="15">Launched in production</text>
+  </g>
+</svg>

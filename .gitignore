@@ -1,0 +1,19 @@
+node_modules/
+.docusaurus/
+.cache-loader/
+build/
+.env
+.env.local
+.DS_Store
+npm-debug.log*
+
+# Editor-local config
+.vscode/
+.idea/
+*.local.json
+
+# Generated artefacts (committed in CI; ignored if you prefer regenerating locally)
+# Uncomment if you choose not to commit generated content:
+# docs/tracker/*.mdx
+# docs/tracker/_category_.json
+# static/badge/*.svg
