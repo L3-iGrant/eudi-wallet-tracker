@@ -84,22 +84,4 @@
   <text x="60" y="582" font-size="18" font-weight="600" fill="#0f172a" letter-spacing="-0.2">eudi-tracker.igrant.io</text>
   <text x="60" y="606" font-size="14" font-weight="500" fill="#64748b">Updated 2026-05-14 · 32 jurisdictions tracked</text>
 
-  <!-- Decorative EU flag stars in the bottom-right -->
-  <g transform="translate(1080 580)" fill="#FFCC00">
-    <circle cx="0" cy="0" r="40" fill="#003399"/>
-    <g transform="translate(0 0)">
-      <circle cx="0" cy="-25" r="3"/>
-      <circle cx="12.5" cy="-21.65" r="3"/>
-      <circle cx="21.65" cy="-12.5" r="3"/>
-      <circle cx="25" cy="0" r="3"/>
-      <circle cx="21.65" cy="12.5" r="3"/>
-      <circle cx="12.5" cy="21.65" r="3"/>
-      <circle cx="0" cy="25" r="3"/>
-      <circle cx="-12.5" cy="21.65" r="3"/>
-      <circle cx="-21.65" cy="12.5" r="3"/>
-      <circle cx="-25" cy="0" r="3"/>
-      <circle cx="-21.65" cy="-12.5" r="3"/>
-      <circle cx="-12.5" cy="-21.65" r="3"/>
-    </g>
-  </g>
 </svg>
