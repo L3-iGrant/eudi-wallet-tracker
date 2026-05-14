@@ -63,6 +63,57 @@ export default function Home() {
   const highLoa = countries.filter((c) => c.assuranceLevel === 'high').length;
   const eu = countries.filter((c) => c.group === 'EU').length;
 
+  const datasetJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'EUDI Wallet Status Tracker',
+    alternateName: 'European Digital Identity Wallet Readiness Map',
+    description:
+      'Open, dated, source-backed editorial record of European Digital Identity (EUDI) Wallet rollout status across the EU 27, EEA (Norway, Iceland, Liechtenstein), the United Kingdom and Switzerland. One row per jurisdiction with status, wallet name, wallet provider, level of assurance, launch or pilot date and primary sources.',
+    url: 'https://eudi-tracker.igrant.io/',
+    identifier: 'https://eudi-tracker.igrant.io/',
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    isAccessibleForFree: true,
+    creator: {
+      '@type': 'Organization',
+      name: 'iGrant.io',
+      url: 'https://www.igrant.io',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'iGrant.io',
+      url: 'https://www.igrant.io',
+    },
+    dateModified: data.lastUpdated,
+    keywords: [
+      'EUDI Wallet',
+      'European Digital Identity Wallet',
+      'eIDAS 2',
+      'digital identity',
+      'wallet readiness',
+      'Member State rollout',
+      'EU 27',
+      'EEA',
+    ],
+    spatialCoverage: {
+      '@type': 'Place',
+      name: 'European Union, EEA, United Kingdom, Switzerland',
+    },
+    distribution: [
+      {
+        '@type': 'DataDownload',
+        encodingFormat: 'application/json',
+        contentUrl: 'https://eudi-tracker.igrant.io/data/eudi-status.json',
+      },
+    ],
+    variableMeasured: [
+      'Wallet rollout status',
+      'Level of Assurance',
+      'Launch or pilot date',
+      'Wallet provider',
+    ],
+  };
+
   return (
     <Layout>
       <Head>
@@ -71,6 +122,9 @@ export default function Home() {
           name="description"
           content="Live readiness of every EU 27, EEA, UK and Switzerland EUDI Wallet rollout. Status, wallet name, level of assurance, milestones."
         />
+        <script type="application/ld+json">
+          {JSON.stringify(datasetJsonLd)}
+        </script>
       </Head>
       <main style={{width: '100%', maxWidth: 1280, margin: '0 auto', padding: '1.25rem 1.25rem 4rem', boxSizing: 'border-box'}}>
         <section className="tracker-hero">

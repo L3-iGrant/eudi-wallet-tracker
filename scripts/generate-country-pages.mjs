@@ -116,6 +116,55 @@ function renderCountry(c) {
   const description = c.notes
     ? c.notes.replace(/\n/g, ' ').slice(0, 155)
     : `${c.name} EUDI Wallet status: ${c.status}`;
+  // Pick datePublished (earliest dated event) and dateModified (latest).
+  const allDates = [
+    c.launchOrPilotDate,
+    ...(Array.isArray(c.sources) ? c.sources.map((s) => s.date) : []),
+  ].filter(Boolean);
+  const datePublished = allDates.length
+    ? allDates.slice().sort()[0]
+    : data.lastUpdated;
+  const dateModified = allDates.length
+    ? allDates.slice().sort().reverse()[0]
+    : data.lastUpdated;
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${c.name}: ${c.status}`,
+    description: description.replace(/"/g, '\\"'),
+    inLanguage: 'en',
+    datePublished,
+    dateModified,
+    author: {
+      '@type': 'Organization',
+      name: 'iGrant.io',
+      url: 'https://www.igrant.io',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'iGrant.io',
+      url: 'https://www.igrant.io',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://eudi-tracker.igrant.io/tracker/${slugged}`,
+    },
+    image: `https://eudi-tracker.igrant.io/badge/${c.isoAlpha2}.svg`,
+    about: {
+      '@type': 'Place',
+      name: c.name,
+      identifier: c.isoAlpha2,
+    },
+    isAccessibleForFree: true,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    keywords: [
+      'EUDI Wallet',
+      c.name,
+      c.walletName,
+      'eIDAS 2',
+      c.status,
+    ].filter(Boolean).join(', '),
+  };
 
   return `---
 id: ${slugged}
@@ -128,6 +177,11 @@ keywords: [EUDI Wallet, ${c.name}, ${c.walletName ?? ''}, eIDAS 2]
 
 import StatusBadge from '@site/src/components/StatusBadge';
 import ShareBar from '@site/src/components/ShareBar';
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">{\`${JSON.stringify(articleJsonLd).replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`}</script>
+</Head>
 
 # ${c.name}
 
