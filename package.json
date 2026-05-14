@@ -69,7 +69,8 @@
     "typescript": "~5.5.0"
   },
   "overrides": {
-    "d3-color": "^3.1.0"
+    "d3-color": "^3.1.0",
+    "serialize-javascript": "^7.0.3"
   },
   "browserslist": {
     "production": [
