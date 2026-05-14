@@ -6,6 +6,7 @@ import data from '@site/data/eudi-status.json';
 import {statusColour} from './StatusBadge';
 import MapShare from './MapShare';
 import MapSearch from './MapSearch';
+import EmbedButton from './EmbedButton';
 
 const GEO_URL =
   'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';
@@ -143,6 +144,7 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
         <div className="europe-map__buttons">
           <MapSearch onSelect={onSearchSelect} onHover={setSearchHoverIso} />
           <MapShare pinnedIso={pinnedIso} />
+          <EmbedButton iso={pinnedIso ?? undefined} />
           {maximised ? (
             <button
               type="button"

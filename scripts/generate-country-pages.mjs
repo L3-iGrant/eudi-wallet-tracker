@@ -177,6 +177,7 @@ keywords: [EUDI Wallet, ${c.name}, ${c.walletName ?? ''}, eIDAS 2]
 
 import StatusBadge from '@site/src/components/StatusBadge';
 import ShareBar from '@site/src/components/ShareBar';
+import EmbedButton from '@site/src/components/EmbedButton';
 import Head from '@docusaurus/Head';
 
 <Head>
@@ -213,6 +214,8 @@ ${sources || '_No sources recorded yet._'}
   title="${c.name} EUDI Wallet status: ${c.status}"
   text="${c.name} EUDI Wallet status: ${c.status}. Source: iGrant.io EUDI Wallet Tracker."
 />
+
+<EmbedButton iso="${c.isoAlpha2}" />
 
 ### Embed the status badge
 
