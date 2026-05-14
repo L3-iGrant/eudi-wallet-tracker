@@ -64,6 +64,8 @@ const ALLOW = new Set([
   'license',
   'licenses',
   'analyze', // when part of identifier like analyze-bundle scripts
+  'dialog', // ARIA / W3C role and HTML <dialog> element
+  'Dialog',
 ]);
 
 // Map of American spelling => British replacement. Only used to detect.
