@@ -185,13 +185,44 @@ a {
    Mirrors the layout on eudi-wallet-compliance.igrant.io. */
 .navbar {
   border-bottom: 1px solid var(--tracker-hairline);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  /* NOTE: do not put backdrop-filter / filter / transform on .navbar itself.
+     It makes .navbar the containing block for its fixed-position child
+     .navbar-sidebar, which collapses the mobile sidebar to navbar height
+     (~64px) and hides all menu items. Apply the blur on .navbar__inner. */
+}
+/* Mobile slide-out sidebar: opaque background, comfortable padding around
+   menu items so the link list reads cleanly. */
+.navbar-sidebar {
+  background: #ffffff;
+}
+[data-theme='dark'] .navbar-sidebar {
+  background: rgb(11, 13, 16);
+}
+.navbar-sidebar__items .menu__link {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(63, 63, 70);
+  padding: 0.6rem 1rem;
+}
+.navbar-sidebar__items .menu__link:hover,
+.navbar-sidebar__items .menu__link--active {
+  color: rgb(24, 24, 27);
+  background: rgba(0, 0, 0, 0.04);
+}
+[data-theme='dark'] .navbar-sidebar__items .menu__link {
+  color: rgb(212, 212, 216);
+}
+[data-theme='dark'] .navbar-sidebar__items .menu__link:hover,
+[data-theme='dark'] .navbar-sidebar__items .menu__link--active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
 }
 .navbar__inner {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
 }
 /* Brand: zinc-950, 16px, semibold, tracking-tight */
 .navbar__brand {
