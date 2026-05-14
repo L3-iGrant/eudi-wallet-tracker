@@ -157,9 +157,9 @@ const config: Config = {
   customFields: {
     giscus: {
       repo: `${GITHUB_ORG}/${GITHUB_REPO}`,
-      repoId: 'REPLACE_AFTER_REPO_CREATED',
+      repoId: 'R_kgDOSdSezQ',
       category: 'Comments',
-      categoryId: 'REPLACE_AFTER_DISCUSSION_CATEGORY_CREATED',
+      categoryId: 'DIC_kwDOSdSezc4C9CnM',
       mapping: 'pathname',
       strict: '0',
       reactionsEnabled: '1',
