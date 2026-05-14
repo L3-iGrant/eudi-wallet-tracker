@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Helvetica, Arial, sans-serif">
+  <!-- Background: soft white-to-cream gradient with subtle teal corner glow -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f4f6f9"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="0.6">
+      <stop offset="0" stop-color="#0d9488" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#0d9488" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="1" cy="1" r="0.5">
+      <stop offset="0" stop-color="#60a5fa" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Top-left: iGrant.io round logo (EU stars) + wordmark -->
+  <g transform="translate(60 56)">
+    <rect width="44" height="44" rx="10" fill="#003399"/>
+    <g fill="#FFCC00" transform="translate(22 22)">
+      <circle cx="0" cy="-13.75" r="2.2"/>
+      <circle cx="6.875" cy="-11.91" r="2.2"/>
+      <circle cx="11.91" cy="-6.875" r="2.2"/>
+      <circle cx="13.75" cy="0" r="2.2"/>
+      <circle cx="11.91" cy="6.875" r="2.2"/>
+      <circle cx="6.875" cy="11.91" r="2.2"/>
+      <circle cx="0" cy="13.75" r="2.2"/>
+      <circle cx="-6.875" cy="11.91" r="2.2"/>
+      <circle cx="-11.91" cy="6.875" r="2.2"/>
+      <circle cx="-13.75" cy="0" r="2.2"/>
+      <circle cx="-11.91" cy="-6.875" r="2.2"/>
+      <circle cx="-6.875" cy="-11.91" r="2.2"/>
+    </g>
+    <text x="58" y="22" font-size="20" font-weight="600" fill="#0f172a" letter-spacing="-0.4">iGrant.io</text>
+    <text x="58" y="42" font-size="13" font-weight="500" fill="#64748b" letter-spacing="0.4">EUDI WALLET STATUS TRACKER</text>
+  </g>
+
+  <!-- Big title: centred-left, two lines -->
+  <text x="60" y="278" font-size="64" font-weight="700" fill="#0f172a" letter-spacing="-1.6">European Digital Identity</text>
+  <text x="60" y="350" font-size="64" font-weight="700" fill="#0f172a" letter-spacing="-1.6">Wallet Readiness Map</text>
+
+  <!-- Lede -->
+  <text x="60" y="402" font-size="22" font-weight="500" fill="#475569" letter-spacing="-0.2">Live adoption across the EU 27, EEA, UK and Switzerland.</text>
+
+  <!-- Status chips: dot + count + label, evenly spaced -->
+  <g transform="translate(60 472)" font-size="18" font-family="Helvetica, Arial, sans-serif">
+    <!-- Live -->
+    <circle cx="9" cy="11" r="6" fill="#5bd0a6"/>
+    <text x="22" y="17" font-weight="700" fill="#0f172a">4</text>
+    <text x="40" y="17" font-weight="500" fill="#475569">Live</text>
+
+    <!-- Pilot -->
+    <circle cx="115" cy="11" r="6" fill="#7fb7e5"/>
+    <text x="128" y="17" font-weight="700" fill="#0f172a">15</text>
+    <text x="155" y="17" font-weight="500" fill="#475569">Pilot</text>
+
+    <!-- Closed -->
+    <circle cx="232" cy="11" r="6" fill="#f5c871"/>
+    <text x="245" y="17" font-weight="700" fill="#0f172a">9</text>
+    <text x="263" y="17" font-weight="500" fill="#475569">Closed</text>
+
+    <!-- eID -->
+    <circle cx="365" cy="11" r="6" fill="#ed9d63"/>
+    <text x="378" y="17" font-weight="700" fill="#0f172a">4</text>
+    <text x="396" y="17" font-weight="500" fill="#475569">eID only</text>
+
+    <!-- No plan -->
+    <circle cx="500" cy="11" r="6" fill="#e37070"/>
+    <text x="513" y="17" font-weight="700" fill="#0f172a">0</text>
+    <text x="531" y="17" font-weight="500" fill="#475569">No plan</text>
+
+    <!-- Unknown -->
+    <circle cx="640" cy="11" r="6" fill="#dce0e6"/>
+    <text x="653" y="17" font-weight="700" fill="#0f172a">0</text>
+    <text x="671" y="17" font-weight="500" fill="#475569">Unknown</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="540" x2="1140" y2="540" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="60" y="582" font-size="18" font-weight="600" fill="#0f172a" letter-spacing="-0.2">eudi-tracker.igrant.io</text>
+  <text x="60" y="606" font-size="14" font-weight="500" fill="#64748b">Updated 2026-05-14 · 32 jurisdictions tracked</text>
+
+  <!-- Decorative EU flag stars in the bottom-right -->
+  <g transform="translate(1080 580)" fill="#FFCC00">
+    <circle cx="0" cy="0" r="40" fill="#003399"/>
+    <g transform="translate(0 0)">
+      <circle cx="0" cy="-25" r="3"/>
+      <circle cx="12.5" cy="-21.65" r="3"/>
+      <circle cx="21.65" cy="-12.5" r="3"/>
+      <circle cx="25" cy="0" r="3"/>
+      <circle cx="21.65" cy="12.5" r="3"/>
+      <circle cx="12.5" cy="21.65" r="3"/>
+      <circle cx="0" cy="25" r="3"/>
+      <circle cx="-12.5" cy="21.65" r="3"/>
+      <circle cx="-21.65" cy="12.5" r="3"/>
+      <circle cx="-25" cy="0" r="3"/>
+      <circle cx="-21.65" cy="-12.5" r="3"/>
+      <circle cx="-12.5" cy="-21.65" r="3"/>
+    </g>
+  </g>
+</svg>
