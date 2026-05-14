@@ -1,5 +1,17 @@
 # EUDI Wallet Tracker
 
+[![CI](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/deploy.yml)
+[![Security](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/security.yml/badge.svg?branch=main)](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/security.yml)
+[![Last commit](https://img.shields.io/github/last-commit/L3-iGrant/eudi-wallet-tracker/main?label=last%20commit)](https://github.com/L3-iGrant/eudi-wallet-tracker/commits/main)
+[![Open issues](https://img.shields.io/github/issues/L3-iGrant/eudi-wallet-tracker?label=open%20issues)](https://github.com/L3-iGrant/eudi-wallet-tracker/issues)
+[![Open PRs](https://img.shields.io/github/issues-pr/L3-iGrant/eudi-wallet-tracker?label=open%20PRs)](https://github.com/L3-iGrant/eudi-wallet-tracker/pulls)
+[![Code: EUPL-1.2](https://img.shields.io/badge/code-EUPL--1.2-1d4ed8.svg)](./LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-0ea5e9.svg)](./DATA-LICENSE)
+[![Contributor Covenant 2.1](https://img.shields.io/badge/code%20of%20conduct-Contributor%20Covenant%202.1-4baaaa.svg)](./CODE_OF_CONDUCT.md)
+[![Anchor: Regulation (EU) 2024/1183](https://img.shields.io/badge/anchor-Regulation%20(EU)%202024%2F1183-1d4ed8)](https://eur-lex.europa.eu/eli/reg/2024/1183/oj)
+[![Site: eudi-wallet-tracker.igrant.io](https://img.shields.io/badge/site-eudi--wallet--tracker.igrant.io-0ea5e9)](https://eudi-wallet-tracker.igrant.io)
+
 Open editorial record of EUDI Wallet readiness across the EU 27, EEA (Norway, Iceland, Liechtenstein), the UK and Switzerland. Anchored on the 21 December 2026 Member State obligation under Regulation (EU) 2024/1183.
 
 Built with Docusaurus 3. Comments via Giscus (GitHub Discussions). Edits via GitHub Pull Requests.
