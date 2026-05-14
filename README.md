@@ -72,6 +72,33 @@ Every page has a ShareBar with LinkedIn, X, Bluesky, Mastodon, Email, Web Share 
 </a>
 ```
 
+## Embed the live map
+
+The interactive map can be embedded on any page (Google-Maps style) via an
+iframe pointing at `/embed`:
+
+```html
+<iframe
+  src="https://eudi-tracker.igrant.io/embed?country=SE"
+  width="100%" height="520" frameborder="0"
+  loading="lazy" allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  title="EUDI Wallet readiness across Europe"
+></iframe>
+```
+
+Optional query parameters:
+
+| Param          | Effect                                                |
+| -------------- | ----------------------------------------------------- |
+| `?country=SE`  | Open with that country pinned in the side panel.      |
+| `?pin=SE`      | Same as above (canonical name).                       |
+| `?status=Public pilot live` | Pre-apply the status chip filter.        |
+
+The embed surface omits all site chrome (navbar, footer) and includes a
+small "View larger map" link back to the canonical tracker. Tracking the
+status of this feature: [issue #1](https://github.com/L3-iGrant/eudi-wallet-tracker/issues/1).
+
 ## Roadmap
 
 See [`EXECUTION_PLAN.md`](EXECUTION_PLAN.md) for the phased plan (Phase 1 to 6),
