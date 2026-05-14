@@ -9,12 +9,65 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import satori from 'satori';
 import {Resvg} from '@resvg/resvg-js';
+import {feature} from 'topojson-client';
+import {geoConicConformal, geoPath} from 'd3-geo';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data', 'eudi-status.json');
 const OUT_DIR = path.join(ROOT, 'static', 'img', 'og');
 const FONT_DIR = path.join(__dirname, 'fonts');
+const TOPO = path.join(__dirname, 'world-atlas-50m.json');
+
+// iGrant.io brand mark: EU-blue rounded square with 12 yellow stars in a ring.
+// Same composition as static/img/logo.svg, scaled to 56px for the OG cards.
+const LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="56" height="56">
+  <rect width="32" height="32" rx="7" fill="#003399"/>
+  <g fill="#FFCC00">
+    <circle cx="16" cy="6" r="1.6"/>
+    <circle cx="21" cy="7.34" r="1.6"/>
+    <circle cx="24.66" cy="11" r="1.6"/>
+    <circle cx="26" cy="16" r="1.6"/>
+    <circle cx="24.66" cy="21" r="1.6"/>
+    <circle cx="21" cy="24.66" r="1.6"/>
+    <circle cx="16" cy="26" r="1.6"/>
+    <circle cx="11" cy="24.66" r="1.6"/>
+    <circle cx="7.34" cy="21" r="1.6"/>
+    <circle cx="6" cy="16" r="1.6"/>
+    <circle cx="7.34" cy="11" r="1.6"/>
+    <circle cx="11" cy="7.34" r="1.6"/>
+  </g>
+</svg>`;
+const LOGO_DATA_URI = `data:image/svg+xml;base64,${Buffer.from(LOGO_SVG).toString('base64')}`;
+
+// Europe silhouette: render the same set of jurisdictions as the live map,
+// projected with matching parameters, exported as a single SVG path. Used
+// as a faded background motif in the OG cards.
+function renderEuropeSilhouette(highlightId) {
+  const topo = JSON.parse(fs.readFileSync(TOPO, 'utf-8'));
+  const countries = feature(topo, topo.objects.countries);
+  const projection = geoConicConformal()
+    .rotate([-10, -54, 0])
+    .center([0, 0])
+    .parallels([40, 65])
+    .scale(700)
+    .translate([550, 280]);
+  const pathBuilder = geoPath(projection);
+  // Render all geometries; tint the highlight country if any.
+  const paths = countries.features
+    .map((f) => {
+      const d = pathBuilder(f);
+      if (!d) return null;
+      const highlight = highlightId && String(f.id).padStart(3, '0') === highlightId;
+      const fill = highlight ? '#0d9488' : '#0f172a';
+      const opacity = highlight ? 0.18 : 0.07;
+      return `<path d="${d}" fill="${fill}" fill-opacity="${opacity}" />`;
+    })
+    .filter(Boolean)
+    .join('');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560">${paths}</svg>`;
+  return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
+}
 
 const STATUS_COLOUR = {
   'Launched in production': '#5bd0a6',
@@ -43,7 +96,7 @@ const STATUS_BG = {
   Unknown: '#f1f5f9',
 };
 
-function card(c, lastUpdated) {
+function card(c, lastUpdated, silhouetteUri) {
   const dot = STATUS_COLOUR[c.status] ?? '#94a3b8';
   const fg = STATUS_FG[c.status] ?? '#475569';
   const bg = STATUS_BG[c.status] ?? '#f1f5f9';
@@ -62,8 +115,24 @@ function card(c, lastUpdated) {
           'linear-gradient(135deg, #f4faf9 0%, #ffffff 60%)',
         fontFamily: 'Geist',
         color: '#0f172a',
+        position: 'relative',
       },
       children: [
+        // Faded Europe silhouette in the background, anchored to the right side.
+        {
+          type: 'img',
+          props: {
+            src: silhouetteUri,
+            width: 1100,
+            height: 560,
+            style: {
+              position: 'absolute',
+              top: '60px',
+              right: '-180px',
+              opacity: 1,
+            },
+          },
+        },
         // Brand row
         {
           type: 'div',
@@ -71,26 +140,17 @@ function card(c, lastUpdated) {
             style: {
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
+              gap: '14px',
               marginBottom: '40px',
             },
             children: [
               {
-                type: 'div',
+                type: 'img',
                 props: {
-                  style: {
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    backgroundColor: '#003399',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#FFCC00',
-                    fontSize: '20px',
-                    fontWeight: 700,
-                  },
-                  children: '★',
+                  src: LOGO_DATA_URI,
+                  width: 44,
+                  height: 44,
+                  style: {borderRadius: '10px'},
                 },
               },
               {
@@ -219,7 +279,8 @@ async function main() {
   fs.mkdirSync(OUT_DIR, {recursive: true});
 
   for (const c of data.countries) {
-    const tree = card(c, data.lastUpdated);
+    const silhouette = renderEuropeSilhouette(c.isoNumeric);
+    const tree = card(c, data.lastUpdated, silhouette);
     const svg = await satori(tree, {
       width: 1200,
       height: 630,
