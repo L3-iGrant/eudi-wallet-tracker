@@ -11,15 +11,79 @@ type Props = {
   pinnedIso?: string | null;
 };
 
-const SHARE_URL =
-  typeof window !== 'undefined' ? window.location.origin + '/' : 'https://eudi-wallet-tracker.igrant.io/';
+const FALLBACK_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
 const SHARE_TITLE = 'EUDI Wallet Tracker';
-const SHARE_TEXT = `EUDI Wallet readiness across the EU, EEA, UK and Switzerland. Updated ${data.lastUpdated}.`;
+
+function slug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+function getOrigin(): string {
+  return typeof window !== 'undefined' ? window.location.origin : FALLBACK_ORIGIN;
+}
+
+function buildShare(pinned: Country | null): {url: string; text: string} {
+  const origin = getOrigin();
+  if (pinned) {
+    return {
+      url: `${origin}/tracker/${slug(pinned.name)}`,
+      text: `${pinned.name}: ${pinned.status}. EUDI Wallet rollout — updated ${data.lastUpdated}.`,
+    };
+  }
+  return {
+    url: `${origin}/`,
+    text: `EUDI Wallet readiness across the EU, EEA, UK and Switzerland. Updated ${data.lastUpdated}.`,
+  };
+}
 
 function encodeQuery(params: Record<string, string>): string {
   return Object.entries(params)
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&');
+}
+
+function IconLinkedIn() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden focusable="false">
+      <path
+        fill="currentColor"
+        d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+      />
+    </svg>
+  );
+}
+
+function IconWhatsApp() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden focusable="false">
+      <path
+        fill="currentColor"
+        d="M17.47 14.38c-.3-.15-1.74-.86-2.01-.96-.27-.1-.46-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.19-.24-.57-.49-.49-.66-.5l-.56-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.69.25-1.28.17-1.4-.07-.12-.27-.2-.57-.34zM12.04 21.6h-.01a9.45 9.45 0 0 1-4.82-1.32l-.34-.21-3.59.94.96-3.5-.22-.36a9.42 9.42 0 0 1-1.45-5.04c0-5.21 4.25-9.45 9.47-9.45 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.68c0 5.21-4.25 9.45-9.46 9.45zm8.05-17.5A11.32 11.32 0 0 0 12.04 1C5.76 1 .65 6.1.64 12.36c0 2 .53 3.96 1.53 5.69L.55 24l6.07-1.59a11.4 11.4 0 0 0 5.42 1.38h.01c6.28 0 11.39-5.1 11.39-11.36 0-3.04-1.18-5.9-3.34-8.05z"
+      />
+    </svg>
+  );
+}
+
+function IconX() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden focusable="false">
+      <path
+        fill="currentColor"
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+      />
+    </svg>
+  );
+}
+
+function IconEmail() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden focusable="false">
+      <path
+        d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.5l8 5 8-5V7H4zm16 2.62-7.45 4.66a1 1 0 0 1-1.1 0L4 9.62V17h16V9.62z"
+        fill="currentColor"
+      />
+    </svg>
+  );
 }
 
 /**
@@ -375,15 +439,17 @@ export default function MapShare({svgSelector = '.europe-map', pinnedIso = null}
     }
   }, [svgSelector, pinnedCountry]);
 
+  const share = buildShare(pinnedCountry);
+
   const onCopyLink = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText(SHARE_URL);
+      await navigator.clipboard.writeText(share.url);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [share.url]);
 
   const onNativeShare = useCallback(async () => {
     const svg = document.querySelector(svgSelector) as SVGElement | null;
@@ -394,22 +460,21 @@ export default function MapShare({svgSelector = '.europe-map', pinnedIso = null}
         : undefined;
       try {
         if (files && navigator.canShare && navigator.canShare({files})) {
-          await navigator.share({title: SHARE_TITLE, text: SHARE_TEXT, url: SHARE_URL, files});
+          await navigator.share({title: SHARE_TITLE, text: share.text, url: share.url, files});
         } else {
-          await navigator.share({title: SHARE_TITLE, text: SHARE_TEXT, url: SHARE_URL});
+          await navigator.share({title: SHARE_TITLE, text: share.text, url: share.url});
         }
       } catch {
         /* user cancelled */
       }
       setOpen(false);
     }
-  }, [svgSelector, pinnedCountry]);
+  }, [svgSelector, pinnedCountry, share.text, share.url]);
 
-  const x = `https://twitter.com/intent/tweet?${encodeQuery({text: `${SHARE_TEXT} ${SHARE_URL}`})}`;
-  const li = `https://www.linkedin.com/sharing/share-offsite/?${encodeQuery({url: SHARE_URL})}`;
-  const bsky = `https://bsky.app/intent/compose?${encodeQuery({text: `${SHARE_TEXT} ${SHARE_URL}`})}`;
-  const masto = `https://mastodon.social/share?${encodeQuery({text: `${SHARE_TEXT} ${SHARE_URL}`})}`;
-  const email = `mailto:?${encodeQuery({subject: SHARE_TITLE, body: `${SHARE_TEXT}\n\n${SHARE_URL}`})}`;
+  const linkedin = `https://www.linkedin.com/sharing/share-offsite/?${encodeQuery({url: share.url})}`;
+  const whatsapp = `https://wa.me/?${encodeQuery({text: `${share.text} ${share.url}`})}`;
+  const x = `https://twitter.com/intent/tweet?${encodeQuery({text: `${share.text} ${share.url}`})}`;
+  const email = `mailto:?${encodeQuery({subject: SHARE_TITLE, body: `${share.text}\n\n${share.url}`})}`;
 
   return (
     <div className="map-share" ref={wrapRef}>
@@ -435,6 +500,56 @@ export default function MapShare({svgSelector = '.europe-map', pinnedIso = null}
       </button>
       {open && (
         <div className="map-share__menu" role="menu">
+          <div className="map-share__heading">Share to</div>
+          <div className="map-share__grid">
+            <a
+              className="map-share__chip map-share__chip--linkedin"
+              href={linkedin}
+              target="_blank"
+              rel="noopener"
+              role="menuitem"
+              title="Share on LinkedIn"
+            >
+              <IconLinkedIn />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              className="map-share__chip map-share__chip--whatsapp"
+              href={whatsapp}
+              target="_blank"
+              rel="noopener"
+              data-action="share/whatsapp/share"
+              role="menuitem"
+              title="Share on WhatsApp"
+            >
+              <IconWhatsApp />
+              <span>WhatsApp</span>
+            </a>
+            <a
+              className="map-share__chip map-share__chip--x"
+              href={x}
+              target="_blank"
+              rel="noopener"
+              role="menuitem"
+              title="Share on X"
+            >
+              <IconX />
+              <span>X</span>
+            </a>
+            <a
+              className="map-share__chip map-share__chip--email"
+              href={email}
+              role="menuitem"
+              title="Share via email"
+            >
+              <IconEmail />
+              <span>Email</span>
+            </a>
+          </div>
+          <p className="map-share__hint">
+            Image preview comes from the page&rsquo;s share card automatically.
+          </p>
+          <div className="map-share__divider" />
           <button
             type="button"
             className="map-share__item"
@@ -443,25 +558,18 @@ export default function MapShare({svgSelector = '.europe-map', pinnedIso = null}
             role="menuitem"
           >
             <strong>{busy ? 'Rendering…' : 'Download PNG snapshot'}</strong>
-            <span>1600 × 1000, suitable for LinkedIn / X</span>
+            <span>{pinnedCountry ? '1700 × 1000, includes country card' : '1320 × 1000, social-ready'}</span>
           </button>
           {typeof navigator !== 'undefined' && (navigator as any).share && (
             <button type="button" className="map-share__item" onClick={onNativeShare} role="menuitem">
-              <strong>Share via device…</strong>
-              <span>Uses the system share sheet (mobile)</span>
+              <strong>Share via device&hellip;</strong>
+              <span>Uses the system share sheet, attaches the PNG</span>
             </button>
           )}
           <button type="button" className="map-share__item" onClick={onCopyLink} role="menuitem">
-            <strong>{copied ? 'Link copied' : 'Copy link to tracker'}</strong>
-            <span>{SHARE_URL}</span>
+            <strong>{copied ? 'Link copied' : 'Copy link'}</strong>
+            <span>{share.url}</span>
           </button>
-          <div className="map-share__row">
-            <a className="map-share__icon" href={x} target="_blank" rel="noopener" title="Share on X">X</a>
-            <a className="map-share__icon" href={li} target="_blank" rel="noopener" title="Share on LinkedIn">in</a>
-            <a className="map-share__icon" href={bsky} target="_blank" rel="noopener" title="Share on Bluesky">bsky</a>
-            <a className="map-share__icon" href={masto} target="_blank" rel="noopener" title="Share on Mastodon">M</a>
-            <a className="map-share__icon" href={email} title="Share via email">@</a>
-          </div>
         </div>
       )}
     </div>
