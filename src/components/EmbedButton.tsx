@@ -1,4 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {createPortal} from 'react-dom';
 
 const FALLBACK_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
 
@@ -87,7 +88,7 @@ export default function EmbedButton({iso, className}: Props) {
         </svg>
         <span>Embed</span>
       </button>
-      {open && (
+      {open && typeof document !== 'undefined' && createPortal(
         <div className="embed-modal__backdrop" role="presentation">
           <div
             ref={dialogRef}
@@ -146,7 +147,8 @@ export default function EmbedButton({iso, className}: Props) {
               </a>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );
