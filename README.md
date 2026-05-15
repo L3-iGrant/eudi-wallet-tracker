@@ -12,7 +12,7 @@
 [![Anchor: Regulation (EU) 2024/1183](https://img.shields.io/badge/anchor-Regulation%20(EU)%202024%2F1183-1d4ed8)](https://eur-lex.europa.eu/eli/reg/2024/1183/oj)
 [![Site: eudi-wallet-tracker.igrant.io](https://img.shields.io/badge/site-eudi--wallet--tracker.igrant.io-0ea5e9)](https://eudi-wallet-tracker.igrant.io)
 
-Open editorial record of EUDI Wallet readiness across the EU 27, EEA (Norway, Iceland, Liechtenstein), the UK and Switzerland. Anchored on the 21 December 2026 Member State obligation under Regulation (EU) 2024/1183.
+Open editorial record of EUDI Wallet readiness across the EU 27, EEA (Norway, Iceland, Liechtenstein), the UK and Switzerland. Anchored on the 24 December 2026 Member State obligation under Regulation (EU) 2024/1183.
 
 Built with Docusaurus 3. Comments via Giscus (GitHub Discussions). Edits via GitHub Pull Requests.
 
