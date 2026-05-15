@@ -11,27 +11,27 @@ type Props = {
   pinnedIso?: string | null;
 };
 
-const FALLBACK_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
+/**
+ * Canonical production origin. Always used for outbound share URLs so that
+ * LinkedIn / WhatsApp / X / Email recipients land on the public site (with a
+ * crawlable OG card) rather than a localhost or PR-preview origin.
+ */
+const SHARE_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
 const SHARE_TITLE = 'EUDI Wallet Tracker';
 
 function slug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function getOrigin(): string {
-  return typeof window !== 'undefined' ? window.location.origin : FALLBACK_ORIGIN;
-}
-
 function buildShare(pinned: Country | null): {url: string; text: string} {
-  const origin = getOrigin();
   if (pinned) {
     return {
-      url: `${origin}/tracker/${slug(pinned.name)}`,
-      text: `${pinned.name}: ${pinned.status}. EUDI Wallet rollout — updated ${data.lastUpdated}.`,
+      url: `${SHARE_ORIGIN}/tracker/${slug(pinned.name)}/`,
+      text: `${pinned.name}: ${pinned.status}. EUDI Wallet rollout - updated ${data.lastUpdated}.`,
     };
   }
   return {
-    url: `${origin}/`,
+    url: `${SHARE_ORIGIN}/`,
     text: `EUDI Wallet readiness across the EU, EEA, UK and Switzerland. Updated ${data.lastUpdated}.`,
   };
 }
