@@ -1,4 +1,4 @@
-# EUDI Wallet Tracker
+# EUDI Wallet Status Tracker
 
 [![CI](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/ci.yml)
 [![Deploy to GitHub Pages](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/L3-iGrant/eudi-wallet-tracker/actions/workflows/deploy.yml)

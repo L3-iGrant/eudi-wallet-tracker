@@ -7,7 +7,7 @@ sidebar_position: 1
 
 # Overview
 
-The EUDI Wallet Tracker is an open editorial record of Member State readiness for the European Digital Identity Wallet, maintained by iGrant.io.
+The EUDI Wallet Status Tracker is an open editorial record of Member State readiness for the European Digital Identity Wallet, maintained by iGrant.io.
 
 It exists to give one trustworthy answer to questions like:
 

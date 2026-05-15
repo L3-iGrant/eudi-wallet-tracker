@@ -6,11 +6,11 @@ import {useDoc} from '@docusaurus/plugin-content-docs/client';
 
 export default function FooterWrapper(props: any) {
   const doc: any = useDoc();
-  const title = doc?.metadata?.title ?? 'EUDI Wallet Tracker';
+  const title = doc?.metadata?.title ?? 'EUDI Wallet Status Tracker';
   return (
     <>
       <Footer {...props} />
-      <ShareBar title={`${title} - iGrant.io EUDI Wallet Tracker`} />
+      <ShareBar title={`${title} - iGrant.io EUDI Wallet Status Tracker`} />
       <GiscusComments />
     </>
   );

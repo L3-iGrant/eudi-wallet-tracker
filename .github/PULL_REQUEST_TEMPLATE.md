@@ -1,5 +1,5 @@
 <!--
-Thanks for contributing to the iGrant.io EUDI Wallet Tracker.
+Thanks for contributing to the iGrant.io EUDI Wallet Status Tracker.
 Please fill in this template so reviewers can act quickly.
 -->
 

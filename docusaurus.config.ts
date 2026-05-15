@@ -27,7 +27,7 @@ const COUNTRY_LASTMOD = new Map<string, string>(
 );
 
 const config: Config = {
-  title: 'EUDI Wallet Tracker',
+  title: 'EUDI Wallet Status Tracker',
   tagline: 'Member State readiness for the European Digital Identity Wallet',
   favicon: 'img/favicon.ico',
 

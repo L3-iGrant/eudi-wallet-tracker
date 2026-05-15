@@ -1,5 +1,5 @@
 /**
- * EUDI Wallet Tracker theme.
+ * EUDI Wallet Status Tracker theme.
  * Apple-inspired surface: hairline borders, soft layered shadows, translucent
  * sticky chrome, refined status tokens. Typography (Geist) and chrome aligned
  * with eudi-wallet-compliance.igrant.io and docs.igrant.io.
@@ -1984,7 +1984,9 @@ a {
 .embed-modal__backdrop {
   position: fixed;
   inset: 0;
-  z-index: 99000;
+  /* Sit above .europe-map-frame--maximised (z-index: 100000) so the modal
+     is visible over the maximised map portal. */
+  z-index: 100050;
   background: rgba(15, 23, 42, 0.4);
   backdrop-filter: blur(4px);
   display: flex;
