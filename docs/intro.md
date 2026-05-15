@@ -18,7 +18,7 @@ It exists to give one trustworthy answer to questions like:
 
 Every data point has a source URL and a date. Status changes are appended to a per-country history and never overwritten. Comments and pull requests are open to anyone with a GitHub account.
 
-The tracker is anchored on the **21 December 2026 Member State obligation** under Regulation (EU) 2024/1183. EEA countries (Norway, Iceland, Liechtenstein) follow a separate, later timetable.
+The tracker is anchored on the **24 December 2026 Member State obligation** under Regulation (EU) 2024/1183. EEA countries (Norway, Iceland, Liechtenstein) follow a separate, later timetable.
 
 For the rules we use to assess each country, read the [methodology](/methodology).
 For how to suggest a change, see [contribute](/contribute).

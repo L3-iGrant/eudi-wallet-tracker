@@ -48,7 +48,7 @@ standards-terminology allow list.
 - Concise prose, no filler caveats
 - No em dashes, no en dashes
 - Names of organisations: as they spell them themselves (so "iGrant.io", not "iGrant" or "iGrant.IO")
-- Dates: `YYYY-MM-DD` in data; "21 December 2026" in prose
+- Dates: `YYYY-MM-DD` in data; "24 December 2026" in prose
 
 ## Maintainers
 

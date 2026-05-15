@@ -84,7 +84,7 @@ Single source of truth is `data/eudi-status.json`. One entry per country, with c
 ```json
 {
   "lastUpdated": "2026-05-13",
-  "deadline": "2026-12-21",
+  "deadline": "2026-12-24",
   "countries": [
     {
       "name": "France",
@@ -176,7 +176,7 @@ Status categories (in display order):
 ### Phase 2, interactive components (week 2)
 7. `EuropeMap.tsx`: D3 + topojson + react-simple-maps, colour-coded by status, accessible. Stable hover tooltip with hovered country brought to top of paint order so the dark slate boundary stroke is never clipped by neighbours. Toolbar with Maximise toggle (and explicit Minimise / Exit full screen control + Esc) framed as a card with a soft gradient and grid pattern.
 8. `StatusTable.tsx`: TanStack-style table with column filters, wrapped in a hairline-bordered card.
-9. `Countdown.tsx`: live countdown to 21 December 2026, expressed in **weeks** (not days) on an Apple-style neutral surface card with a small status dot.
+9. `Countdown.tsx`: live countdown to 24 December 2026, expressed in **weeks** (not days) on an Apple-style neutral surface card with a small status dot.
 10. `RecentChanges.tsx`: most recent dated position per country (date + country + status badge + wallet name). Source titles are deliberately not surfaced; sources remain on country pages.
 11. `StatusBadge.tsx`: reusable status pill, used on map tooltips, country pages, table cells. Refined pastel surfaces with a leading status dot.
 12. `StatsGrid.tsx`: sleek inline status chip row (dot + count + label) in a pill container, sitting just above the map.
@@ -235,7 +235,7 @@ Status categories (in display order):
 
 ## Beyond December 2026, sustaining the tracker
 
-The 21 December 2026 obligation is the launch milestone, not the end of the
+The 24 December 2026 obligation is the launch milestone, not the end of the
 story. The tracker is designed to keep earning attention well past that date
 without becoming a stale countdown widget.
 
@@ -249,7 +249,7 @@ spine, same editorial discipline, evolving lenses on top.
    plan / unknown. From 2027: add operational sub-states like "available but
    <50% national coverage", "issuer outage", "RP integration backlog",
    "withdrawn or paused". Old statuses do not disappear, they migrate.
-2. **Countdown rotates**. The 21 Dec 2026 hero countdown gives way to the
+2. **Countdown rotates**. The 24 Dec 2026 hero countdown gives way to the
    next regulatory milestone (Article 5a, Implementing Acts review windows,
    QTSP audit cycles), then to a rolling "days since first national wallet"
    counter. The component stays, the target moves.

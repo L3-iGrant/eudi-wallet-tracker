@@ -6,7 +6,7 @@ function formatTargetDate(iso: string): string {
   return `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
 
-export default function Countdown({target = '2026-12-21'}: {target?: string}) {
+export default function Countdown({target = '2026-12-24'}: {target?: string}) {
   const [now, setNow] = useState<Date>(() => new Date());
 
   useEffect(() => {

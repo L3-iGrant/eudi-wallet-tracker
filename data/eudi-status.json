@@ -1,7 +1,7 @@
 {
   "lastUpdated": "2026-05-13",
-  "deadline": "2026-12-21",
-  "deadlineNote": "Reg (EU) 2024/1183 obliges Member States to make at least one EUDI Wallet available within 24 months of the first implementing acts entering into force on 24 December 2024. iGrant.io tracks the soft target of 21 December 2026.",
+  "deadline": "2026-12-24",
+  "deadlineNote": "Reg (EU) 2024/1183 obliges Member States to make at least one EUDI Wallet available within 24 months of the first implementing acts entering into force on 24 December 2024, placing the deadline at 24 December 2026.",
   "statusOrder": [
     "Launched in production",
     "Public pilot live",
