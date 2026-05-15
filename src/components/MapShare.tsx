@@ -17,7 +17,7 @@ type Props = {
  * crawlable OG card) rather than a localhost or PR-preview origin.
  */
 const SHARE_ORIGIN = 'https://eudi-wallet-tracker.igrant.io';
-const SHARE_TITLE = 'EUDI Wallet Tracker';
+const SHARE_TITLE = 'EUDI Wallet Status Tracker';
 
 function slug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');

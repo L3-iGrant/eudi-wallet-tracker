@@ -335,7 +335,7 @@ Optimised for citation, embed and social sharing. Built in two waves.
 - **OpenGraph and Twitter card meta** so links unfurl nicely in messaging apps (WhatsApp, Telegram, Signal) and social platforms.
 
 **Phase 4 to 5 (planned)**:
-- **Dynamic OG cards per country** at 1200x630, generated at build time with satori or @vercel/og. Country flag, status pill, wallet name, last-updated date, faint map thumbnail, "iGrant.io EUDI Wallet Tracker" footer.
+- **Dynamic OG cards per country** at 1200x630, generated at build time with satori or @vercel/og. Country flag, status pill, wallet name, last-updated date, faint map thumbnail, "iGrant.io EUDI Wallet Status Tracker" footer.
 - **Snapshot generator page** (`/snapshot`) Carbon-for-code style: pick countries, filters, theme and aspect ratio (LinkedIn 1200x627, X 1200x675, Instagram 1080x1080, Story 1080x1920), get a downloadable PNG.
 - **Compare cards** at `/compare?a=FR&b=NL` for side-by-side share assets aimed at journalists.
 - **Embeddable iframe widget** at `/embed?country=FR` for blog posts, Notion, Medium. Each embed is a backlink.
@@ -384,7 +384,7 @@ Total marginal cost: zero. Time cost: roughly four weeks of one developer to shi
 
 ## Cite this tracker
 
-> iGrant.io EUDI Wallet Tracker. Accessed YYYY-MM-DD. https://eudi-wallet-tracker.igrant.io/
+> iGrant.io EUDI Wallet Status Tracker. Accessed YYYY-MM-DD. https://eudi-wallet-tracker.igrant.io/
 
 Permalink format for country pages: `https://eudi-wallet-tracker.igrant.io/tracker/{country-slug}`
 Permalink format for individual history entries: `https://eudi-wallet-tracker.igrant.io/tracker/{country-slug}#{YYYY-MM-DD}`

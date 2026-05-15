@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Prose linter for the EUDI Wallet Tracker.
+ * Prose linter for the EUDI Wallet Status Tracker.
  *
  * Enforces two house rules:
  *   1. No em dash (U+2014) anywhere in tracked prose. Use a comma, semicolon,

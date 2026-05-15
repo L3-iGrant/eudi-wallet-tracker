@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the iGrant.io EUDI Wallet Tracker.
+Thanks for helping improve the iGrant.io EUDI Wallet Status Tracker.
 
 The dataset is the one in `data/eudi-status.json`. Everything else (per-country MDX pages, SVG status badges, the table view, the map colours) is regenerated from that file.
 

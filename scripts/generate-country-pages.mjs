@@ -213,7 +213,7 @@ ${sources || '_No sources recorded yet._'}
 
 <ShareBar
   title="${c.name} EUDI Wallet status: ${c.status}"
-  text="${c.name} EUDI Wallet status: ${c.status}. Source: iGrant.io EUDI Wallet Tracker."
+  text="${c.name} EUDI Wallet status: ${c.status}. Source: iGrant.io EUDI Wallet Status Tracker."
 />
 
 <EmbedButton iso="${c.isoAlpha2}" />
