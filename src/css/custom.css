@@ -712,7 +712,7 @@ a {
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--ifm-color-primary) 4%, var(--tracker-surface)) 0%, var(--tracker-surface) 60%);
   border: var(--tracker-border);
-  border-radius: 22px;
+  border-radius: 12px;
   box-shadow: var(--tracker-shadow-lg);
   overflow: hidden;
   isolation: isolate;
@@ -2154,6 +2154,9 @@ body.is-embed [class*='mainWrapper'] {
 }
 .embed-root .status-chiprow {
   margin: 0;
+  /* Match the map card's 12px corner radius so the chip row and the map
+     card share the same rounded silhouette. */
+  border-radius: 12px;
 }
 .embed-map-wrap {
   flex: 1;
