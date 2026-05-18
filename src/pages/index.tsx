@@ -29,31 +29,6 @@ function slug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-const STATUS_DESCRIPTIONS: Record<string, string> = {
-  'Launched in production':
-    'A nationally available wallet that any eligible resident can install and use with at least one public-service relying party.',
-  'Public pilot live':
-    'A wallet that real users can install today as part of an open pilot, with onboarding paths published by the issuing authority.',
-  'Closed pilot or LSP only':
-    'A wallet that exists but is restricted to invited testers or to a Large Scale Pilot consortium.',
-  'Notified eID, no wallet yet':
-    'A Member State with an eIDAS-notified electronic identity scheme but no public-facing EUDI Wallet build.',
-  'No public plan':
-    'No public-facing wallet roadmap, repository or sandbox is currently visible.',
-  Unknown:
-    'Position not yet captured by the tracker. Contributions welcome.',
-};
-
-function countBy<K extends string>(rows: CountryRow[], key: (r: CountryRow) => K | undefined) {
-  const out: Record<string, number> = {};
-  for (const r of rows) {
-    const k = key(r);
-    if (!k) continue;
-    out[k] = (out[k] || 0) + 1;
-  }
-  return out;
-}
-
 export default function Home() {
   const countries = data.countries as CountryRow[];
   const total = countries.length;
@@ -155,24 +130,6 @@ export default function Home() {
         </p>
 
         <section className="tracker-section">
-          <span className="tracker-section__eyebrow">Status definitions</span>
-          <h2 className="tracker-section__title">What each label really means</h2>
-          <p className="tracker-section__lede">
-            One short definition per status, so a green dot on the map carries the same meaning in Berlin as in Reykjavik.
-          </p>
-          <div className="stats-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))'}}>
-            {data.statusOrder.map((s) => (
-              <div className="stat-card" key={s}>
-                <span className={`status-badge status-badge--${statusClassKey(s)}`}>{s}</span>
-                <p style={{margin: '0.65rem 0 0', fontSize: '0.9rem', lineHeight: 1.5, color: 'var(--tracker-text-muted)'}}>
-                  {STATUS_DESCRIPTIONS[s]}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="tracker-section">
           <span className="tracker-section__eyebrow">Latest status</span>
           <h2 className="tracker-section__title">Where things stand by jurisdiction</h2>
           <p className="tracker-section__lede">
@@ -258,21 +215,4 @@ export default function Home() {
       </main>
     </Layout>
   );
-}
-
-function statusClassKey(status: string): string {
-  switch (status) {
-    case 'Launched in production':
-      return 'launched';
-    case 'Public pilot live':
-      return 'pilot';
-    case 'Closed pilot or LSP only':
-      return 'closed';
-    case 'Notified eID, no wallet yet':
-      return 'eid-only';
-    case 'No public plan':
-      return 'no-plan';
-    default:
-      return 'unknown';
-  }
 }
