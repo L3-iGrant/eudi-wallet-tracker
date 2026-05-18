@@ -46,8 +46,8 @@ All parameters are optional. Unknown values fall back to the defaults.
 | `status` | `Launched in production`, `Public pilot live`, `Closed pilot or LSP only`, `Notified eID, no wallet yet`, `No public plan`, `Unknown` | Pre-applies the status chip filter. |
 | `legend` | `show` (default), `hide` | Hides the coloured status chip row above the map. |
 | `chrome` | `full` (default), `minimal` | Hides the map toolbar title and the "View larger map" attribution at the bottom. |
-| `host` | `igrant` | Applies a named host design preset. |
-| `preset` | `igrant` | Alias of `host`. |
+| `host` | `default` | Applies a named host design preset. |
+| `preset` | `default` | Alias of `host`. |
 
 ## Common patterns
 
@@ -69,19 +69,19 @@ https://eudi-wallet-tracker.igrant.io/embed?status=Public%20pilot%20live
 https://eudi-wallet-tracker.igrant.io/embed?legend=hide&chrome=minimal
 ```
 
-**iGrant.io house style** combined with map-only mode:
+**Maintainer house style** combined with map-only mode:
 
 ```
-https://eudi-wallet-tracker.igrant.io/embed?host=igrant&legend=hide&chrome=minimal
+https://eudi-wallet-tracker.igrant.io/embed?host=default&legend=hide&chrome=minimal
 ```
 
 ## Host presets
 
 Host presets let third-party pages match the embed to their own design system without forking the tracker.
 
-### `host=igrant`
+### `host=default`
 
-Matches the conventions used on https://www.igrant.io:
+The maintainer house style:
 
 - Heading font: `Byrd`, weight 300, uppercase, letter spacing 2px, word spacing 8px.
 - Body font: `Plus Jakarta Sans`, loaded from Google Fonts inside the iframe.
@@ -89,7 +89,7 @@ Matches the conventions used on https://www.igrant.io:
 - Surface: white background with a 1px #cfcfcf top border.
 - Link colour: #337ab7.
 
-Live preview: [/embed?host=igrant](https://eudi-wallet-tracker.igrant.io/embed?host=igrant).
+Live preview: [/embed?host=default](https://eudi-wallet-tracker.igrant.io/embed?host=default).
 
 ### Adding a new preset
 
@@ -113,6 +113,66 @@ The embed wraps its status chip row onto multiple lines on narrow widths. At ifr
 }
 ```
 
+## Use on Markdown surfaces (LinkedIn, GitHub, Medium)
+
+Most Markdown environments strip `<iframe>` tags for security, so the live interactive embed will not render on a LinkedIn article, a Medium post, a GitHub README or a Substack issue. In those places, link to the canonical tracker (or a country page) and use the auto-generated Open Graph card as a static hero image.
+
+The OG card lives at a predictable path for every page:
+
+- Home: `https://eudi-wallet-tracker.igrant.io/img/og-default.png`
+- Per country: `https://eudi-wallet-tracker.igrant.io/img/og/{ISO-alpha-2}.png`
+
+### LinkedIn articles
+
+LinkedIn does not render arbitrary iframes. Two patterns work:
+
+1. **Paste the URL on its own line.** LinkedIn's editor auto-unfurls the link into a card with title, description and the OG image. No image upload required.
+2. **Attach the OG image manually** and link to the tracker in the caption when you want explicit control over the visual:
+
+   ```markdown
+   ![EUDI Wallet readiness across Europe](https://eudi-wallet-tracker.igrant.io/img/og-default.png)
+
+   See the live tracker: https://eudi-wallet-tracker.igrant.io/
+   ```
+
+### GitHub README, issues, PRs and gists
+
+GitHub's HTML sanitiser strips iframes. Use a clickable image:
+
+```markdown
+[![EUDI Wallet readiness across Europe](https://eudi-wallet-tracker.igrant.io/img/og-default.png)](https://eudi-wallet-tracker.igrant.io/)
+```
+
+For a single country:
+
+```markdown
+[![Sweden EUDI Wallet status](https://eudi-wallet-tracker.igrant.io/img/og/SE.png)](https://eudi-wallet-tracker.igrant.io/tracker/sweden/)
+```
+
+### Medium, Substack, Hashnode, Dev.to
+
+These platforms also strip iframes. The same image-plus-link pattern works:
+
+```markdown
+[![EUDI Wallet readiness across Europe](https://eudi-wallet-tracker.igrant.io/img/og-default.png)](https://eudi-wallet-tracker.igrant.io/)
+```
+
+### What works where
+
+| Surface | Live iframe | Image embed | Auto-unfurl on URL paste |
+| --- | --- | --- | --- |
+| LinkedIn articles | No | Yes | Yes |
+| GitHub README, issues, PRs, gists | No | Yes | No |
+| Medium | No | Yes | Yes |
+| Substack | No | Yes | Yes |
+| Notion | Sometimes (via `/embed` block) | Yes | Yes |
+| Hashnode, Dev.to | No | Yes | Yes |
+| MDX (Docusaurus, Astro, Next.js docs) | Yes | Yes | Not applicable |
+| Hugo, Jekyll with raw HTML enabled | Yes | Yes | Not applicable |
+| Obsidian, Bear, VSCode preview | Usually yes | Yes | Not applicable |
+
+If a surface ever adds iframe support, the existing `/embed` URL works as-is. No tracker changes are required.
+
 ## Attribution and licensing
 
 The map data is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). When you embed the tracker, the default `chrome=full` mode shows a small "EUDI Wallet Status Tracker / View larger map" attribution at the bottom of the iframe. If you set `chrome=minimal` you are asked to provide equivalent attribution on the host page itself, for example:
@@ -130,7 +190,7 @@ The map data is published under [CC BY 4.0](https://creativecommons.org/licenses
 The tracker does not run cross-origin analytics on third-party pages. If you want to measure how often visitors click through from your embed, append a UTM parameter on the iframe URL and on any outbound link you place near it:
 
 ```
-https://eudi-wallet-tracker.igrant.io/embed?host=igrant&utm_source=acme_home
+https://eudi-wallet-tracker.igrant.io/embed?host=default&utm_source=acme_home
 ```
 
 Sessions that flow from the embed into the canonical tracker will then carry the source through the tracker's own analytics.

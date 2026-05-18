@@ -108,7 +108,7 @@ Optional query parameters:
 | `?status=Public pilot live` | Pre-apply the status chip filter.                                     |
 | `?legend=hide`              | Hide the colored status chip row above the map.                       |
 | `?chrome=minimal`           | Hide the map toolbar title and the "View larger map" bottom link.     |
-| `?host=igrant`              | Apply a named host design preset (alias: `?preset=igrant`).           |
+| `?host=default`             | Apply a named host design preset (alias: `?preset=default`).          |
 
 Unknown values for `legend`, `chrome`, `host` and `preset` fall back to the
 defaults.
@@ -120,7 +120,7 @@ without forking the tracker. Today the following preset ships:
 
 | Preset    | Matches                                                                  |
 | --------- | ------------------------------------------------------------------------ |
-| `igrant`  | https://www.igrant.io conventions: Plus Jakarta Sans body, Byrd-style heading (uppercase, weight 300, letter and word-spaced), outline CTA buttons (1px solid #000, uppercase, hover fills #000), white surface with 1px #cfcfcf top border, link colour #337ab7. |
+| `default` | The maintainer house style: Plus Jakarta Sans body, Byrd heading (uppercase, weight 300, letter and word-spaced), outline CTA buttons (1px solid #000, uppercase, hover fills #000), white surface with 1px #cfcfcf top border, link colour #337ab7. |
 
 Add a new preset by extending `HOST_PRESETS` in `src/pages/embed.tsx` and
 adding the matching `body.is-embed.theme--<name>` CSS block in

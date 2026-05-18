@@ -17,8 +17,8 @@ import StatsGrid from '@site/src/components/StatsGrid';
  *   ?status=Launched   Pre-apply the status chip filter.
  *   ?legend=hide       Hide the colored status chip row above the map.
  *   ?chrome=minimal    Hide the map toolbar title and "View larger map" link.
- *   ?host=igrant       Apply a named host design preset (see HOST_PRESETS).
- *   ?preset=igrant     Alias of ?host=igrant.
+ *   ?host=default      Apply a named host design preset (see HOST_PRESETS).
+ *   ?preset=default    Alias of ?host=default.
  *
  * Unknown values for legend / chrome / host fall back to defaults.
  *
@@ -26,7 +26,9 @@ import StatsGrid from '@site/src/components/StatsGrid';
  */
 
 // Whitelist of host presets. Add new entries here as more hosts adopt the embed.
-const HOST_PRESETS = new Set(['igrant']);
+// 'default' is the maintainer house style; hosts wanting their own look ship a
+// new preset name (e.g. 'acme') alongside a matching .theme--acme CSS block.
+const HOST_PRESETS = new Set(['default']);
 
 function pickEnum<T extends string>(value: string | null, allowed: readonly T[], fallback: T): T {
   return value && (allowed as readonly string[]).includes(value) ? (value as T) : fallback;
