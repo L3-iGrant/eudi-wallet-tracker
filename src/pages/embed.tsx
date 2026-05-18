@@ -16,9 +16,12 @@ import StatsGrid from '@site/src/components/StatsGrid';
  *   ?pin=FR            Same as country (canonical, used by the in-app map).
  *   ?status=Launched   Pre-apply the status chip filter.
  *   ?legend=hide       Hide the colored status chip row above the map.
+ *   ?toolbar=hide      Hide the top toolbar (title + search + share + embed
+ *                      + maximise buttons) only.
  *   ?attribution=hide  Hide the bottom "EUDI Wallet Status Tracker / View
  *                      larger map" attribution strip only.
- *   ?chrome=minimal    Hide both the map toolbar AND the attribution strip.
+ *   ?chrome=minimal    Back-compat convenience that implies both
+ *                      toolbar=hide AND attribution=hide in one go.
  *   ?host=default      Apply a named host design preset (see HOST_PRESETS).
  *   ?preset=default    Alias of ?host=default.
  *
@@ -41,8 +44,15 @@ export default function Embed() {
   const [pinnedIso, setPinnedIso] = useState<string | null>(null);
   const [legend, setLegend] = useState<'show' | 'hide'>('show');
   const [chrome, setChrome] = useState<'full' | 'minimal'>('full');
+  const [toolbar, setToolbar] = useState<'show' | 'hide'>('show');
   const [attribution, setAttribution] = useState<'show' | 'hide'>('show');
   const [hostPreset, setHostPreset] = useState<string | null>(null);
+
+  // Compose the effective visibility of the toolbar / attribution. chrome
+  // remains an alias-style convenience: chrome=minimal implies both
+  // toolbar=hide AND attribution=hide unless the caller overrides either.
+  const toolbarVisible = toolbar === 'show' && chrome !== 'minimal';
+  const attributionVisible = attribution === 'show' && chrome !== 'minimal';
 
   useEffect(() => {
     document.body.classList.add('is-embed');
@@ -77,20 +87,25 @@ export default function Embed() {
     const cls = document.body.classList;
     if (legend === 'hide') cls.add('embed--no-legend');
     else cls.remove('embed--no-legend');
+    // chrome=minimal is treated as toolbar=hide + attribution=hide for body
+    // class purposes so existing CSS overrides keep working.
+    if (!toolbarVisible) cls.add('embed--no-toolbar');
+    else cls.remove('embed--no-toolbar');
+    if (!attributionVisible) cls.add('embed--no-attribution');
+    else cls.remove('embed--no-attribution');
     if (chrome === 'minimal') cls.add('embed--no-chrome');
     else cls.remove('embed--no-chrome');
-    if (attribution === 'hide') cls.add('embed--no-attribution');
-    else cls.remove('embed--no-attribution');
     // Reset any previously applied preset before adding the current one.
     Array.from(cls).filter((c) => c.startsWith('theme--')).forEach((c) => cls.remove(c));
     if (hostPreset) cls.add(`theme--${hostPreset}`);
     return () => {
       cls.remove('embed--no-legend');
       cls.remove('embed--no-chrome');
+      cls.remove('embed--no-toolbar');
       cls.remove('embed--no-attribution');
       Array.from(cls).filter((c) => c.startsWith('theme--')).forEach((c) => cls.remove(c));
     };
-  }, [legend, chrome, attribution, hostPreset]);
+  }, [legend, chrome, toolbar, attribution, toolbarVisible, attributionVisible, hostPreset]);
 
   // Hydrate from URL once: support both ?country= (Google-Maps-style alias)
   // and ?pin= (canonical, used by the in-app map).
@@ -101,6 +116,7 @@ export default function Embed() {
     setPinnedIso(params.get('country') ?? params.get('pin'));
     setLegend(pickEnum(params.get('legend'), ['show', 'hide'] as const, 'show'));
     setChrome(pickEnum(params.get('chrome'), ['full', 'minimal'] as const, 'full'));
+    setToolbar(pickEnum(params.get('toolbar'), ['show', 'hide'] as const, 'show'));
     setAttribution(pickEnum(params.get('attribution'), ['show', 'hide'] as const, 'show'));
     const requested = params.get('host') ?? params.get('preset');
     setHostPreset(requested && HOST_PRESETS.has(requested) ? requested : null);
@@ -135,7 +151,7 @@ export default function Embed() {
             }}
           </BrowserOnly>
         </div>
-        {chrome === 'full' && attribution === 'show' && (
+        {attributionVisible && (
           <div className="embed-attribution">
             <span>EUDI Wallet Status Tracker</span>
             <a

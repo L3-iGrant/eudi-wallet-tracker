@@ -107,8 +107,9 @@ Optional query parameters:
 | `?pin=SE`                   | Same as above (canonical name).                                       |
 | `?status=Public pilot live` | Pre-apply the status chip filter.                                     |
 | `?legend=hide`              | Hide the colored status chip row above the map.                       |
+| `?toolbar=hide`             | Hide only the top toolbar (title + search + share + embed + maximise). |
 | `?attribution=hide`         | Hide only the bottom "EUDI Wallet Status Tracker / View larger map" strip. |
-| `?chrome=minimal`           | Hide both the map toolbar AND the bottom attribution strip.           |
+| `?chrome=minimal`           | Back-compat alias: implies both `toolbar=hide` and `attribution=hide`. |
 | `?host=default`             | Apply a named host design preset (alias: `?preset=default`).          |
 
 Unknown values for `legend`, `chrome`, `host` and `preset` fall back to the

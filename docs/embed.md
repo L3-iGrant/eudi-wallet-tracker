@@ -45,8 +45,9 @@ All parameters are optional. Unknown values fall back to the defaults.
 | `pin` | ISO alpha-2 | Same as `country`. The canonical name used by the in-app map. |
 | `status` | `Launched in production`, `Public pilot live`, `Closed pilot or LSP only`, `Notified eID, no wallet yet`, `No public plan`, `Unknown` | Pre-applies the status chip filter. |
 | `legend` | `show` (default), `hide` | Hides the coloured status chip row above the map. |
+| `toolbar` | `show` (default), `hide` | Hides only the top toolbar (title + search + share + embed + maximise buttons). |
 | `attribution` | `show` (default), `hide` | Hides only the bottom "EUDI Wallet Status Tracker / View larger map" strip. |
-| `chrome` | `full` (default), `minimal` | Hides both the map toolbar AND the bottom attribution strip. |
+| `chrome` | `full` (default), `minimal` | Back-compat alias for `toolbar=hide&attribution=hide` in one go. |
 | `host` | `default` | Applies a named host design preset. |
 | `preset` | `default` | Alias of `host`. |
 
@@ -64,10 +65,22 @@ https://eudi-wallet-tracker.igrant.io/embed?country=SE
 https://eudi-wallet-tracker.igrant.io/embed?status=Public%20pilot%20live
 ```
 
-**Slim map-only mode** for tight host sections, with both the legend and chrome stripped so the map fills the iframe:
+**Slim map-only mode** for tight host sections, with the legend and both chrome strips removed so the map fills the iframe:
 
 ```
 https://eudi-wallet-tracker.igrant.io/embed?legend=hide&chrome=minimal
+```
+
+**Keep the in-iframe search but drop the bottom strip** when the host page already provides its own outbound link to the tracker:
+
+```
+https://eudi-wallet-tracker.igrant.io/embed?legend=hide&attribution=hide
+```
+
+**Strip only the top toolbar** while keeping the bottom attribution (rare, but useful when the host wants a totally minimal heading area but still wants the standard tracker credit visible):
+
+```
+https://eudi-wallet-tracker.igrant.io/embed?toolbar=hide
 ```
 
 **Maintainer house style** combined with map-only mode:

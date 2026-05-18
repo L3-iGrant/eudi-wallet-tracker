@@ -2184,20 +2184,44 @@ body.is-embed .europe-map {
      smaller, so give the svg more vertical room. */
   max-height: calc(100vh - 110px) !important;
 }
-/* Chrome=minimal mode strips both the toolbar (~43px) and the attribution
-   (~26px), so the map gets nearly the whole iframe. */
+/* Reclaim the vertical space freed when individual chrome pieces are
+   hidden so the map fills the iframe without leaving whitespace. Each
+   hidden element saves roughly:
+     - toolbar:     ~43px
+     - attribution: ~26px
+     - legend:      ~50px
+*/
+body.is-embed.embed--no-toolbar .europe-map {
+  max-height: calc(100vh - 67px) !important;
+}
+body.is-embed.embed--no-attribution .europe-map {
+  max-height: calc(100vh - 84px) !important;
+}
+body.is-embed.embed--no-toolbar.embed--no-attribution .europe-map,
 body.is-embed.embed--no-chrome .europe-map {
   max-height: calc(100vh - 40px) !important;
 }
-/* Legend hidden removes the chip row (~50px), so reclaim that too. */
 body.is-embed.embed--no-legend .europe-map {
   max-height: calc(100vh - 60px) !important;
 }
+body.is-embed.embed--no-legend.embed--no-toolbar .europe-map {
+  max-height: calc(100vh - 17px) !important;
+}
+body.is-embed.embed--no-legend.embed--no-attribution .europe-map {
+  max-height: calc(100vh - 34px) !important;
+}
+body.is-embed.embed--no-legend.embed--no-toolbar.embed--no-attribution .europe-map,
 body.is-embed.embed--no-legend.embed--no-chrome .europe-map {
   max-height: 100vh !important;
 }
 body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
+}
+/* In embed mode the legend chip row sits as a sibling card above the map,
+   so its corner radius should match the map card instead of the full pill
+   used on the home page. */
+body.is-embed .status-chiprow {
+  border-radius: var(--tracker-card-radius);
 }
 .embed-attribution {
   display: flex;
@@ -2221,11 +2245,17 @@ body.is-embed .europe-map__toolbar {
  * Driven by body classes that src/pages/embed.tsx sets from URL params.
  * --------------------------------------------------------------------------- */
 
-/* ?chrome=minimal -> hide the map toolbar (title + actions) and the bottom
-   "View larger map" strip so the map fills the iframe. */
-body.is-embed.embed--no-chrome .europe-map__toolbar {
+/* ?toolbar=hide -> remove the top toolbar (title + search + share + embed
+   + maximise buttons) from the layout. The map flex grows to reclaim the
+   freed height; no leftover whitespace. */
+body.is-embed.embed--no-toolbar .europe-map__toolbar {
   display: none !important;
 }
+/* ?chrome=minimal -> back-compat alias that hides both the toolbar AND the
+   attribution. embed.tsx also adds embed--no-toolbar and
+   embed--no-attribution under chrome=minimal so other CSS hooks still
+   match. */
+body.is-embed.embed--no-chrome .europe-map__toolbar,
 body.is-embed.embed--no-chrome .embed-attribution {
   display: none !important;
 }
