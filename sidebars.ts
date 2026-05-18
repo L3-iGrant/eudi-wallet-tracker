@@ -18,6 +18,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Embed',
+      collapsed: false,
+      items: ['embed'],
+    },
+    {
+      type: 'category',
       label: 'Editorial',
       collapsed: false,
       items: ['methodology', 'contribute', 'changelog', 'about'],

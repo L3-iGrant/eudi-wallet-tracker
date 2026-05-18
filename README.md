@@ -101,15 +101,33 @@ iframe pointing at `/embed`:
 
 Optional query parameters:
 
-| Param          | Effect                                                |
-| -------------- | ----------------------------------------------------- |
-| `?country=SE`  | Open with that country pinned in the side panel.      |
-| `?pin=SE`      | Same as above (canonical name).                       |
-| `?status=Public pilot live` | Pre-apply the status chip filter.        |
+| Param                       | Effect                                                                |
+| --------------------------- | --------------------------------------------------------------------- |
+| `?country=SE`               | Open with that country pinned in the side panel.                      |
+| `?pin=SE`                   | Same as above (canonical name).                                       |
+| `?status=Public pilot live` | Pre-apply the status chip filter.                                     |
+| `?legend=hide`              | Hide the colored status chip row above the map.                       |
+| `?chrome=minimal`           | Hide the map toolbar title and the "View larger map" bottom link.     |
+| `?host=default`             | Apply a named host design preset (alias: `?preset=default`).          |
+
+Unknown values for `legend`, `chrome`, `host` and `preset` fall back to the
+defaults.
+
+### Host presets
+
+Host presets let third-party pages match the embed to their own design system
+without forking the tracker. Today the following preset ships:
+
+| Preset    | Matches                                                                  |
+| --------- | ------------------------------------------------------------------------ |
+| `default` | The maintainer house style: Plus Jakarta Sans body, Byrd heading (uppercase, weight 300, letter and word-spaced), outline CTA buttons (1px solid #000, uppercase, hover fills #000), white surface with 1px #cfcfcf top border, link colour #337ab7. |
+
+Add a new preset by extending `HOST_PRESETS` in `src/pages/embed.tsx` and
+adding the matching `body.is-embed.theme--<name>` CSS block in
+`src/css/custom.css`.
 
 The embed surface omits all site chrome (navbar, footer) and includes a
-small "View larger map" link back to the canonical tracker. Tracking the
-status of this feature: [issue #1](https://github.com/L3-iGrant/eudi-wallet-tracker/issues/1).
+small "View larger map" link back to the canonical tracker.
 
 ## Roadmap
 
