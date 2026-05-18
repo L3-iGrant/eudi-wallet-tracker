@@ -2208,39 +2208,43 @@ body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
 }
 
-/* In embed mode the country detail panel slides in as an absolute overlay
-   on the right side of the map instead of pushing the map sideways or
-   stacking it underneath. The map stays exactly where it was when the user
-   clicked, which matters in tight iframe contexts. */
+/* In embed mode the country detail panel slides in as an overlay on the
+   right side of the map (instead of pushing the map sideways or stacking
+   underneath). Use a CSS grid so the pin shares the same cell as the
+   canvas; align it to the top-right of that cell so its top edge sits
+   exactly flush with the canvas top, no matter the toolbar height. */
 body.is-embed .europe-map-frame--pin-open {
-  display: flex !important;
-  flex-direction: column;
-  position: relative;
+  display: grid !important;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  column-gap: 0;
+}
+body.is-embed .europe-map-frame--pin-open > .europe-map__toolbar {
+  grid-row: 1;
+  grid-column: 1;
 }
 body.is-embed .europe-map-frame--pin-open > .europe-map__canvas {
-  grid-column: auto;
-  grid-row: auto;
+  grid-row: 2;
+  grid-column: 1;
   width: 100%;
 }
 body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
-  position: absolute;
-  top: 0;
-  right: 0.5rem;
+  grid-row: 2;
+  grid-column: 1;
+  align-self: start;
+  justify-self: end;
+  position: static;
+  top: auto;
+  right: auto;
+  margin: 0 0.5rem 0 0;
   width: min(320px, calc(100% - 1rem));
   max-height: 100%;
   overflow-y: auto;
-  margin: 0;
   z-index: 6;
   background: var(--tracker-surface);
   border: 1px solid var(--tracker-hairline-strong);
   border-radius: var(--tracker-card-radius);
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
-}
-/* When the toolbar is visible in embed mode, drop the overlay so its top
-   sits flush with the map canvas top edge (just below the toolbar). The
-   toolbar is roughly 2.7rem tall. */
-body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--pin-open > .europe-map__pin {
-  top: 2.7rem;
 }
 .embed-attribution {
   display: flex;
