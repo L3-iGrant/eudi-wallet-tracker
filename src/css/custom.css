@@ -2130,7 +2130,12 @@ body.is-embed .europe-map__zoom {
 /* Iframe embed mode: strip chrome, fill the iframe viewport */
 body.is-embed {
   background: var(--ifm-background-color);
-  overflow: auto;
+  /* No body scroll in embed mode - the map provides its own zoom + pan
+     controls, and a scrollbar inside the host's iframe is visual noise. */
+  overflow: hidden;
+}
+html:has(body.is-embed) {
+  overflow: hidden;
 }
 body.is-embed .navbar,
 body.is-embed .footer,
@@ -2201,6 +2206,45 @@ body.is-embed.embed--no-legend.embed--no-chrome .europe-map {
 }
 body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
+}
+
+/* In embed mode the country detail panel slides in as an absolute overlay
+   on the right side of the canvas. Using `position: absolute` keeps the
+   pin completely out of the flex/grid layout flow so it does NOT change
+   the canvas size when toggled on. Anchor the panel to the canvas (which
+   is made `position: relative`) so its top edge sits exactly at the
+   canvas top, regardless of toolbar height. */
+body.is-embed .europe-map-frame--pin-open {
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+}
+body.is-embed .europe-map-frame--pin-open > .europe-map__canvas {
+  position: relative;
+  width: 100%;
+}
+body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
+  position: absolute;
+  /* Anchor to the bottom of the toolbar (toolbar lives above canvas in
+     flex flow). With toolbar visible the toolbar's rendered height is the
+     pin's natural offset; absolute positioning relative to frame means we
+     add the toolbar height + 0.5rem inset. */
+  top: 0.5rem;
+  right: 0.5rem;
+  margin: 0;
+  width: min(320px, calc(100% - 1rem));
+  max-height: calc(100% - 1rem);
+  overflow-y: auto;
+  z-index: 6;
+  background: var(--tracker-surface);
+  border: 1px solid var(--tracker-hairline-strong);
+  border-radius: var(--tracker-card-radius);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+/* When the toolbar is visible, drop the overlay below it (toolbar is
+   ~36px). 36 + 8 (0.5rem inset) = 44px from frame top. */
+body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--pin-open > .europe-map__pin {
+  top: calc(36px + 0.5rem);
 }
 .embed-attribution {
   display: flex;
