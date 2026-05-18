@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
-import {ComposableMap, Geographies, Geography} from 'react-simple-maps';
+import {ComposableMap, Geographies, Geography, ZoomableGroup} from 'react-simple-maps';
 import {useHistory} from '@docusaurus/router';
 import data from '@site/data/eudi-status.json';
 import {statusColour} from './StatusBadge';
@@ -55,6 +55,24 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
   const [hover, setHover] = useState<HoverState>(null);
   const [maximised, setMaximisedState] = useState(false);
   const [pulseIso, setPulseIso] = useState<string | null>(null);
+  // Zoom + pan state for the ZoomableGroup. `center` is in the projection's
+  // local coords (the projection rotate already centres on 10E/54N, so [0,0]
+  // here is the visual centre of the map).
+  const [mapZoom, setMapZoom] = useState(1);
+  const [mapCenter, setMapCenter] = useState<[number, number]>([0, 0]);
+  const ZOOM_MIN = 1;
+  const ZOOM_MAX = 8;
+  const ZOOM_STEP = 1.5;
+  const zoomIn = useCallback(() => {
+    setMapZoom((z) => Math.min(ZOOM_MAX, z * ZOOM_STEP));
+  }, []);
+  const zoomOut = useCallback(() => {
+    setMapZoom((z) => Math.max(ZOOM_MIN, z / ZOOM_STEP));
+  }, []);
+  const zoomReset = useCallback(() => {
+    setMapZoom(1);
+    setMapCenter([0, 0]);
+  }, []);
 
   const setMaximised = useCallback((next: boolean | ((prev: boolean) => boolean)) => {
     setMaximisedState((prev) => {
@@ -199,6 +217,16 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
               <line x1="0" y1="0" x2="0" y2="7" stroke="#d8dde4" strokeWidth="1" />
             </pattern>
           </defs>
+          <ZoomableGroup
+            zoom={mapZoom}
+            center={mapCenter}
+            minZoom={ZOOM_MIN}
+            maxZoom={ZOOM_MAX}
+            onMoveEnd={({coordinates, zoom}) => {
+              setMapCenter(coordinates as [number, number]);
+              setMapZoom(zoom);
+            }}
+          >
           <Geographies geography={GEO_URL}>
             {({geographies}) => {
               // Lift the currently emphasised country (mouse hover, search
@@ -282,7 +310,47 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
               });
             }}
           </Geographies>
+          </ZoomableGroup>
         </ComposableMap>
+
+        <div className="europe-map__zoom" role="group" aria-label="Map zoom controls">
+          <button
+            type="button"
+            className="europe-map__zoom-btn"
+            onClick={zoomIn}
+            disabled={mapZoom >= ZOOM_MAX - 0.001}
+            aria-label="Zoom in"
+            title="Zoom in"
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden>
+              <path d="M8 3.5v9M3.5 8h9" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className="europe-map__zoom-btn"
+            onClick={zoomOut}
+            disabled={mapZoom <= ZOOM_MIN + 0.001}
+            aria-label="Zoom out"
+            title="Zoom out"
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden>
+              <path d="M3.5 8h9" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className="europe-map__zoom-btn"
+            onClick={zoomReset}
+            disabled={mapZoom === 1 && mapCenter[0] === 0 && mapCenter[1] === 0}
+            aria-label="Reset zoom"
+            title="Reset view"
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden>
+              <path d="M2.5 5.5V2.5h3M13.5 5.5V2.5h-3M2.5 10.5v3h3M13.5 10.5v3h-3" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </div>
 
         {hover && (
           <div
