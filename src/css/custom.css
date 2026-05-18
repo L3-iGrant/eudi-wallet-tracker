@@ -2208,37 +2208,30 @@ body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
 }
 
-/* In embed mode the country detail panel slides in as an overlay on the
-   right side of the map (instead of pushing the map sideways or stacking
-   underneath). Use a CSS grid so the pin shares the same cell as the
-   canvas; align it to the top-right of that cell so its top edge sits
-   exactly flush with the canvas top, no matter the toolbar height. */
+/* In embed mode the country detail panel slides in as an absolute overlay
+   on the right side of the canvas. Using `position: absolute` keeps the
+   pin completely out of the flex/grid layout flow so it does NOT change
+   the canvas size when toggled on. Anchor the panel to the canvas (which
+   is made `position: relative`) so its top edge sits exactly at the
+   canvas top, regardless of toolbar height. */
 body.is-embed .europe-map-frame--pin-open {
-  display: grid !important;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr;
-  column-gap: 0;
-}
-body.is-embed .europe-map-frame--pin-open > .europe-map__toolbar {
-  grid-row: 1;
-  grid-column: 1;
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
 }
 body.is-embed .europe-map-frame--pin-open > .europe-map__canvas {
-  grid-row: 2;
-  grid-column: 1;
+  position: relative;
   width: 100%;
 }
 body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
-  grid-row: 2;
-  grid-column: 1;
-  align-self: start;
-  justify-self: end;
-  position: static;
-  top: auto;
-  right: auto;
-  /* Equal top + right inset so the card looks deliberately positioned in
-     the corner instead of glued to either edge. */
-  margin: 0.5rem 0.5rem 0 0;
+  position: absolute;
+  /* Anchor to the bottom of the toolbar (toolbar lives above canvas in
+     flex flow). With toolbar visible the toolbar's rendered height is the
+     pin's natural offset; absolute positioning relative to frame means we
+     add the toolbar height + 0.5rem inset. */
+  top: 0.5rem;
+  right: 0.5rem;
+  margin: 0;
   width: min(320px, calc(100% - 1rem));
   max-height: calc(100% - 1rem);
   overflow-y: auto;
@@ -2247,6 +2240,11 @@ body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
   border: 1px solid var(--tracker-hairline-strong);
   border-radius: var(--tracker-card-radius);
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+/* When the toolbar is visible, drop the overlay below it (toolbar is
+   ~36px). 36 + 8 (0.5rem inset) = 44px from frame top. */
+body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--pin-open > .europe-map__pin {
+  top: calc(36px + 0.5rem);
 }
 .embed-attribution {
   display: flex;
