@@ -20,15 +20,33 @@
       "walletName": "ID Austria / eAusweise",
       "walletProvider": "Federal Chancellery / Digital Austria",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "APTITUDE"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2023-12-05",
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": "A-Trust",
       "notes": "Existing ID Austria platform with mobile eAusweise. Upgrade to EUDI Wallet officially confirmed. Among the strong second tier per Namirial Q1 2026 review.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "ID Austria Zukunftsforum", "url": "https://www.bundeskanzleramt.gv.at/bundeskanzleramt/nachrichten-der-bundesregierung/2025/10/id-austria-zukunftsforum-erfolgreicher-auftakt-des-dialogs-ueber-die-digitale-zukunft-oesterreichs.html", "date": "2025-10-01"}
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "ID Austria Zukunftsforum",
+          "url": "https://www.bundeskanzleramt.gv.at/bundeskanzleramt/nachrichten-der-bundesregierung/2025/10/id-austria-zukunftsforum-erfolgreicher-auftakt-des-dialogs-ueber-die-digitale-zukunft-oesterreichs.html",
+          "date": "2025-10-01"
+        }
       ]
     },
     {
@@ -40,15 +58,33 @@
       "walletName": "MyGov.be",
       "walletProvider": "FPS Policy and Support (BOSA)",
       "assuranceLevel": "high",
-      "lspParticipation": ["EWC", "POTENTIAL", "APTITUDE"],
+      "lspParticipation": [
+        "EWC",
+        "POTENTIAL",
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2025-09-15",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "itsme (Belgian Mobile ID)",
       "notes": "BOSA presented MyGov.be as Belgium's response to the eIDAS 2.0 wallet obligation. itsme continues to be widely used for daily authentication and is expected to plug into the EUDI ecosystem.",
       "sources": [
-        {"title": "BOSA - MyGov.be available as digital key", "url": "https://bosa.belgium.be/nl/news/mygovbe-app-beschikbaar-als-digitale-sleutel-voor-online-overheidsdiensten", "date": "2025-09-15"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "BOSA - MyGov.be available as digital key",
+          "url": "https://bosa.belgium.be/nl/news/mygovbe-app-beschikbaar-als-digitale-sleutel-voor-online-overheidsdiensten",
+          "date": "2025-09-15"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -60,19 +96,42 @@
       "walletName": "Bulgarian EUDI Wallet",
       "walletProvider": "Ministry of e-Government",
       "assuranceLevel": "substantial",
-      "lspParticipation": ["WE BUILD"],
+      "lspParticipation": [
+        "WE BUILD"
+      ],
       "launchOrPilotDate": "2026-02-15",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Draft Law on the European Digital Identity Wallet published for consultation in February 2026. Public developer repository available but no sandbox. Namirial flags Bulgaria as remaining risky for the December 2026 deadline.",
       "sources": [
-        {"title": "Bulgaria Public Consultation Portal - Draft EUDI Wallet law", "url": "https://www.strategy.bg/bg/public-consultations/12172", "date": "2026-02-15"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Bulgaria Public Consultation Portal - Draft EUDI Wallet law",
+          "url": "https://www.strategy.bg/bg/public-consultations/12172",
+          "date": "2026-02-15"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ],
       "igrantActivity": {
         "summary": "iGrant.io contributes to the WE BUILD Large Scale Pilot, in which Bulgaria participates. Past EUDI Wallet involvement includes EWC, EBSI, EBSI VECTOR and CRANE PCP (healthcare).",
-        "lsps": ["WE BUILD"],
+        "lsps": [
+          "WE BUILD"
+        ],
         "url": "https://www.igrant.io/datawallet-for-eudi-wallet.html",
         "since": "2024-09-01"
       }
@@ -86,14 +145,26 @@
       "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Ministry of Justice and Digital Transformation",
       "assuranceLevel": "high",
-      "lspParticipation": ["APTITUDE"],
+      "lspParticipation": [
+        "APTITUDE"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Announced project with no public sandbox per eIDEasy April 2026. National eID notified under eIDAS but no public-facing wallet build visible.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Identity Week 18 months to launch overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Identity Week 18 months to launch overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -105,14 +176,26 @@
       "walletName": "AltID Cyprus (aligning to Gov.gr Wallet)",
       "walletProvider": "Deputy Ministry of Digital Policy",
       "assuranceLevel": "substantial",
-      "lspParticipation": ["APTITUDE"],
+      "lspParticipation": [
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2026-04-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Cyprus aligns its Digital Citizen platform to the Greek Gov.gr Wallet for mutual recognition. AltID first phase release expected spring 2026 with limited functionalities.",
       "sources": [
-        {"title": "Signicat - EUDI Wallets one year to launch", "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch", "date": "2025-12-12"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Signicat - EUDI Wallets one year to launch",
+          "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch",
+          "date": "2025-12-12"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -124,14 +207,27 @@
       "walletName": "DIA EUDI Programme",
       "walletProvider": "Digital and Information Agency",
       "assuranceLevel": "high",
-      "lspParticipation": ["WE BUILD", "APTITUDE"],
+      "lspParticipation": [
+        "WE BUILD",
+        "APTITUDE"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -143,14 +239,32 @@
       "walletName": "AltID",
       "walletProvider": "Danish Agency for Digital Government",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID", "APTITUDE"],
+      "lspParticipation": [
+        "NOBID",
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2025-04-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Public sandbox available since April 2026. AltID rollout staged with first release expected to ship with limited functionality before the deadline.",
       "sources": [
-        {"title": "Danish Agency for Digital Government - new wallet", "url": "https://en.digst.dk/news/news-archive/2025/april/startskud-givet-til-ny-digital-identitetstegnebog/", "date": "2025-04-15"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Danish Agency for Digital Government - new wallet",
+          "url": "https://en.digst.dk/news/news-archive/2025/april/startskud-givet-til-ny-digital-identitetstegnebog/",
+          "date": "2025-04-15"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -162,14 +276,33 @@
       "walletName": "EUDI Wallet Estonia",
       "walletProvider": "Information System Authority (RIA)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID", "DC4EU"],
+      "lspParticipation": [
+        "NOBID",
+        "DC4EU"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": "SK ID Solutions",
       "notes": "Announced project, no public sandbox. Estonia already runs Smart-ID and Mobile-ID at very high adoption; EUDI work is being built on top of that estate.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Identity Week 18 months to launch overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Identity Week 18 months to launch overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -181,13 +314,27 @@
       "walletName": "National Digital Identity Wallet",
       "walletProvider": "Digital and Population Data Services Agency (DVV)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID", "POTENTIAL"],
+      "lspParticipation": [
+        "NOBID",
+        "POTENTIAL"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Public developer repository linked to DVV's wallet work, no confirmed sandbox.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -199,15 +346,39 @@
       "walletName": "France Identité",
       "walletProvider": "France Titres (ANTS)",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "DC4EU", "EWC"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "DC4EU",
+        "EWC"
+      ],
       "launchOrPilotDate": "2024-04-17",
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "France Identité is a live production service expanding its functionality and ecosystem integration as it becomes an official EUDI Wallet. Public playground for relying parties.",
       "sources": [
-        {"title": "France Identité EUDIW Playground", "url": "https://playground.france-identite.gouv.fr/", "date": "2026-03-01"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "France Identité EUDIW Playground",
+          "url": "https://playground.france-identite.gouv.fr/",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -219,15 +390,37 @@
       "walletName": "State EUDI Wallet",
       "walletProvider": "Federal Ministry for Digital Affairs (BMDS)",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "NOBID"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "NOBID"
+      ],
       "launchOrPilotDate": "2025-09-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "D-Trust, Bundesdruckerei",
       "notes": "Announced project with public sandbox. State-driven version scheduled to launch on 2 January 2027, then opening the market to private wallet providers in 2028. Sandbox and prototype challenge in progress.",
       "sources": [
-        {"title": "BMDS - EUDI Wallet page", "url": "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet", "date": "2026-03-01"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "BMDS - EUDI Wallet page",
+          "url": "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -239,14 +432,32 @@
       "walletName": "Gov.gr Wallet",
       "walletProvider": "Ministry of Digital Governance",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL"],
+      "lspParticipation": [
+        "POTENTIAL"
+      ],
       "launchOrPilotDate": "2022-07-26",
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "Gov.gr Wallet runs as a production citizen-facing service. Upgrade to EUDI Wallet officially confirmed; details on production scope still limited.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        }
       ]
     },
     {
@@ -258,13 +469,21 @@
       "walletName": "DÁP Wallet",
       "walletProvider": "Hungarian Government (DÁP)",
       "assuranceLevel": "substantial",
-      "lspParticipation": ["WE BUILD"],
+      "lspParticipation": [
+        "WE BUILD"
+      ],
       "launchOrPilotDate": "2024-09-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "DÁP (Digitális Állampolgárság Program) wallet deployed at national level. EUDI upgrade not yet officially confirmed per eIDEasy.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -276,13 +495,21 @@
       "walletName": "Government Digital Wallet",
       "walletProvider": "Department of Public Expenditure, NDP Delivery and Reform",
       "assuranceLevel": "substantial",
-      "lspParticipation": ["APTITUDE"],
+      "lspParticipation": [
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2026-04-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Ireland opened early public access to a test wallet in April 2026, joining France and Germany as one of the most accessible ecosystems.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -294,15 +521,41 @@
       "walletName": "Sistema IT-Wallet (IO app + private wallets)",
       "walletProvider": "Department for Digital Transformation / PagoPA",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "NOBID", "DC4EU", "EWC"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "NOBID",
+        "DC4EU",
+        "EWC"
+      ],
       "launchOrPilotDate": "2024-12-04",
-      "notableIssuers": ["PID", "mDL", "EHIC"],
+      "notableIssuers": [
+        "PID",
+        "mDL",
+        "EHIC"
+      ],
       "qtspPartner": "Namirial, InfoCert, Aruba PEC",
       "notes": "Italy's IT-Wallet system pairs the public IO app with accredited private wallets, with citizens activating via CIE or SPID. SPID has 41.5 million registered users, making Italy one of the most operationally advanced EUDI transition cases in Europe.",
       "sources": [
-        {"title": "Dipartimento per la trasformazione digitale - Sistema IT-Wallet", "url": "https://innovazione.gov.it/progetti/sistema-it-wallet/", "date": "2025-12-01"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Dipartimento per la trasformazione digitale - Sistema IT-Wallet",
+          "url": "https://innovazione.gov.it/progetti/sistema-it-wallet/",
+          "date": "2025-12-01"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -314,14 +567,26 @@
       "walletName": "EUDI Wallet Latvia",
       "walletProvider": "State Digital Development Agency (VDAA)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID"],
+      "lspParticipation": [
+        "NOBID"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Latvia developed an EUDIW prototype used in the Large Scale Pilots. Initial release with basic functionality planned for December 2026.",
       "sources": [
-        {"title": "Signicat - EUDI Wallets one year to launch", "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch", "date": "2025-12-12"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Signicat - EUDI Wallets one year to launch",
+          "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch",
+          "date": "2025-12-12"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -333,13 +598,21 @@
       "walletName": "EUDI Pilot",
       "walletProvider": "Informatics and Communications Department, Ministry of the Interior",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID"],
+      "lspParticipation": [
+        "NOBID"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -351,14 +624,27 @@
       "walletName": "EUDI Wallet (built on GouvID / LuxTrust)",
       "walletProvider": "Ministry for Digitalisation / INCERT",
       "assuranceLevel": "high",
-      "lspParticipation": ["WE BUILD", "APTITUDE"],
+      "lspParticipation": [
+        "WE BUILD",
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2025-11-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "LuxTrust",
       "notes": "Existing GouvID app being upgraded. INCERT partnering with HOPAE on wallet services.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Identity Week 18 months overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Identity Week 18 months overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -376,8 +662,21 @@
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox. Identity Week and Namirial note Malta is expected to deliver only partial availability by deadline.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Identity Week 18 months overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Identity Week 18 months overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -389,14 +688,27 @@
       "walletName": "NL Wallet",
       "walletProvider": "Ministry of the Interior and Kingdom Relations",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "DC4EU"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "DC4EU"
+      ],
       "launchOrPilotDate": "2024-10-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Public technical work and a developer repository, but the Dutch Government has publicly stated the initial release will not meet the full requirement set on time.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -408,15 +720,38 @@
       "walletName": "mObywatel",
       "walletProvider": "Ministry of Digital Affairs",
       "assuranceLevel": "high",
-      "lspParticipation": ["POTENTIAL", "DC4EU"],
+      "lspParticipation": [
+        "POTENTIAL",
+        "DC4EU"
+      ],
       "launchOrPilotDate": "2023-07-14",
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "mObywatel runs in production with nearly 10 million users on version 2.0. Public commitment to integrate EUDI Wallet capabilities into mObywatel by end of 2026; transition to version 3.0 carries some delivery risk.",
       "sources": [
-        {"title": "Ministerstwo Cyfryzacji - mObywatel EUDI", "url": "https://www.gov.pl/web/cyfryzacja/europejski-portfel-tozsamosci-cyfrowej-zmierza-do-mobywatela", "date": "2025-11-12"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Ministerstwo Cyfryzacji - mObywatel EUDI",
+          "url": "https://www.gov.pl/web/cyfryzacja/europejski-portfel-tozsamosci-cyfrowej-zmierza-do-mobywatela",
+          "date": "2025-11-12"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -428,14 +763,27 @@
       "walletName": "gov.pt Wallet",
       "walletProvider": "Agency for Administrative Modernisation (AMA)",
       "assuranceLevel": "high",
-      "lspParticipation": ["EWC", "POTENTIAL"],
+      "lspParticipation": [
+        "EWC",
+        "POTENTIAL"
+      ],
       "launchOrPilotDate": "2024-06-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Existing wallet-like citizen-facing services in production; EUDI upgrade path not yet officially confirmed per eIDEasy snapshot. Namirial places Portugal in the strong second tier.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -447,14 +795,29 @@
       "walletName": "EUDI Wallet Romania (announced)",
       "walletProvider": "Authority for the Digitalization of Romania (ADR)",
       "assuranceLevel": "substantial",
-      "lspParticipation": ["APTITUDE"],
+      "lspParticipation": [
+        "APTITUDE"
+      ],
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": "certSIGN, Trans Sped",
       "notes": "Announced project, no public sandbox. Among the late-starter group identified in early-2026 analysis.",
       "sources": [
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"},
-        {"title": "Identity Week 18 months overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "Identity Week 18 months overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -466,15 +829,32 @@
       "walletName": "eDOKLADY",
       "walletProvider": "Ministry of Interior",
       "assuranceLevel": "high",
-      "lspParticipation": ["APTITUDE"],
+      "lspParticipation": [
+        "APTITUDE"
+      ],
       "launchOrPilotDate": "2024-01-22",
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "eDOKLADY in production with a published timeline. EUDIW offline verification scheduled for Q2 2026 per the Slovak Ministry of Interior.",
       "sources": [
-        {"title": "Ministry of Interior Slovakia - eDOKLADY timeline", "url": "https://edoklady.minv.sk/o-projekte/casovy-harmonogram-projektu/", "date": "2026-01-15"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Ministry of Interior Slovakia - eDOKLADY timeline",
+          "url": "https://edoklady.minv.sk/o-projekte/casovy-harmonogram-projektu/",
+          "date": "2026-01-15"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -486,14 +866,26 @@
       "walletName": "EUDI Wallet Slovenia (SI-PASS based)",
       "walletProvider": "Ministry of Digital Transformation",
       "assuranceLevel": "high",
-      "lspParticipation": ["WE BUILD"],
+      "lspParticipation": [
+        "WE BUILD"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox. SI-PASS to provide the trust anchor for the wallet.",
       "sources": [
-        {"title": "Government of Slovenia - SI-PASS and eID", "url": "https://www.gov.si/novice/2026-01-19-zaupanje-kot-temelj-digitalne-drzave-elektronske-identitete-in-vloga-si-pass/", "date": "2026-01-19"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "Government of Slovenia - SI-PASS and eID",
+          "url": "https://www.gov.si/novice/2026-01-19-zaupanje-kot-temelj-digitalne-drzave-elektronske-identitete-in-vloga-si-pass/",
+          "date": "2026-01-19"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -505,15 +897,38 @@
       "walletName": "Cartera Digital (Cl@ve based)",
       "walletProvider": "Ministry for Digital Transformation and Civil Service",
       "assuranceLevel": "high",
-      "lspParticipation": ["DC4EU", "POTENTIAL", "EWC"],
+      "lspParticipation": [
+        "DC4EU",
+        "POTENTIAL",
+        "EWC"
+      ],
       "launchOrPilotDate": "2025-12-10",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "FNMT-RCM",
       "notes": "First wallet version leveraging Cl@ve presented at the EUDI Wallet Launchpad in December 2025. Cl@ve has over 24 million registered users and 1.1 billion annual authentications.",
       "sources": [
-        {"title": "Digital EU - Spanish National Wallet at EUDI Launchpad 2025", "url": "https://www.youtube.com/watch?v=cgQ29g6YFtE", "date": "2025-12-10"},
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Digital EU - Spanish National Wallet at EUDI Launchpad 2025",
+          "url": "https://www.youtube.com/watch?v=cgQ29g6YFtE",
+          "date": "2025-12-10"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -525,14 +940,31 @@
       "walletName": "Digital identitetsplånbok",
       "walletProvider": "Agency for Digital Government (DIGG)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID"],
+      "lspParticipation": [
+        "NOBID"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox. Namirial places Sweden in the second tier on the strength of public mandate, sandbox work and implementation structure.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     },
     {
@@ -544,14 +976,31 @@
       "walletName": "Norwegian EUDI Wallet (concept study)",
       "walletProvider": "Digitaliseringsdirektoratet (Digdir)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID"],
+      "lspParticipation": [
+        "NOBID"
+      ],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "BankID",
       "notes": "Concept study run through end-2025/early-2026. Sandbox set up for practical implementation work with public and private sector partners. EEA deadline is December 2027.",
       "sources": [
-        {"title": "NOBID Consortium wrap-up", "url": "https://www.nobidconsortium.com/nobid-wraps-up-successful-pilot-under-the-european-digital-identity-wallet-programme/", "date": "2025-06-26"},
-        {"title": "Identity Week 18 months overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "NOBID Consortium wrap-up",
+          "url": "https://www.nobidconsortium.com/nobid-wraps-up-successful-pilot-under-the-european-digital-identity-wallet-programme/",
+          "date": "2025-06-26"
+        },
+        {
+          "title": "Identity Week 18 months overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -563,14 +1012,31 @@
       "walletName": "National EUDI Wallet (Iceland)",
       "walletProvider": "Digital Iceland (Stafrænt Ísland)",
       "assuranceLevel": "high",
-      "lspParticipation": ["NOBID"],
+      "lspParticipation": [
+        "NOBID"
+      ],
       "launchOrPilotDate": "2026-01-01",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": "Idemia",
       "notes": "Launch announced for 2026 with Idemia as technology partner, one year before Iceland's EEA deadline of December 2027.",
       "sources": [
-        {"title": "FIDES Community - National EUDI Wallet Iceland", "url": "https://fides.community/ecosystem-explorer/personal-wallets/?wallet=national-eudi-wallet-iceland", "date": "2025-11-01"},
-        {"title": "NOBID Consortium wrap-up", "url": "https://www.nobidconsortium.com/nobid-wraps-up-successful-pilot-under-the-european-digital-identity-wallet-programme/", "date": "2025-06-26"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "FIDES Community - National EUDI Wallet Iceland",
+          "url": "https://fides.community/ecosystem-explorer/personal-wallets/?wallet=national-eudi-wallet-iceland",
+          "date": "2025-11-01"
+        },
+        {
+          "title": "NOBID Consortium wrap-up",
+          "url": "https://www.nobidconsortium.com/nobid-wraps-up-successful-pilot-under-the-european-digital-identity-wallet-programme/",
+          "date": "2025-06-26"
+        }
       ]
     },
     {
@@ -584,11 +1050,18 @@
       "assuranceLevel": "high",
       "lspParticipation": [],
       "launchOrPilotDate": null,
-      "notableIssuers": ["PID", "mDL"],
+      "notableIssuers": [
+        "PID",
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "Existing eID app supports identity, driving licence, QES and cross-border commuter registration. Will be adapted to EUDI Wallet; EEA deadline is December 2027.",
       "sources": [
-        {"title": "Identity Week 18 months overview", "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/", "date": "2025-06-21"}
+        {
+          "title": "Identity Week 18 months overview",
+          "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
+          "date": "2025-06-21"
+        }
       ]
     },
     {
@@ -602,12 +1075,22 @@
       "assuranceLevel": "substantial",
       "lspParticipation": [],
       "launchOrPilotDate": "2025-07-01",
-      "notableIssuers": ["mDL"],
+      "notableIssuers": [
+        "mDL"
+      ],
       "qtspPartner": null,
       "notes": "GOV.UK Wallet under build alongside One Login. Digital Veteran Card went live in 2025; private testing of digital driving licence under way. UK is outside the EUDI mandate but tracking interoperability.",
       "sources": [
-        {"title": "GDS Blog - Making the government's first digital wallet a reality", "url": "https://gds.blog.gov.uk/2026/01/21/making-the-governments-first-digital-wallet-a-reality/", "date": "2026-01-21"},
-        {"title": "Making public services work for you with your digital identity (UK Gov paper)", "url": "https://assets.publishing.service.gov.uk/media/69b2bd51c8010d37b34e008a/Making_public_services_work_for_you_with_your_digital_identity_2026.pdf", "date": "2026-03-01"}
+        {
+          "title": "GDS Blog - Making the government's first digital wallet a reality",
+          "url": "https://gds.blog.gov.uk/2026/01/21/making-the-governments-first-digital-wallet-a-reality/",
+          "date": "2026-01-21"
+        },
+        {
+          "title": "Making public services work for you with your digital identity (UK Gov paper)",
+          "url": "https://assets.publishing.service.gov.uk/media/69b2bd51c8010d37b34e008a/Making_public_services_work_for_you_with_your_digital_identity_2026.pdf",
+          "date": "2026-03-01"
+        }
       ]
     },
     {
@@ -621,12 +1104,27 @@
       "assuranceLevel": "high",
       "lspParticipation": [],
       "launchOrPilotDate": "2025-09-15",
-      "notableIssuers": ["PID"],
+      "notableIssuers": [
+        "PID"
+      ],
       "qtspPartner": null,
       "notes": "Public beta of swiyu infrastructure ahead of many EU countries on openness. National e-ID launch expected on 1 December 2026 following the September 2025 referendum.",
       "sources": [
-        {"title": "Namirial Q1 2026 status review", "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/", "date": "2026-04-09"},
-        {"title": "eIDEasy April 2026 snapshot", "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026", "date": "2026-04-06"}
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "Namirial Q1 2026 status review",
+          "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        }
       ]
     }
   ]
