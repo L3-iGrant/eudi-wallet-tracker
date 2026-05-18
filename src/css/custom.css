@@ -2236,9 +2236,11 @@ body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
   position: static;
   top: auto;
   right: auto;
-  margin: 0 0.5rem 0 0;
+  /* Equal top + right inset so the card looks deliberately positioned in
+     the corner instead of glued to either edge. */
+  margin: 0.5rem 0.5rem 0 0;
   width: min(320px, calc(100% - 1rem));
-  max-height: 100%;
+  max-height: calc(100% - 1rem);
   overflow-y: auto;
   z-index: 6;
   background: var(--tracker-surface);
