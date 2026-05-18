@@ -407,6 +407,8 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
           <a
             className="europe-map__pin-cta"
             href={`/tracker/${slug(pinnedCountry.name)}`}
+            target="_blank"
+            rel="noopener"
           >
             Open full profile <span aria-hidden>→</span>
           </a>
