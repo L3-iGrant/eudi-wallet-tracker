@@ -2133,7 +2133,22 @@ body.is-embed .europe-map__canvas {
 }
 body.is-embed .europe-map {
   width: 100% !important;
-  height: 100% !important;
+  /* The base rule caps the svg at 100vh - 260px so that the home-page chrome
+     (hero, status definitions, etc.) stays visible. The embed chrome is much
+     smaller, so give the svg more vertical room. */
+  max-height: calc(100vh - 110px) !important;
+}
+/* Chrome=minimal mode strips both the toolbar (~43px) and the attribution
+   (~26px), so the map gets nearly the whole iframe. */
+body.is-embed.embed--no-chrome .europe-map {
+  max-height: calc(100vh - 40px) !important;
+}
+/* Legend hidden removes the chip row (~50px), so reclaim that too. */
+body.is-embed.embed--no-legend .europe-map {
+  max-height: calc(100vh - 60px) !important;
+}
+body.is-embed.embed--no-legend.embed--no-chrome .europe-map {
+  max-height: 100vh !important;
 }
 body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
