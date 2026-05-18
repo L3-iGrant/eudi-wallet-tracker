@@ -55,14 +55,17 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
   const [hover, setHover] = useState<HoverState>(null);
   const [maximised, setMaximisedState] = useState(false);
   const [pulseIso, setPulseIso] = useState<string | null>(null);
-  // Zoom + pan state for the ZoomableGroup. `center` is in the projection's
-  // local coords (the projection rotate already centres on 10E/54N, so [0,0]
-  // here is the visual centre of the map).
-  const [mapZoom, setMapZoom] = useState(1);
-  const [mapCenter, setMapCenter] = useState<[number, number]>([0, 0]);
+  // Zoom + pan state for the ZoomableGroup. `center` is in geographic
+  // coordinates ([longitude, latitude]) so it must match the projection's
+  // rotate centre. With rotate [-10, -54, 0] the default visual centre is
+  // 10E/54N; using [0,0] instead anchors zoom on the Atlantic off Africa
+  // and shoves the map several thousand pixels off-screen as zoom grows.
   const ZOOM_MIN = 1;
   const ZOOM_MAX = 8;
   const ZOOM_STEP = 1.5;
+  const DEFAULT_CENTER: [number, number] = [10, 54];
+  const [mapZoom, setMapZoom] = useState(1);
+  const [mapCenter, setMapCenter] = useState<[number, number]>(DEFAULT_CENTER);
   const zoomIn = useCallback(() => {
     setMapZoom((z) => Math.min(ZOOM_MAX, z * ZOOM_STEP));
   }, []);
@@ -71,7 +74,7 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
   }, []);
   const zoomReset = useCallback(() => {
     setMapZoom(1);
-    setMapCenter([0, 0]);
+    setMapCenter(DEFAULT_CENTER);
   }, []);
 
   const setMaximised = useCallback((next: boolean | ((prev: boolean) => boolean)) => {
@@ -342,7 +345,7 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
             type="button"
             className="europe-map__zoom-btn"
             onClick={zoomReset}
-            disabled={mapZoom === 1 && mapCenter[0] === 0 && mapCenter[1] === 0}
+            disabled={mapZoom === 1 && mapCenter[0] === DEFAULT_CENTER[0] && mapCenter[1] === DEFAULT_CENTER[1]}
             aria-label="Reset zoom"
             title="Reset view"
           >
