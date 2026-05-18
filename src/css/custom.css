@@ -2154,9 +2154,11 @@ body.is-embed [class*='mainWrapper'] {
 }
 .embed-root .status-chiprow {
   margin: 0;
-  /* Match the .europe-map-wrap card radius (22px) so the chip row above the
-     map and the map card itself share the same rounded silhouette. */
-  border-radius: 22px;
+  /* Echo the map card's rounded silhouette but with a tighter radius so the
+     corner chips' text and dots stay clear of the curve (the map card itself
+     uses 22px, but its inner content is far from the edge; the chip row
+     packs content right to the corner). */
+  border-radius: 12px;
 }
 .embed-map-wrap {
   flex: 1;
