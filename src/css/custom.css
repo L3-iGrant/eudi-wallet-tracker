@@ -2132,6 +2132,104 @@ body.is-embed [class*='mainWrapper'] {
   text-decoration: underline;
 }
 
+/* -----------------------------------------------------------------------------
+ * Embed skinning: chrome / legend visibility flags + named host presets.
+ * Driven by body classes that src/pages/embed.tsx sets from URL params.
+ * --------------------------------------------------------------------------- */
+
+/* ?chrome=minimal -> hide the map toolbar (title + actions) and the bottom
+   "View larger map" strip so the map fills the iframe. */
+body.is-embed.embed--no-chrome .europe-map__toolbar {
+  display: none !important;
+}
+body.is-embed.embed--no-chrome .embed-attribution {
+  display: none !important;
+}
+
+/* ?legend=hide -> hide the colored status chip row above the map. The
+   conditional render in embed.tsx already omits it; this is defence in depth
+   for any path that mounts the chip row inside .is-embed. */
+body.is-embed.embed--no-legend .status-chiprow {
+  display: none !important;
+}
+
+/* -----------------------------------------------------------------------------
+ * Host preset: iGrant.io (?host=igrant)
+ *
+ * Matches the conventions used on https://www.igrant.io: white surface with
+ * a 1px hairline top border, Byrd heading (uppercase, weight 300, letter and
+ * word-spaced), Plus Jakarta Sans body, outline CTA buttons (1px solid #000,
+ * uppercase, hover fills #000), accent link colour #337ab7.
+ *
+ * The fonts are declared with sensible system fallbacks so the embed degrades
+ * cleanly if the host's font files are not loaded inside the iframe (iframes
+ * are cross-origin and do not inherit parent @font-face declarations).
+ * --------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+body.is-embed.theme--igrant {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+body.is-embed.theme--igrant .embed-root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  border-top: 1px solid #cfcfcf;
+}
+body.is-embed.theme--igrant .europe-map__title {
+  font-family: 'Byrd', 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-spacing: 8px;
+  color: #1a1a1a;
+}
+body.is-embed.theme--igrant .europe-map__title-meta {
+  text-transform: none;
+  letter-spacing: 0;
+  word-spacing: normal;
+  font-weight: 400;
+  color: #6b6b6b;
+}
+body.is-embed.theme--igrant .europe-map__btn,
+body.is-embed.theme--igrant .embed-button {
+  border-radius: 0;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 0.6rem 1.1rem;
+  box-shadow: none;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+body.is-embed.theme--igrant .europe-map__btn:hover,
+body.is-embed.theme--igrant .embed-button:hover {
+  background: #000;
+  color: #ffffff;
+}
+body.is-embed.theme--igrant .map-search__input {
+  border-radius: 0;
+  border-color: #cfcfcf;
+}
+body.is-embed.theme--igrant .embed-attribution a,
+body.is-embed.theme--igrant a {
+  color: #337ab7;
+}
+body.is-embed.theme--igrant .embed-attribution a:hover {
+  color: #1f5a8a;
+}
+/* Status chip row reads as part of the white surface, not a translucent card. */
+body.is-embed.theme--igrant .status-chiprow {
+  background: transparent;
+  border: 0;
+  padding: 0.5rem 0;
+}
+body.is-embed.theme--igrant .status-chip {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+}
+
 /* Mobile tweaks */
 @media (max-width: 768px) {
   .filter-bar {
