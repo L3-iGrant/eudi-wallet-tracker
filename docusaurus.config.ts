@@ -65,7 +65,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/edit/${GITHUB_BRANCH}/`,
           showLastUpdateTime: true,
-          showLastUpdateAuthor: true,
+          showLastUpdateAuthor: false,
         },
         blog: false,
         theme: {
