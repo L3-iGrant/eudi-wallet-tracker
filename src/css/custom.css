@@ -2130,7 +2130,12 @@ body.is-embed .europe-map__zoom {
 /* Iframe embed mode: strip chrome, fill the iframe viewport */
 body.is-embed {
   background: var(--ifm-background-color);
-  overflow: auto;
+  /* No body scroll in embed mode - the map provides its own zoom + pan
+     controls, and a scrollbar inside the host's iframe is visual noise. */
+  overflow: hidden;
+}
+html:has(body.is-embed) {
+  overflow: hidden;
 }
 body.is-embed .navbar,
 body.is-embed .footer,
@@ -2201,6 +2206,40 @@ body.is-embed.embed--no-legend.embed--no-chrome .europe-map {
 }
 body.is-embed .europe-map__toolbar {
   padding: 0.1rem 0.3rem 0.2rem;
+}
+
+/* In embed mode the country detail panel slides in as an absolute overlay
+   on the right side of the map instead of pushing the map sideways or
+   stacking it underneath. The map stays exactly where it was when the user
+   clicked, which matters in tight iframe contexts. */
+body.is-embed .europe-map-frame--pin-open {
+  display: flex !important;
+  flex-direction: column;
+  position: relative;
+}
+body.is-embed .europe-map-frame--pin-open > .europe-map__canvas {
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%;
+}
+body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: min(320px, calc(100% - 1rem));
+  max-height: calc(100% - 1rem);
+  overflow-y: auto;
+  margin: 0;
+  z-index: 6;
+  background: var(--tracker-surface);
+  border: 1px solid var(--tracker-hairline-strong);
+  border-radius: var(--tracker-card-radius);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+/* When the toolbar is visible in embed mode, drop the overlay below it so
+   the panel does not collide with the title/buttons. */
+body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--pin-open > .europe-map__pin {
+  top: 3.25rem;
 }
 .embed-attribution {
   display: flex;
