@@ -1556,6 +1556,9 @@ a {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
+  display: inline-block;
+  min-width: 1.4em;
+  text-align: right;
 }
 .status-chip__label {
   color: var(--tracker-text-muted);
