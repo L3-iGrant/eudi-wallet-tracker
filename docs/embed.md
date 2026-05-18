@@ -45,7 +45,8 @@ All parameters are optional. Unknown values fall back to the defaults.
 | `pin` | ISO alpha-2 | Same as `country`. The canonical name used by the in-app map. |
 | `status` | `Launched in production`, `Public pilot live`, `Closed pilot or LSP only`, `Notified eID, no wallet yet`, `No public plan`, `Unknown` | Pre-applies the status chip filter. |
 | `legend` | `show` (default), `hide` | Hides the coloured status chip row above the map. |
-| `chrome` | `full` (default), `minimal` | Hides the map toolbar title and the "View larger map" attribution at the bottom. |
+| `attribution` | `show` (default), `hide` | Hides only the bottom "EUDI Wallet Status Tracker / View larger map" strip. |
+| `chrome` | `full` (default), `minimal` | Hides both the map toolbar AND the bottom attribution strip. |
 | `host` | `default` | Applies a named host design preset. |
 | `preset` | `default` | Alias of `host`. |
 
