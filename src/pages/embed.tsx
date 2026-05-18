@@ -16,7 +16,9 @@ import StatsGrid from '@site/src/components/StatsGrid';
  *   ?pin=FR            Same as country (canonical, used by the in-app map).
  *   ?status=Launched   Pre-apply the status chip filter.
  *   ?legend=hide       Hide the colored status chip row above the map.
- *   ?chrome=minimal    Hide the map toolbar title and "View larger map" link.
+ *   ?attribution=hide  Hide the bottom "EUDI Wallet Status Tracker / View
+ *                      larger map" attribution strip only.
+ *   ?chrome=minimal    Hide both the map toolbar AND the attribution strip.
  *   ?host=default      Apply a named host design preset (see HOST_PRESETS).
  *   ?preset=default    Alias of ?host=default.
  *
@@ -39,12 +41,33 @@ export default function Embed() {
   const [pinnedIso, setPinnedIso] = useState<string | null>(null);
   const [legend, setLegend] = useState<'show' | 'hide'>('show');
   const [chrome, setChrome] = useState<'full' | 'minimal'>('full');
+  const [attribution, setAttribution] = useState<'show' | 'hide'>('show');
   const [hostPreset, setHostPreset] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.classList.add('is-embed');
     return () => {
       document.body.classList.remove('is-embed');
+    };
+  }, []);
+
+  // Crop the map svg viewBox in embed mode so the European landmass fills the
+  // iframe without the empty Atlantic / east-of-scope letterbox. The default
+  // viewBox is "0 0 1240 700" with the meaningful land in roughly x=150-1060,
+  // y=80-660. Trimming the wide empty bands gives a tighter aspect ratio and
+  // reclaims most of the bottom whitespace visible on host pages.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const apply = () => {
+      const svg = document.querySelector('svg.europe-map');
+      if (svg) svg.setAttribute('viewBox', '150 60 920 600');
+    };
+    apply();
+    const id = window.setInterval(apply, 250);
+    const stop = window.setTimeout(() => window.clearInterval(id), 4000);
+    return () => {
+      window.clearInterval(id);
+      window.clearTimeout(stop);
     };
   }, []);
 
@@ -56,15 +79,18 @@ export default function Embed() {
     else cls.remove('embed--no-legend');
     if (chrome === 'minimal') cls.add('embed--no-chrome');
     else cls.remove('embed--no-chrome');
+    if (attribution === 'hide') cls.add('embed--no-attribution');
+    else cls.remove('embed--no-attribution');
     // Reset any previously applied preset before adding the current one.
     Array.from(cls).filter((c) => c.startsWith('theme--')).forEach((c) => cls.remove(c));
     if (hostPreset) cls.add(`theme--${hostPreset}`);
     return () => {
       cls.remove('embed--no-legend');
       cls.remove('embed--no-chrome');
+      cls.remove('embed--no-attribution');
       Array.from(cls).filter((c) => c.startsWith('theme--')).forEach((c) => cls.remove(c));
     };
-  }, [legend, chrome, hostPreset]);
+  }, [legend, chrome, attribution, hostPreset]);
 
   // Hydrate from URL once: support both ?country= (Google-Maps-style alias)
   // and ?pin= (canonical, used by the in-app map).
@@ -75,6 +101,7 @@ export default function Embed() {
     setPinnedIso(params.get('country') ?? params.get('pin'));
     setLegend(pickEnum(params.get('legend'), ['show', 'hide'] as const, 'show'));
     setChrome(pickEnum(params.get('chrome'), ['full', 'minimal'] as const, 'full'));
+    setAttribution(pickEnum(params.get('attribution'), ['show', 'hide'] as const, 'show'));
     const requested = params.get('host') ?? params.get('preset');
     setHostPreset(requested && HOST_PRESETS.has(requested) ? requested : null);
   }, []);
@@ -108,7 +135,7 @@ export default function Embed() {
             }}
           </BrowserOnly>
         </div>
-        {chrome === 'full' && (
+        {chrome === 'full' && attribution === 'show' && (
           <div className="embed-attribution">
             <span>EUDI Wallet Status Tracker</span>
             <a

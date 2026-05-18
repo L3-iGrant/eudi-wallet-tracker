@@ -2191,6 +2191,13 @@ body.is-embed.embed--no-legend .status-chiprow {
   display: none !important;
 }
 
+/* ?attribution=hide -> hide only the bottom 'EUDI Wallet Status Tracker /
+   View larger map' strip. Use this when the host page already provides its
+   own outbound link to the canonical tracker. */
+body.is-embed.embed--no-attribution .embed-attribution {
+  display: none !important;
+}
+
 /* -----------------------------------------------------------------------------
  * Host preset: default (?host=default)
  *
