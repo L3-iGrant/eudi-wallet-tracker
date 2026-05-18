@@ -973,6 +973,52 @@ a {
   border-radius: 12px;
   overflow: hidden;
 }
+.europe-map__zoom {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--tracker-surface) 96%, transparent);
+  border: 1px solid var(--tracker-hairline-strong);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+}
+.europe-map__zoom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-bottom: 1px solid var(--tracker-hairline);
+  background: transparent;
+  color: var(--tracker-text);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.europe-map__zoom-btn:last-child {
+  border-bottom: 0;
+}
+.europe-map__zoom-btn:hover:not(:disabled) {
+  background: var(--tracker-surface-2);
+}
+.europe-map__zoom-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+/* Maximised + embed: keep controls clear of the toolbar. */
+.europe-map-frame--maximised .europe-map__zoom,
+body.is-embed .europe-map__zoom {
+  top: 1rem;
+  right: 1rem;
+}
 .europe-map__toolbar {
   display: flex;
   align-items: center;
