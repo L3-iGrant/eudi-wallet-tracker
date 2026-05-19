@@ -2162,7 +2162,9 @@ body.is-embed [class*='mainWrapper'] {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0.35rem 0.5rem;
+  /* Equal padding on all sides so the map card is inset the same amount
+     from the top, bottom, left and right of the iframe. */
+  padding: 0.5rem;
   box-sizing: border-box;
   gap: 0.2rem;
 }
