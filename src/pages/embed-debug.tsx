@@ -82,7 +82,7 @@ export default function EmbedDebug() {
         <title>Embed debug</title>
         <meta name="robots" content="noindex,nofollow" />
       </Head>
-      <main style={{maxWidth: 1280, margin: '0 auto', padding: '2rem 1.25rem 4rem'}}>
+      <main style={{maxWidth: 1280, margin: '0 auto', padding: '2rem 0.75rem 4rem', boxSizing: 'border-box'}}>
         <header style={{marginBottom: '2rem'}}>
           <h1 style={{margin: 0}}>Embed debug</h1>
           <p style={{color: 'var(--tracker-text-muted)', maxWidth: 720}}>
@@ -94,7 +94,10 @@ export default function EmbedDebug() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(420px, 1fr))',
+            // Use min(100%, 420px) so the minimum column never exceeds the
+            // available width. Below ~420px viewports, each tile collapses
+            // to a single column instead of spilling beyond the viewport.
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
             gap: '1.5rem',
           }}
         >
