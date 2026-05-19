@@ -2464,14 +2464,15 @@ body.is-embed.theme--default .europe-map__title-meta {
 }
 body.is-embed.theme--default .europe-map__btn,
 body.is-embed.theme--default .embed-button {
-  border-radius: 0;
+  /* Keep the base pill radius so buttons read as friendly rounded chips
+     instead of harsh outline rectangles. */
   border: 1px solid #000;
   background: transparent;
   color: #000;
+  font-family: inherit;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
-  padding: 0.6rem 1.1rem;
   box-shadow: none;
   transition: background-color 140ms ease, color 140ms ease;
 }
@@ -2481,7 +2482,7 @@ body.is-embed.theme--default .embed-button:hover {
   color: #ffffff;
 }
 body.is-embed.theme--default .map-search__input {
-  border-radius: 0;
+  font-family: inherit;
   border-color: #cfcfcf;
 }
 body.is-embed.theme--default .embed-attribution a,
