@@ -51,23 +51,36 @@ export default function Embed() {
     };
   }, []);
 
-  // Crop the map svg viewBox in embed mode so the European landmass fills the
-  // iframe without the empty Atlantic / east-of-scope letterbox. The default
-  // viewBox is "0 0 1240 700" with the meaningful land in roughly x=150-1060,
-  // y=80-660. Trimming the wide empty bands gives a tighter aspect ratio and
-  // reclaims most of the bottom whitespace visible on host pages.
+  // Tune the map svg per viewport size:
+  //   Wide iframes: crop viewBox to "150 60 920 600" so the European landmass
+  //                 fills horizontally without the empty Atlantic / east bands.
+  //   Narrow iframes (<900px): use the uncropped viewBox AND switch to
+  //                 preserveAspectRatio="xMidYMid slice" so the map zooms to
+  //                 fill the near-square mobile card. The trim is the
+  //                 out-of-scope hatched eastern area + a small Cyprus crop,
+  //                 not the core EU/EEA landmass.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const apply = () => {
       const svg = document.querySelector('svg.europe-map');
-      if (svg) svg.setAttribute('viewBox', '150 60 920 600');
+      if (!svg) return;
+      const narrow = window.innerWidth < 900;
+      if (narrow) {
+        svg.setAttribute('viewBox', '0 0 1240 700');
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+      } else {
+        svg.setAttribute('viewBox', '150 60 920 600');
+        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+      }
     };
     apply();
     const id = window.setInterval(apply, 250);
     const stop = window.setTimeout(() => window.clearInterval(id), 4000);
+    window.addEventListener('resize', apply);
     return () => {
       window.clearInterval(id);
       window.clearTimeout(stop);
+      window.removeEventListener('resize', apply);
     };
   }, []);
 

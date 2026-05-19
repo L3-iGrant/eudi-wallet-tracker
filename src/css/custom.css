@@ -2359,13 +2359,23 @@ body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--
   }
 }
 
-/* Map svg height behaviour at narrow widths: ensure it never collapses to
-   zero. The natural aspect ratio from viewBox 1240x700 (~1.77) keeps the
-   map proportional as the iframe narrows. */
+/* Map svg fills the full canvas at narrow widths so there is no big
+   empty strip below the European landmass. The SVG's viewBox-derived
+   intrinsic aspect-ratio wins over `height: 100%` in flex containers,
+   so absolutely-position the svg over the canvas to force it to fill
+   both axes. preserveAspectRatio="xMidYMid meet" then centres the map
+   content inside so any aspect mismatch shows as balanced background
+   padding above and below the European landmass. */
 @media (max-width: 899px) {
+  body.is-embed .europe-map__canvas {
+    position: relative;
+  }
   body.is-embed .europe-map {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
     max-height: none !important;
-    height: auto !important;
   }
 }
 .embed-attribution {
