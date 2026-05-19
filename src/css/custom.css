@@ -2426,82 +2426,18 @@ body.is-embed.embed--no-attribution .embed-attribution {
 /* -----------------------------------------------------------------------------
  * Host preset: default (?host=default)
  *
- * The maintainer house style. White surface with a 1px hairline top border,
- * Byrd heading (uppercase, weight 300, letter and word-spaced), Plus Jakarta
- * Sans body, outline CTA buttons (1px solid #000, uppercase, hover fills
- * #000), accent link colour #337ab7.
+ * The neutral preset that the embed ships with. Intentionally minimal so
+ * the embed reads as a clean, brand-agnostic widget that fits naturally
+ * into any host page: title case heading, rounded pill outline buttons,
+ * standard surface. No uppercase, no custom heading font.
  *
  * Add a new preset by extending HOST_PRESETS in src/pages/embed.tsx and
- * cloning this block under .theme--<name>. The fonts are declared with
- * sensible system fallbacks so the embed degrades cleanly if the host's
- * font files are not loaded inside the iframe (iframes are cross-origin and
- * do not inherit parent @font-face declarations).
+ * adding a .theme--<name> CSS block below.
  * --------------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
-body.is-embed.theme--default {
-  background: #ffffff;
-  color: #1a1a1a;
-}
-body.is-embed.theme--default .embed-root {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  border-top: 1px solid #cfcfcf;
-}
-body.is-embed.theme--default .europe-map__title {
-  font-family: 'Byrd', 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  word-spacing: 8px;
-  color: #1a1a1a;
-}
-body.is-embed.theme--default .europe-map__title-meta {
-  text-transform: none;
-  letter-spacing: 0;
-  word-spacing: normal;
-  font-weight: 400;
-  color: #6b6b6b;
-}
-body.is-embed.theme--default .europe-map__btn,
-body.is-embed.theme--default .embed-button {
-  /* Keep the base pill radius so buttons read as friendly rounded chips
-     instead of harsh outline rectangles. */
-  border: 1px solid #000;
-  background: transparent;
-  color: #000;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 500;
-  box-shadow: none;
-  transition: background-color 140ms ease, color 140ms ease;
-}
-body.is-embed.theme--default .europe-map__btn:hover,
-body.is-embed.theme--default .embed-button:hover {
-  background: #000;
-  color: #ffffff;
-}
-body.is-embed.theme--default .map-search__input {
-  font-family: inherit;
-  border-color: #cfcfcf;
-}
-body.is-embed.theme--default .embed-attribution a,
-body.is-embed.theme--default a {
-  color: #337ab7;
-}
-body.is-embed.theme--default .embed-attribution a:hover {
-  color: #1f5a8a;
-}
-/* Status chip row reads as part of the white surface, not a translucent card. */
-body.is-embed.theme--default .status-chiprow {
-  background: transparent;
-  border: 0;
-  padding: 0.5rem 0;
-}
-body.is-embed.theme--default .status-chip {
-  background: #ffffff;
-  border: 1px solid #e3e3e3;
-}
+/* No visual overrides: theme--default keeps the base look. The body class
+   is still set so future per-host tweaks can hang off this selector if
+   needed, but at present `?host=default` renders exactly like the base
+   embed surface. */
 
 /* Mobile tweaks */
 @media (max-width: 768px) {

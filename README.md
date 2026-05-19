@@ -121,7 +121,7 @@ without forking the tracker. Today the following preset ships:
 
 | Preset    | Matches                                                                  |
 | --------- | ------------------------------------------------------------------------ |
-| `default` | The maintainer house style: Plus Jakarta Sans body, Byrd heading (uppercase, weight 300, letter and word-spaced), outline CTA buttons (1px solid #000, uppercase, hover fills #000), white surface with 1px #cfcfcf top border, link colour #337ab7. |
+| `default` | Neutral base look: Title Case heading, rounded pill outline buttons, standard surface. Acts as a no-op on the visual layer so the embed reads as a clean, brand-agnostic widget on any host page. |
 
 Add a new preset by extending `HOST_PRESETS` in `src/pages/embed.tsx` and
 adding the matching `body.is-embed.theme--<name>` CSS block in

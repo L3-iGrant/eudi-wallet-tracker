@@ -70,25 +70,13 @@ https://eudi-wallet-tracker.igrant.io/embed?status=Public%20pilot%20live
 https://eudi-wallet-tracker.igrant.io/embed?legend=hide&chrome=minimal
 ```
 
-**Maintainer house style** combined with map-only mode:
-
-```
-https://eudi-wallet-tracker.igrant.io/embed?host=default&legend=hide&chrome=minimal
-```
-
 ## Host presets
 
 Host presets let third-party pages match the embed to their own design system without forking the tracker.
 
 ### `host=default`
 
-The maintainer house style:
-
-- Heading font: `Byrd`, weight 300, uppercase, letter spacing 2px, word spacing 8px.
-- Body font: `Plus Jakarta Sans`, loaded from Google Fonts inside the iframe.
-- Primary CTAs: square outline buttons, 1px solid #000, uppercase, hover fills #000 with white text.
-- Surface: white background with a 1px #cfcfcf top border.
-- Link colour: #337ab7.
+The neutral preset shipped with the embed. Intentionally minimal so the widget reads as clean and brand-agnostic on any host page: Title Case heading, rounded pill outline buttons, standard surface. Acts as a no-op on the visual layer.
 
 Live preview: [/embed?host=default](https://eudi-wallet-tracker.igrant.io/embed?host=default).
 
