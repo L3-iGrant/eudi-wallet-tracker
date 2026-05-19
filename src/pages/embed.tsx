@@ -115,8 +115,13 @@ export default function Embed() {
     setLegend(pickEnum(params.get('legend'), ['show', 'hide'] as const, 'show'));
     setChrome(pickEnum(params.get('chrome'), ['full', 'minimal'] as const, 'full'));
     setAttribution(pickEnum(params.get('attribution'), ['show', 'hide'] as const, 'show'));
+    // Silent back-compat aliases for older URLs that pre-date the
+    // 'default' preset naming. Kept undocumented so the configuration
+    // surface only exposes the canonical preset names.
+    const HOST_ALIASES: Record<string, string> = {igrant: 'default'};
     const requested = params.get('host') ?? params.get('preset');
-    setHostPreset(requested && HOST_PRESETS.has(requested) ? requested : null);
+    const normalized = requested ? HOST_ALIASES[requested] ?? requested : null;
+    setHostPreset(normalized && HOST_PRESETS.has(normalized) ? normalized : null);
   }, []);
 
   return (
