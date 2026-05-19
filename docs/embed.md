@@ -70,25 +70,13 @@ https://eudi-wallet-tracker.igrant.io/embed?status=Public%20pilot%20live
 https://eudi-wallet-tracker.igrant.io/embed?legend=hide&chrome=minimal
 ```
 
-**Maintainer house style** combined with map-only mode:
-
-```
-https://eudi-wallet-tracker.igrant.io/embed?host=default&legend=hide&chrome=minimal
-```
-
 ## Host presets
 
 Host presets let third-party pages match the embed to their own design system without forking the tracker.
 
 ### `host=default`
 
-The maintainer house style:
-
-- Heading font: `Byrd`, weight 300, uppercase, letter spacing 2px, word spacing 8px.
-- Body font: `Plus Jakarta Sans`, loaded from Google Fonts inside the iframe.
-- Primary CTAs: square outline buttons, 1px solid #000, uppercase, hover fills #000 with white text.
-- Surface: white background with a 1px #cfcfcf top border.
-- Link colour: #337ab7.
+The neutral preset shipped with the embed. Intentionally minimal so the widget reads as clean and brand-agnostic on any host page: Title Case heading, rounded pill outline buttons, standard surface. Acts as a no-op on the visual layer.
 
 Live preview: [/embed?host=default](https://eudi-wallet-tracker.igrant.io/embed?host=default).
 
@@ -104,7 +92,17 @@ If the preset depends on a font that is not on Google Fonts, host the font file 
 
 ## Responsive layout
 
-The embed wraps its status chip row onto multiple lines on narrow widths. At iframe widths under 768px the chip row may need an extra line and the toolbar buttons collapse to icon-only pills. To keep the map readable on narrow screens, give the iframe a taller aspect ratio on small viewports:
+The embed reflows across three breakpoints so it stays usable from a 320 px mobile iframe up to a desktop sidebar.
+
+| Iframe width | Chip row | Country detail panel |
+| --- | --- | --- |
+| `>= 900 px` | Single horizontal row | Floating overlay at the top-right of the map (does not push the map) |
+| `640-899 px` | Three chips per row in two compact rows | Bottom sheet covering the lower 50% of the iframe; map stays visible above |
+| `< 640 px` | Horizontal scroll strip with snap | Bottom sheet covering the lower 60% of the iframe; map stays visible above |
+
+The toolbar buttons collapse to icon-only pills below 640 px and the map SVG scales proportionally via `width: 100%; height: auto` so it never clips at narrow widths. On touch devices, tapping a country shows the lightweight name + status tooltip first; a second tap on the same country opens the full detail panel.
+
+To keep the embed shaped well across all of those breakpoints, give the iframe a taller aspect ratio on small viewports:
 
 ```css
 .tracker-embed { aspect-ratio: 16 / 10; }
