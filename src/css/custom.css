@@ -2246,6 +2246,117 @@ body.is-embed .europe-map-frame--pin-open > .europe-map__pin {
 body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome) .europe-map-frame--pin-open > .europe-map__pin {
   top: calc(36px + 0.5rem);
 }
+
+/* -----------------------------------------------------------------------------
+ * Mobile responsive (#30): chip row, pin layout, tap targets.
+ *
+ * Three breakpoints:
+ *   >=900px: pin is the floating top-right overlay (default rules above).
+ *   640-899px: pin slides up from the bottom as a sheet covering ~50% of
+ *              the iframe so the map stays visible above it.
+ *   <640px:    same bottom-sheet but ~60% tall; chip row scrolls
+ *              horizontally; tap targets enlarged on small country paths.
+ * --------------------------------------------------------------------------- */
+
+/* Bottom-sheet pin layout (640-899px and <640px). The pin element comes
+   straight from the React tree as an absolute child of the frame, so
+   pinning it to the bottom of the frame is a one-rule swap. */
+@media (max-width: 899px) {
+  body.is-embed .europe-map-frame--pin-open > .europe-map__pin,
+  body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome)
+    .europe-map-frame--pin-open > .europe-map__pin {
+    top: auto !important;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 50%;
+    margin: 0;
+    border-radius: var(--tracker-card-radius) var(--tracker-card-radius) 0 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: 0 -12px 32px rgba(15, 23, 42, 0.18);
+    animation: euMapSheetUp 220ms ease both;
+  }
+}
+@media (max-width: 639px) {
+  body.is-embed .europe-map-frame--pin-open > .europe-map__pin,
+  body.is-embed:not(.embed--no-toolbar):not(.embed--no-chrome)
+    .europe-map-frame--pin-open > .europe-map__pin {
+    max-height: 60%;
+  }
+}
+@keyframes euMapSheetUp {
+  from {
+    transform: translateY(12%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Chip row reflow.
+   640-899px: 3 chips per row in a grid (~2 rows total for 6 statuses).
+   <640px:    horizontal scroll strip with momentum + snap, tightened
+              chip padding so each chip is still a comfortable tap target. */
+@media (min-width: 640px) and (max-width: 899px) {
+  body.is-embed .status-chiprow {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+  body.is-embed .status-chip {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 639px) {
+  body.is-embed .status-chiprow {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    padding: 0.4rem 0.5rem;
+    gap: 0.4rem;
+    /* Hide the scrollbar but keep scroll behaviour. */
+    scrollbar-width: none;
+  }
+  body.is-embed .status-chiprow::-webkit-scrollbar {
+    display: none;
+  }
+  body.is-embed .status-chiprow > li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  body.is-embed .status-chip {
+    padding: 0.45rem 0.7rem;
+    min-height: 40px; /* comfortable tap target */
+    font-size: 0.82rem;
+  }
+}
+
+/* Tap target enlargement on touch viewports: thicken country borders so
+   small Member States (LU, BE, NL, SI, MT, CY) are easier to tap. */
+@media (max-width: 639px) {
+  body.is-embed .europe-map path.is-scope {
+    stroke-width: 1.2px;
+  }
+}
+
+/* Map svg height behaviour at narrow widths: ensure it never collapses to
+   zero. The natural aspect ratio from viewBox 1240x700 (~1.77) keeps the
+   map proportional as the iframe narrows. */
+@media (max-width: 899px) {
+  body.is-embed .europe-map {
+    max-height: none !important;
+    height: auto !important;
+  }
+}
 .embed-attribution {
   display: flex;
   justify-content: space-between;
