@@ -289,13 +289,6 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
                       if (c) trackPointer(e, c);
                     }}
                     onMouseLeave={() => setHover(null)}
-                    onTouchStart={(e) => {
-                      if (!c) return;
-                      const t = e.touches[0];
-                      const rect = containerRef.current?.getBoundingClientRect();
-                      if (!t || !rect) return;
-                      setHover({c, x: t.clientX - rect.left, y: t.clientY - rect.top});
-                    }}
                     onClick={(e) => {
                       if (!c) return;
                       if (e.metaKey || e.ctrlKey) {

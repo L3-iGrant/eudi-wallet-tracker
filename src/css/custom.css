@@ -1457,6 +1457,15 @@ body.is-embed .europe-map__zoom {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(6px);
 }
+/* Hover tooltip is a desktop affordance only. On touch-only devices the
+   synthetic mouseEnter from a tap shows the tooltip and no mouseLeave
+   ever follows, so it gets stuck on screen after the user pins a
+   country. Hide it entirely on devices that cannot hover. */
+@media (hover: none) {
+  .europe-map__tooltip {
+    display: none !important;
+  }
+}
 .europe-map__tooltip strong {
   display: block;
   font-weight: 600;
