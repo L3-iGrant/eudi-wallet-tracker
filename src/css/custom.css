@@ -769,37 +769,51 @@ a {
   background: color-mix(in srgb, var(--ifm-background-color) 92%, transparent);
   backdrop-filter: blur(10px);
 }
-/* When a country is pinned, lay the frame out as two columns:
-   the map on the left, the pin panel on the right. */
+/* When a country is pinned, render the detail panel as an absolute overlay
+   at the top-right of the map canvas instead of pushing the map sideways
+   into a sidebar. Map stays exactly where it was when the user clicked. */
 .europe-map-frame--pin-open {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  grid-template-rows: auto auto;
-  column-gap: 1rem;
-  align-items: start;
-}
-.europe-map-frame--pin-open > .europe-map__toolbar {
-  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .europe-map-frame--pin-open > .europe-map__canvas {
-  grid-column: 1;
-  grid-row: 2;
+  position: relative;
+  width: 100%;
 }
 .europe-map-frame--pin-open > .europe-map__pin {
-  grid-column: 2;
-  grid-row: 2;
+  position: absolute;
+  /* Toolbar height is ~38px on home + tracker; add the same 0.5rem the right
+     edge uses so the visible inset from the canvas is symmetric on both
+     axes (0.5rem top from canvas top, 0.5rem right from canvas right). */
+  top: calc(38px + 0.5rem);
+  right: 0.5rem;
   margin: 0;
-  position: sticky;
-  top: calc(var(--ifm-navbar-height) + 0.75rem);
+  width: min(320px, calc(100% - 1rem));
+  max-height: calc(100% - 1rem - 38px);
+  overflow-y: auto;
+  z-index: 6;
+  background: var(--tracker-surface);
+  border: 1px solid var(--tracker-hairline-strong);
+  border-radius: var(--tracker-card-radius);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
 }
+/* Narrow viewports: pin slides up as a bottom sheet over the lower part of
+   the map so the map stays fully visible above it. */
 @media (max-width: 880px) {
-  .europe-map-frame--pin-open {
-    grid-template-columns: 1fr;
-  }
   .europe-map-frame--pin-open > .europe-map__pin {
-    grid-column: 1;
-    grid-row: auto;
-    position: static;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 55%;
+    border-radius: var(--tracker-card-radius) var(--tracker-card-radius) 0 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: 0 -12px 32px rgba(15, 23, 42, 0.18);
   }
 }
 
