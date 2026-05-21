@@ -231,7 +231,14 @@ export default function EuropeMap({filterStatus = null, pinnedIso = null, onPin}
             }}
           >
           <Geographies geography={GEO_URL}>
-            {({geographies}) => {
+            {({geographies: rawGeographies}) => {
+              // Drop the unrecognised 'N. Cyprus' (Turkish Republic of
+              // Northern Cyprus) geometry so the island renders as a single
+              // territory under the Republic of Cyprus (id=196). The EU
+              // (and the tracker) recognises only the Republic of Cyprus.
+              const geographies = rawGeographies.filter(
+                (g) => g.properties?.name !== 'N. Cyprus',
+              );
               // Lift the currently emphasised country (mouse hover, search
               // hover, pulse, or pin) to the top of the paint order so its
               // border isn't clipped by neighbours. Hover state now only

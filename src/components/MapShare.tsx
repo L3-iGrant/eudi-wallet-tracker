@@ -375,6 +375,17 @@ async function generateMapPng(svg: SVGElement, pinned: Country | null): Promise<
       ctx.fillText('eudi-wallet-tracker.igrant.io  ·  iGrant.io', mapX + mapW - 16, mapY + mapH - 12);
       ctx.restore();
 
+      // "As of YYYY-MM-DD" stamp in the top-right corner of the map card so
+      // newsletter readers can see when the snapshot was taken without
+      // hunting for the lastUpdated meta in the page header.
+      ctx.save();
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.55)';
+      ctx.font = '600 13px -apple-system, "Inter", system-ui, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'top';
+      ctx.fillText(`As of ${data.lastUpdated}`, mapX + mapW - 16, mapY + 14);
+      ctx.restore();
+
       canvas.toBlob((blob) => {
         URL.revokeObjectURL(url);
         resolve(blob);
