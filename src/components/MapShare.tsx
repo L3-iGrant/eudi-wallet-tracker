@@ -376,14 +376,16 @@ async function generateMapPng(svg: SVGElement, pinned: Country | null): Promise<
       ctx.restore();
 
       // "As of YYYY-MM-DD" stamp in the top-right corner of the map card so
-      // newsletter readers can see when the snapshot was taken without
-      // hunting for the lastUpdated meta in the page header.
+      // newsletter readers can see when the snapshot was taken. Uses the
+      // current download date, not the data's lastUpdated - so a reader
+      // can tell when YOU pulled the image, not when the data last changed.
+      const today = new Date().toISOString().slice(0, 10);
       ctx.save();
       ctx.fillStyle = 'rgba(15, 23, 42, 0.55)';
       ctx.font = '600 13px -apple-system, "Inter", system-ui, sans-serif';
       ctx.textAlign = 'right';
       ctx.textBaseline = 'top';
-      ctx.fillText(`As of ${data.lastUpdated}`, mapX + mapW - 16, mapY + 14);
+      ctx.fillText(`As of ${today}`, mapX + mapW - 16, mapY + 14);
       ctx.restore();
 
       canvas.toBlob((blob) => {
