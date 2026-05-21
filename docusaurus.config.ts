@@ -98,6 +98,9 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/og-default.png',
+    metadata: [
+      {name: 'author', content: 'iGrant.io, Sweden'},
+    ],
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
