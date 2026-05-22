@@ -8,8 +8,10 @@ import MapShare from './MapShare';
 import MapSearch from './MapSearch';
 import EmbedButton from './EmbedButton';
 
-const GEO_URL =
-  'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';
+// Locally-hosted topojson with corrected boundary attributions. Built at
+// pre-build time by scripts/fix-geo-attribution.mjs from the cached
+// upstream world-atlas snapshot.
+const GEO_URL = '/geo/europe-eu-view.json';
 
 type Country = (typeof data.countries)[number];
 
