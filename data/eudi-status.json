@@ -235,7 +235,7 @@
       "isoAlpha2": "DK",
       "isoNumeric": "208",
       "group": "EU",
-      "status": "Public pilot live",
+      "status": "Launched in production",
       "walletName": "AltID",
       "walletProvider": "Danish Agency for Digital Government",
       "assuranceLevel": "high",
@@ -243,12 +243,12 @@
         "NOBID",
         "APTITUDE"
       ],
-      "launchOrPilotDate": "2025-04-01",
+      "launchOrPilotDate": "2025-06-03",
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Public sandbox available since April 2026. AltID rollout staged with first release expected to ship with limited functionality before the deadline.",
+      "notes": "Public sandbox available since April 2026. AltID rolled out with ID and Age Verification functionality.",
       "sources": [
         {
           "title": "iGrant.io Research Lab",
@@ -256,9 +256,9 @@
           "date": "2026-05-18"
         },
         {
-          "title": "Danish Agency for Digital Government - new wallet",
-          "url": "https://en.digst.dk/news/news-archive/2025/april/startskud-givet-til-ny-digital-identitetstegnebog/",
-          "date": "2025-04-15"
+          "title": "Danish Agency for Digital Government - AltID",
+          "url": "https://digst.dk/it-loesninger/altid/",
+          "date": "2026-06-04"
         },
         {
           "title": "eIDEasy April 2026 snapshot",
