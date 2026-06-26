@@ -44,7 +44,7 @@ export default function Home() {
     name: 'EUDI Wallet Status Tracker',
     alternateName: 'European Digital Identity Wallet Readiness Map',
     description:
-      'Open, dated, source-backed editorial record of European Digital Identity (EUDI) Wallet rollout status across the EU 27, EEA (Norway, Iceland, Liechtenstein), the United Kingdom and Switzerland. One row per jurisdiction with status, wallet name, wallet provider, level of assurance, launch or pilot date and primary sources.',
+      'Open, dated, source-backed editorial record of European Digital Identity (EUDI) Wallet rollout status across Europe and beyond. One row per jurisdiction with status, wallet name, wallet provider, level of assurance, launch or pilot date and primary sources.',
     url: 'https://eudi-wallet-tracker.igrant.io/',
     identifier: 'https://eudi-wallet-tracker.igrant.io/',
     license: 'https://creativecommons.org/licenses/by/4.0/',
@@ -72,7 +72,7 @@ export default function Home() {
     ],
     spatialCoverage: {
       '@type': 'Place',
-      name: 'European Union, EEA, United Kingdom, Switzerland',
+      name: 'Europe and beyond',
     },
     distribution: [
       {
@@ -95,7 +95,7 @@ export default function Home() {
         <title>EUDI Wallet Status Tracker</title>
         <meta
           name="description"
-          content="Live readiness of every EU 27, EEA, UK and Switzerland EUDI Wallet rollout. Status, wallet name, level of assurance, milestones."
+          content="Live readiness of every tracked jurisdiction EUDI Wallet rollout. Status, wallet name, level of assurance, milestones."
         />
         <script type="application/ld+json">
           {JSON.stringify(datasetJsonLd)}

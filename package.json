@@ -2,7 +2,7 @@
   "name": "eudi-wallet-tracker",
   "version": "0.1.0",
   "private": true,
-  "description": "EUDI Wallet Status Tracker. Open editorial record of EUDI Wallet readiness across the EU 27, EEA, UK and Switzerland. Maintained by iGrant.io.",
+  "description": "EUDI Wallet Status Tracker. Open editorial record of EUDI Wallet readiness across Europe and beyond. Maintained by iGrant.io.",
   "license": "EUPL-1.2",
   "repository": {
     "type": "git",

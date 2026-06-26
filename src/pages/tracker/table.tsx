@@ -9,7 +9,7 @@ export default function TrackerTable() {
     <Layout>
       <Head>
         <title>Table | EUDI Wallet Status Tracker</title>
-        <meta name="description" content="Sortable, filterable table of EUDI Wallet rollout status across the EU 27, EEA, UK and Switzerland." />
+        <meta name="description" content="Sortable, filterable table of EUDI Wallet rollout status across Europe and beyond." />
       </Head>
       <main style={{width: '100%', maxWidth: 1280, margin: '0 auto', padding: '1.25rem 1.25rem 4rem', boxSizing: 'border-box'}}>
         <section className="tracker-hero">
