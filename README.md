@@ -105,7 +105,7 @@ Optional query parameters:
 | --------------------------- | --------------------------------------------------------------------- |
 | `?country=SE`               | Open with that country pinned in the side panel.                      |
 | `?pin=SE`                   | Same as above (canonical name).                                       |
-| `?status=Public pilot live` | Pre-apply the status chip filter.                                     |
+| `?status=Public Pilot` | Pre-apply the status chip filter.                                     |
 | `?legend=hide`              | Hide the colored status chip row above the map.                       |
 | `?attribution=hide`         | Hide only the bottom "EUDI Wallet Status Tracker / View larger map" strip. |
 | `?chrome=minimal`           | Hide both the map toolbar AND the bottom attribution strip.           |

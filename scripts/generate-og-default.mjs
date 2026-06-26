@@ -21,20 +21,22 @@ const FONT_DIR = path.join(__dirname, 'fonts');
 const TOPO = path.join(__dirname, 'world-atlas-50m.json');
 
 const STATUS_COLOUR = {
-  'Launched in production': '#5bd0a6',
-  'Public pilot live': '#7fb7e5',
-  'Closed pilot or LSP only': '#f5c871',
-  'Notified eID, no wallet yet': '#ed9d63',
-  'No public plan': '#e37070',
+  'Production (EU Notified)': '#15803d',
+  'Production (EU Notification Pending)': '#5bd0a6',
+  'Public Pilot': '#7fb7e5',
+  'Closed Pilot / LSP': '#f5c871',
+  'Planned for Production': '#a78bfa',
+  'No plans': '#e37070',
   Unknown: '#dce0e6',
 };
 
 const SHORT = {
-  'Launched in production': 'Live',
-  'Public pilot live': 'Pilot',
-  'Closed pilot or LSP only': 'Closed',
-  'Notified eID, no wallet yet': 'eID only',
-  'No public plan': 'No plan',
+  'Production (EU Notified)': 'Live',
+  'Production (EU Notification Pending)': 'Live',
+  'Public Pilot': 'Pilot',
+  'Closed Pilot / LSP': 'Closed',
+  'Planned for Production': 'Planned',
+  'No plans': 'No plan',
   Unknown: 'Unknown',
 };
 

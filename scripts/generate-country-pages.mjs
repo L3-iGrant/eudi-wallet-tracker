@@ -31,11 +31,12 @@ function escapeMdx(s) {
 function badgeSvg(country) {
   const status = country.status;
   const colour = {
-    'Launched in production': '#15803d',
-    'Public pilot live': '#2563eb',
-    'Closed pilot or LSP only': '#f59e0b',
-    'Notified eID, no wallet yet': '#b45309',
-    'No public plan': '#dc2626',
+    'Production (EU Notified)': '#15803d',
+    'Production (EU Notification Pending)': '#15803d',
+    'Public Pilot': '#2563eb',
+    'Closed Pilot / LSP': '#d97706',
+    'Planned for Production': '#7c3aed',
+    'No plans': '#e37070',
     'Unknown': '#6b7280',
   }[status] ?? '#6b7280';
 

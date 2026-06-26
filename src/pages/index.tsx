@@ -32,9 +32,9 @@ function slug(name: string): string {
 export default function Home() {
   const countries = data.countries as CountryRow[];
   const total = countries.length;
-  const live = countries.filter((c) => c.status === 'Launched in production').length;
-  const pilot = countries.filter((c) => c.status === 'Public pilot live').length;
-  const ready = live + pilot;
+  const live = countries.filter((c) => c.status === 'Production (EU Notified)' || c.status === 'Production (EU Notification Pending)').length;
+  const publicPilot = countries.filter((c) => c.status === 'Public Pilot').length;
+  const closedPilot = countries.filter((c) => c.status === 'Closed Pilot / LSP').length;
   const highLoa = countries.filter((c) => c.assuranceLevel === 'high').length;
   const eu = countries.filter((c) => c.group === 'EU').length;
 
@@ -105,14 +105,18 @@ export default function Home() {
         <section className="tracker-hero">
           <div className="tracker-hero__text">
             <span className="tracker-hero__eyebrow">Live readiness, {total} jurisdictions</span>
-            <h1>Where every Member State stands on the EUDI Wallet.</h1>
+            <h1>Where each country in Europe stands on EUDI Wallet adoption.</h1>
             <p className="tracker-hero__lede">
-              Live adoption across the region: who has launched, who is in public pilot, and who is still
-              preparing to ship.
+              Live adoption across the region: who has launched as per the EU
+              Trust List, who is in public pilot, and who is still preparing to
+              ship the EU Digital Identity Wallet. The number of weeks until the
+              deadline indicates the EUDI Wallet roll-out to the European Union
+              Member States, in which each country must offer a state-backed
+              EUDI Wallet to its citizens.
             </p>
             <div className="tracker-hero__meta">
               <span>
-                {ready} of {total} jurisdictions in production or public pilot today.{' '}
+                {live} in production, {publicPilot} in public pilot, {closedPilot} in closed pilot / LSP.{' '}
                 Prefer a sortable list?{' '}
                 <Link to="/tracker/table">Open the table view</Link>.
               </span>
@@ -146,7 +150,7 @@ export default function Home() {
           </p>
           <div className="stats-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'}}>
             {countries
-              .filter((c) => c.status === 'Launched in production')
+              .filter((c) => c.status === 'Production (EU Notified)' || c.status === 'Production (EU Notification Pending)')
               .sort((a, b) => a.name.localeCompare(b.name))
               .map((c) => (
                 <Link
@@ -174,7 +178,7 @@ export default function Home() {
           <h2 className="tracker-section__title">The picture today, in three numbers</h2>
           <div className="stats-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))'}}>
             <div className="stat-card">
-              <span className="stat-card__count">{Math.round((ready / total) * 100)}%</span>
+              <span className="stat-card__count">{Math.round(((live + publicPilot) / total) * 100)}%</span>
               <span className="stat-card__label">of tracked jurisdictions are live or in public pilot</span>
             </div>
             <div className="stat-card">
@@ -183,7 +187,7 @@ export default function Home() {
             </div>
             <div className="stat-card">
               <span className="stat-card__count">{eu}</span>
-              <span className="stat-card__label">EU Member States tracked, plus EEA, UK and Switzerland</span>
+              <span className="stat-card__label">EU Member States tracked, {total - eu} non-EU jurisdictions</span>
             </div>
           </div>
         </section>
@@ -199,9 +203,9 @@ export default function Home() {
               </span>
             </Link>
             <Link className="stat-card" to="/tracker" style={{textDecoration: 'none', color: 'inherit'}}>
-              <span style={{fontWeight: 600, fontSize: '1.05rem'}}>Where is my wallet rollout up to?</span>
+              <span style={{fontWeight: 600, fontSize: '1.05rem'}}>How far along is each country?</span>
               <span className="stat-card__label" style={{marginTop: '0.4rem'}}>
-                Open any country to see wallet name, provider, assurance level and most recent milestone.
+                Drill into any tracked jurisdiction for wallet name, provider, LoA and latest milestone.
               </span>
             </Link>
             <Link className="stat-card" to="/changelog" style={{textDecoration: 'none', color: 'inherit'}}>

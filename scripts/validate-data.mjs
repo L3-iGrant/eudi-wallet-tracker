@@ -12,11 +12,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA = path.join(__dirname, '..', 'data', 'eudi-status.json');
 
 const VALID_STATUS = new Set([
-  'Launched in production',
-  'Public pilot live',
-  'Closed pilot or LSP only',
-  'Notified eID, no wallet yet',
-  'No public plan',
+  'Production (EU Notified)',
+  'Production (EU Notification Pending)',
+  'Public Pilot',
+  'Closed Pilot / LSP',
+  'Planned for Production',
+  'No plans',
   'Unknown',
 ]);
 

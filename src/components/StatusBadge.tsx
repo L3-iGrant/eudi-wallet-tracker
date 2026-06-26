@@ -1,28 +1,31 @@
 import React from 'react';
 
 export type Status =
-  | 'Launched in production'
-  | 'Public pilot live'
-  | 'Closed pilot or LSP only'
-  | 'Notified eID, no wallet yet'
-  | 'No public plan'
+  | 'Production (EU Notified)'
+  | 'Production (EU Notification Pending)'
+  | 'Public Pilot'
+  | 'Closed Pilot / LSP'
+  | 'Planned for Production'
+  | 'No plans'
   | 'Unknown';
 
 const statusToClass: Record<Status, string> = {
-  'Launched in production': 'status-badge--launched',
-  'Public pilot live': 'status-badge--pilot',
-  'Closed pilot or LSP only': 'status-badge--closed',
-  'Notified eID, no wallet yet': 'status-badge--eid-only',
-  'No public plan': 'status-badge--no-plan',
+  'Production (EU Notified)': 'status-badge--launched',
+  'Production (EU Notification Pending)': 'status-badge--launched',
+  'Public Pilot': 'status-badge--pilot',
+  'Closed Pilot / LSP': 'status-badge--closed',
+  'Planned for Production': 'status-badge--planned',
+  'No plans': 'status-badge--no-plan',
   'Unknown': 'status-badge--unknown',
 };
 
 const statusToMapColour: Record<Status, string> = {
-  'Launched in production': 'var(--map-launched)',
-  'Public pilot live': 'var(--map-pilot)',
-  'Closed pilot or LSP only': 'var(--map-closed)',
-  'Notified eID, no wallet yet': 'var(--map-eid-only)',
-  'No public plan': 'var(--map-no-plan)',
+  'Production (EU Notified)': 'var(--map-launched)',
+  'Production (EU Notification Pending)': 'var(--map-pending)',
+  'Public Pilot': 'var(--map-pilot)',
+  'Closed Pilot / LSP': 'var(--map-closed)',
+  'Planned for Production': 'var(--map-planned)',
+  'No plans': 'var(--map-no-plan)',
   'Unknown': 'var(--map-unknown)',
 };
 

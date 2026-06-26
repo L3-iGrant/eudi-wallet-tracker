@@ -43,7 +43,7 @@ All parameters are optional. Unknown values fall back to the defaults.
 | --- | --- | --- |
 | `country` | ISO alpha-2 (e.g. `SE`) | Opens with that country pinned in the detail panel. |
 | `pin` | ISO alpha-2 | Same as `country`. The canonical name used by the in-app map. |
-| `status` | `Launched in production`, `Public pilot live`, `Closed pilot or LSP only`, `Notified eID, no wallet yet`, `No public plan`, `Unknown` | Pre-applies the status chip filter. |
+| `status` | `Production (EU Notified)`, `Production (EU Notification Pending)`, `Public Pilot`, `Closed Pilot / LSP`, `Planned for Production`, `No plans`, `Unknown` | Pre-applies the status chip filter. |
 | `legend` | `show` (default), `hide` | Hides the coloured status chip row above the map. |
 | `attribution` | `show` (default), `hide` | Hides only the bottom "EUDI Wallet Status Tracker / View larger map" strip. |
 | `chrome` | `full` (default), `minimal` | Hides both the map toolbar AND the bottom attribution strip. |

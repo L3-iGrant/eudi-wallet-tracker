@@ -29,7 +29,7 @@ Cite at least one verifiable source URL with a date in `YYYY-MM-DD` format.
 
 - [ ] House style: British English, no em or en dashes
 - [ ] Source dated and linked
-- [ ] If a status change, the new history entry is appended (not replacing existing entries)
+- [ ] If a status change, the new history entry is appended (as a new commit, not replacing existing entries)
 - [ ] If a correction, marked as `"correction": true` with a one-line rationale
 - [ ] `npm run validate-data` passes
 - [ ] `npm run build` succeeds locally
