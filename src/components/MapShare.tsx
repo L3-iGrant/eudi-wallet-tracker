@@ -32,7 +32,7 @@ function buildShare(pinned: Country | null): {url: string; text: string} {
   }
   return {
     url: `${SHARE_ORIGIN}/`,
-    text: `EUDI Wallet readiness across the EU, EEA, UK and Switzerland. Updated ${data.lastUpdated}.`,
+    text: `EUDI Wallet readiness across Europe and beyond. Updated ${data.lastUpdated}.`,
   };
 }
 
@@ -198,7 +198,7 @@ async function generateMapPng(svg: SVGElement, pinned: Country | null): Promise<
       ctx.fillStyle = '#475569';
       ctx.font = '500 22px Geist, -apple-system, "Inter", system-ui, sans-serif';
       ctx.fillText(
-        `Readiness across the EU 27, EEA, UK and Switzerland · Updated ${data.lastUpdated}`,
+        `Readiness across Europe and beyond · Updated ${data.lastUpdated}`,
         60,
         110,
       );

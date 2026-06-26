@@ -31,10 +31,10 @@ const STATUS_COLOUR = {
 };
 
 const SHORT = {
-  'Production (EU Notified)': 'Live',
-  'Production (EU Notification Pending)': 'Live',
-  'Public Pilot': 'Pilot',
-  'Closed Pilot / LSP': 'Closed',
+  'Production (EU Notified)': 'Live / Notified',
+  'Production (EU Notification Pending)': 'Live / Pending',
+  'Public Pilot': 'Public Pilot',
+  'Closed Pilot / LSP': 'Closed Pilot / LSP',
   'Planned for Production': 'Planned',
   'No plans': 'No plan',
   Unknown: 'Unknown',
@@ -153,7 +153,7 @@ function tree(data, silhouetteUri) {
           type: 'div',
           props: {
             style: {fontSize: '22px', fontWeight: 500, color: '#475569', marginBottom: '40px', maxWidth: '760px'},
-            children: 'Live adoption across the EU 27, EEA, UK and Switzerland.',
+            children: 'Live adoption across Europe and beyond.',
           },
         },
         {

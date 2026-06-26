@@ -12,7 +12,7 @@ export default function Tracker() {
     <Layout>
       <Head>
         <title>Map | EUDI Wallet Status Tracker</title>
-        <meta name="description" content="Interactive EUDI Wallet rollout map across the EU 27, EEA, UK and Switzerland." />
+        <meta name="description" content="Interactive EUDI Wallet rollout map across Europe and beyond." />
       </Head>
       <main style={{width: '100%', maxWidth: 1280, margin: '0 auto', padding: '0.5rem 1.25rem 4rem', boxSizing: 'border-box'}}>
         <section className="tracker-hero">
