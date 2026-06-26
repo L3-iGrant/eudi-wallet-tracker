@@ -48,11 +48,12 @@ body:
     attributes:
       label: Proposed new status
       options:
-        - Launched in production
-        - Public pilot live
-        - Closed pilot or LSP only
-        - Notified eID, no wallet yet
-        - No public plan
+        - Production (EU Notified)
+        - Production (EU Notification Pending)
+        - Public Pilot
+        - Closed Pilot / LSP
+        - Planned for Production
+        - No plans
         - Unknown
     validations:
       required: true

@@ -3,12 +3,12 @@
   "deadline": "2026-12-24",
   "deadlineNote": "Reg (EU) 2024/1183 obliges Member States to make at least one EUDI Wallet available within 24 months of the first implementing acts entering into force on 24 December 2024, placing the deadline at 24 December 2026.",
   "statusOrder": [
-    "Launched in production",
-    "Public pilot live",
-    "Closed pilot or LSP only",
-    "Notified eID, no wallet yet",
-    "No public plan",
-    "Unknown"
+    "Production (EU Notified)",
+    "Production (EU Notification Pending)",
+    "Public Pilot",
+    "Closed Pilot / LSP",
+    "Planned for Production",
+    "No plans"
   ],
   "countries": [
     {
@@ -16,15 +16,17 @@
       "isoAlpha2": "AT",
       "isoNumeric": "040",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "ID Austria / eAusweise",
+      "status": "Public Pilot",
+      "walletName": "eAusweise",
       "walletProvider": "Federal Chancellery / Digital Austria",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "DC4EU",
+        "EWC",
         "POTENTIAL",
-        "APTITUDE"
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2023-12-05",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID",
         "mDL"
@@ -43,9 +45,34 @@
           "date": "2026-04-06"
         },
         {
+          "title": "Biometric Update - Austria adds digital student ID to eAusweise",
+          "url": "https://www.biometricupdate.com/202605/austria-adds-digital-student-id-to-eausweise-wallet-with-youniqx-identity",
+          "date": "2026-05-01"
+        },
+        {
           "title": "ID Austria Zukunftsforum",
           "url": "https://www.bundeskanzleramt.gv.at/bundeskanzleramt/nachrichten-der-bundesregierung/2025/10/id-austria-zukunftsforum-erfolgreicher-auftakt-des-dialogs-ueber-die-digitale-zukunft-oesterreichs.html",
           "date": "2025-10-01"
+        },
+        {
+          "title": "ID Austria - eAusweise",
+          "url": "https://www.id-austria.gv.at/de/verwenden/eausweise",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "A-SIT Wallet",
+          "url": "https://wallet.a-sit.at/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List - Austria",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/AT",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EC Launchpad Demos",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/930448024/Launchpad+Demos",
+          "date": "2026-06-24"
         }
       ]
     },
@@ -54,22 +81,33 @@
       "isoAlpha2": "BE",
       "isoNumeric": "056",
       "group": "EU",
-      "status": "Public pilot live",
+      "status": "Closed Pilot / LSP",
       "walletName": "MyGov.be",
       "walletProvider": "FPS Policy and Support (BOSA)",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "DC4EU",
         "EWC",
         "POTENTIAL",
-        "APTITUDE"
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2025-09-15",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": "itsme (Belgian Mobile ID)",
       "notes": "BOSA presented MyGov.be as Belgium's response to the eIDAS 2.0 wallet obligation. itsme continues to be widely used for daily authentication and is expected to plug into the EUDI ecosystem.",
       "sources": [
+        {
+          "title": "EU Trust List - Belgium",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/BE",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Belgium.be - MyGov.be",
+          "url": "https://www.belgium.be/en/news/2025/mygovbe_your_administration_hand",
+          "date": "2025-12-01"
+        },
         {
           "title": "BOSA - MyGov.be available as digital key",
           "url": "https://bosa.belgium.be/nl/news/mygovbe-app-beschikbaar-als-digitale-sleutel-voor-online-overheidsdiensten",
@@ -92,20 +130,31 @@
       "isoAlpha2": "BG",
       "isoNumeric": "100",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "Bulgarian EUDI Wallet",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Ministry of e-Government",
       "assuranceLevel": "substantial",
       "lspParticipation": [
+        "EWC",
         "WE BUILD"
       ],
-      "launchOrPilotDate": "2026-02-15",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
       "notes": "Draft Law on the European Digital Identity Wallet published for consultation in February 2026. Public developer repository available but no sandbox. Namirial flags Bulgaria as remaining risky for the December 2026 deadline.",
       "sources": [
+        {
+          "title": "EU Trust List - Bulgaria",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/BG",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "BTA - Bulgaria moves to introduce European Digital Identity Wallet",
+          "url": "https://www.bta.bg/en/news/bulgaria/1068700-bulgaria-moves-to-introduce-european-digital-identity-wallet-bill-set-for-publi",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -141,20 +190,40 @@
       "isoAlpha2": "HR",
       "isoNumeric": "191",
       "group": "EU",
-      "status": "Notified eID, no wallet yet",
-      "walletName": "National EUDI Wallet (announced)",
-      "walletProvider": "Ministry of Justice and Digital Transformation",
+      "status": "Closed Pilot / LSP",
+      "walletName": "Certilia Wallet",
+      "walletProvider": "Ministry of Finance / Financial Agency (FINA)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "APTITUDE"
+        "EWC"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Announced project with no public sandbox per eIDEasy April 2026. National eID notified under eIDAS but no public-facing wallet build visible.",
+      "notes": "The Certilia Wallet is being upgraded for EUDI Wallet capabilities.",
       "sources": [
+        {
+          "title": "Biometric Update - Croatian digitalization head shares concerns",
+          "url": "https://www.biometricupdate.com/202510/croatian-digitalization-head-shares-concerns-about-eudi-wallet-certification",
+          "date": "2025-10-01"
+        },
+        {
+          "title": "Certilia",
+          "url": "https://www.certilia.com/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "AKD - EUDI Wallet",
+          "url": "https://www.akd.hr/en/solutions/digital-identity-solutions/eudi-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Signicat - EUDI Wallets: only one year to launch",
+          "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch",
+          "date": "2025-12-01"
+        },
         {
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
@@ -172,20 +241,25 @@
       "isoAlpha2": "CY",
       "isoNumeric": "196",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "AltID Cyprus (aligning to Gov.gr Wallet)",
-      "walletProvider": "Deputy Ministry of Digital Policy",
-      "assuranceLevel": "substantial",
+      "status": "Public Pilot",
+      "walletName": "Digital Citizen",
+      "walletProvider": "Deputy Ministry of Research, Innovation and Digital Policy",
+      "assuranceLevel": "high",
       "lspParticipation": [
-        "APTITUDE"
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2026-04-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Cyprus aligns its Digital Citizen platform to the Greek Gov.gr Wallet for mutual recognition. AltID first phase release expected spring 2026 with limited functionalities.",
+      "notes": "The Digital Citizen platform is aligning to the Greek Gov.gr Wallet for mutual recognition.",
       "sources": [
+        {
+          "title": "Digital Citizen Cyprus",
+          "url": "https://www.digital-citizen.gov.cy/",
+          "date": "2026-06-24"
+        },
         {
           "title": "Signicat - EUDI Wallets one year to launch",
           "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch",
@@ -203,13 +277,15 @@
       "isoAlpha2": "CZ",
       "isoNumeric": "203",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "DIA EUDI Programme",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Digital and Information Agency",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "WE BUILD",
-        "APTITUDE"
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
+        "POTENTIAL"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
@@ -218,6 +294,21 @@
       "qtspPartner": null,
       "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard.",
       "sources": [
+        {
+          "title": "Biometric Update - Czechia's EUDI Wallet to go live in early 2027",
+          "url": "https://www.biometricupdate.com/202602/czechias-eudi-wallet-to-go-live-in-early-2027",
+          "date": "2026-02-01"
+        },
+        {
+          "title": "eDoklady on Google Play",
+          "url": "https://play.google.com/store/apps/details?id=cz.gov.edoklady&hl=en_IN",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "eDoklady Portal",
+          "url": "https://edoklady.gov.cz/",
+          "date": "2026-06-24"
+        },
         {
           "title": "Namirial Q1 2026 status review",
           "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
@@ -235,21 +326,35 @@
       "isoAlpha2": "DK",
       "isoNumeric": "208",
       "group": "EU",
-      "status": "Launched in production",
+      "status": "Production (EU Notification Pending)",
       "walletName": "AltID",
-      "walletProvider": "Danish Agency for Digital Government",
-      "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID",
-        "APTITUDE"
+        "DC4EU",
+        "EWC",
+        "NOBID"
       ],
-      "launchOrPilotDate": "2025-06-03",
+      "launchOrPilotDate": "2026-06-03",
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Public sandbox available since April 2026. AltID rolled out with ID and Age Verification functionality.",
+      "notes": "Public sandbox available since April 2026. AltID has released both Age Verification and Identity Verification, though it does not yet offer full EUDI Wallet functionality.",
       "sources": [
+        {
+          "title": "Identity Week - Denmark launches AltID",
+          "url": "https://identityweek.net/denmark-launches-official-digital-identity-wallet-altid/",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Biometric Update - Denmark launches AltID for proof of age and identity",
+          "url": "https://www.biometricupdate.com/202606/denmark-launches-altid-digital-wallet-for-proof-of-age-identity",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "Biometric Update - AltID to provide ID and age verification with ZKPs",
+          "url": "https://www.biometricupdate.com/202512/denmarks-digital-identity-wallet-altid-to-provide-id-age-verification-zkps",
+          "date": "2025-12-01"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -272,13 +377,13 @@
       "isoAlpha2": "EE",
       "isoNumeric": "233",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "EUDI Wallet Estonia",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Information System Authority (RIA)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID",
-        "DC4EU"
+        "EWC",
+        "POTENTIAL"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
@@ -288,6 +393,21 @@
       "qtspPartner": "SK ID Solutions",
       "notes": "Announced project, no public sandbox. Estonia already runs Smart-ID and Mobile-ID at very high adoption; EUDI work is being built on top of that estate.",
       "sources": [
+        {
+          "title": "Biometric Update - Estonia launches EUR 21.65m procurement for EUDI Wallet",
+          "url": "https://www.biometricupdate.com/202605/estonia-launches-e21-65m-procurement-for-eu-digital-identity-wallet",
+          "date": "2026-05-01"
+        },
+        {
+          "title": "e-Estonia - Smart-ID",
+          "url": "https://e-estonia.com/solutions/estonian-e-identity/smart-id/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List - Estonia",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/EE",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -310,13 +430,15 @@
       "isoAlpha2": "FI",
       "isoNumeric": "246",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "National Digital Identity Wallet",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Digital and Population Data Services Agency (DVV)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID",
-        "POTENTIAL"
+        "DC4EU",
+        "EWC",
+        "POTENTIAL",
+        "WE BUILD"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
@@ -325,6 +447,16 @@
       "qtspPartner": null,
       "notes": "Public developer repository linked to DVV's wallet work, no confirmed sandbox.",
       "sources": [
+        {
+          "title": "DVV - European Digital Identity Wallet",
+          "url": "https://dvv.fi/en/european-digital-identity-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List - Finland",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/FI",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -342,14 +474,15 @@
       "isoAlpha2": "FR",
       "isoNumeric": "250",
       "group": "EU",
-      "status": "Launched in production",
+      "status": "Production (EU Notification Pending)",
       "walletName": "France Identité",
       "walletProvider": "France Titres (ANTS)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "POTENTIAL",
+        "APTITUDE",
         "DC4EU",
-        "EWC"
+        "EWC",
+        "POTENTIAL"
       ],
       "launchOrPilotDate": "2024-04-17",
       "notableIssuers": [
@@ -357,7 +490,7 @@
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "France Identité is a live production service expanding its functionality and ecosystem integration as it becomes an official EUDI Wallet. Public playground for relying parties.",
+      "notes": "France Identité is a live production service expanding its functionality and ecosystem integration as it becomes an official EUDI Wallet. Public playground for relying parties. Significant development is also underway through UNFOLD interoperathon events.",
       "sources": [
         {
           "title": "iGrant.io Research Lab",
@@ -368,6 +501,11 @@
           "title": "France Identité EUDIW Playground",
           "url": "https://playground.france-identite.gouv.fr/",
           "date": "2026-03-01"
+        },
+        {
+          "title": "EU Trust List - France",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/FR",
+          "date": "2026-06-24"
         },
         {
           "title": "Namirial Q1 2026 status review",
@@ -386,15 +524,16 @@
       "isoAlpha2": "DE",
       "isoNumeric": "276",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "State EUDI Wallet",
-      "walletProvider": "Federal Ministry for Digital Affairs (BMDS)",
-      "assuranceLevel": "high",
+      "status": "Public Pilot",
+      "walletName": "National EUDI Wallet (announced)",
       "lspParticipation": [
-        "POTENTIAL",
-        "NOBID"
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
+        "NOBID",
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2025-09-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
@@ -410,6 +549,11 @@
           "title": "BMDS - EUDI Wallet page",
           "url": "https://bmds.bund.de/themen/digitaler-staat/digitale-identitaeten/eudi-wallet",
           "date": "2026-03-01"
+        },
+        {
+          "title": "EU Trust List - Germany",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/DE",
+          "date": "2026-06-24"
         },
         {
           "title": "Namirial Q1 2026 status review",
@@ -428,21 +572,30 @@
       "isoAlpha2": "GR",
       "isoNumeric": "300",
       "group": "EU",
-      "status": "Launched in production",
-      "walletName": "Gov.gr Wallet",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Ministry of Digital Governance",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "POTENTIAL"
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
+        "POTENTIAL",
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2022-07-26",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID",
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "Gov.gr Wallet runs as a production citizen-facing service. Upgrade to EUDI Wallet officially confirmed; details on production scope still limited.",
+      "notes": "Gov.gr Wallet is in closed pilot. Upgrade to EUDI Wallet officially confirmed; details on production scope still limited.",
       "sources": [
+        {
+          "title": "EU Trust List - Greece",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/EL",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -465,20 +618,28 @@
       "isoAlpha2": "HU",
       "isoNumeric": "348",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "DÁP Wallet",
-      "walletProvider": "Hungarian Government (DÁP)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
+      "walletProvider": "Digitális Magyarország Ügynökség (DMA)",
       "assuranceLevel": "substantial",
       "lspParticipation": [
-        "WE BUILD"
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2024-09-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
       "notes": "DÁP (Digitális Állampolgárság Program) wallet deployed at national level. EUDI upgrade not yet officially confirmed per eIDEasy.",
       "sources": [
+        {
+          "title": "EU Trust List - Hungary",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/HU",
+          "date": "2026-06-24"
+        },
         {
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
@@ -491,20 +652,31 @@
       "isoAlpha2": "IE",
       "isoNumeric": "372",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "Government Digital Wallet",
-      "walletProvider": "Department of Public Expenditure, NDP Delivery and Reform",
-      "assuranceLevel": "substantial",
+      "status": "Public Pilot",
+      "walletName": "National EUDI Wallet (announced)",
+      "walletProvider": "Department of the Environment, Climate and Communications",
+      "assuranceLevel": "high",
       "lspParticipation": [
-        "APTITUDE"
+        "DC4EU",
+        "EWC"
       ],
-      "launchOrPilotDate": "2026-04-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
       "notes": "Ireland opened early public access to a test wallet in April 2026, joining France and Germany as one of the most accessible ecosystems.",
       "sources": [
+        {
+          "title": "Gov.ie - Government Digital Wallet questions answered",
+          "url": "https://www.gov.ie/en/department-of-public-expenditure-infrastructure-public-service-reform-and-digitalisation/publications/government-digital-wallet-your-questions-answered/#mygovid-and-the-government-digital-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List - Ireland",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/IE",
+          "date": "2026-06-24"
+        },
         {
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
@@ -517,15 +689,17 @@
       "isoAlpha2": "IT",
       "isoNumeric": "380",
       "group": "EU",
-      "status": "Launched in production",
+      "status": "Production (EU Notification Pending)",
       "walletName": "Sistema IT-Wallet (IO app + private wallets)",
       "walletProvider": "Department for Digital Transformation / PagoPA",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "POTENTIAL",
-        "NOBID",
+        "APTITUDE",
         "DC4EU",
-        "EWC"
+        "EWC",
+        "NOBID",
+        "POTENTIAL",
+        "WE BUILD"
       ],
       "launchOrPilotDate": "2024-12-04",
       "notableIssuers": [
@@ -536,6 +710,21 @@
       "qtspPartner": "Namirial, InfoCert, Aruba PEC",
       "notes": "Italy's IT-Wallet system pairs the public IO app with accredited private wallets, with citizens activating via CIE or SPID. SPID has 41.5 million registered users, making Italy one of the most operationally advanced EUDI transition cases in Europe.",
       "sources": [
+        {
+          "title": "FIDES Community - IT-Wallet",
+          "url": "https://fides.community/ecosystem-explorer/personal-wallets/?wallet=it-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Innovazione.gov.it - IT-Wallet three digital documents available",
+          "url": "https://innovazione.gov.it/notizie/articoli/en/it-wallet-three-digital-documents-available-for-all-italian-citizens-and-resident/",
+          "date": "2025-12-04"
+        },
+        {
+          "title": "EU Trust List - Italy",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/IT",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -555,6 +744,11 @@
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
           "date": "2026-04-06"
+        },
+        {
+          "title": "EC Launchpad Demos - Italy",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/download/attachments/930448024/IT.pdf",
+          "date": "2026-06-24"
         }
       ]
     },
@@ -563,11 +757,12 @@
       "isoAlpha2": "LV",
       "isoNumeric": "428",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "EUDI Wallet Latvia",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "State Digital Development Agency (VDAA)",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "APTITUDE",
         "NOBID"
       ],
       "launchOrPilotDate": null,
@@ -577,6 +772,11 @@
       "qtspPartner": null,
       "notes": "Latvia developed an EUDIW prototype used in the Large Scale Pilots. Initial release with basic functionality planned for December 2026.",
       "sources": [
+        {
+          "title": "EU Trust List - Latvia",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/LV",
+          "date": "2026-06-24"
+        },
         {
           "title": "Signicat - EUDI Wallets one year to launch",
           "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch",
@@ -594,12 +794,14 @@
       "isoAlpha2": "LT",
       "isoNumeric": "440",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "EUDI Pilot",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Informatics and Communications Department, Ministry of the Interior",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID"
+        "APTITUDE",
+        "DC4EU",
+        "POTENTIAL"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
@@ -608,6 +810,11 @@
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox.",
       "sources": [
+        {
+          "title": "EU Trust List - Lithuania",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/LT",
+          "date": "2026-06-24"
+        },
         {
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
@@ -620,21 +827,27 @@
       "isoAlpha2": "LU",
       "isoNumeric": "442",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "EUDI Wallet (built on GouvID / LuxTrust)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Ministry for Digitalisation / INCERT",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "WE BUILD",
-        "APTITUDE"
+        "DC4EU",
+        "EWC",
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2025-11-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": "LuxTrust",
       "notes": "Existing GouvID app being upgraded. INCERT partnering with HOPAE on wallet services.",
       "sources": [
+        {
+          "title": "EU Trust List - Luxembourg",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/LU",
+          "date": "2026-06-24"
+        },
         {
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
@@ -652,16 +865,29 @@
       "isoAlpha2": "MT",
       "isoNumeric": "470",
       "group": "EU",
-      "status": "Notified eID, no wallet yet",
+      "status": "Closed Pilot / LSP",
       "walletName": "National Digital Wallet (announced)",
       "walletProvider": "Malta Digital Innovation Authority",
       "assuranceLevel": "substantial",
-      "lspParticipation": [],
+      "lspParticipation": [
+        "DC4EU",
+        "WE BUILD"
+      ],
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": null,
       "notes": "Announced project, no public sandbox. Identity Week and Namirial note Malta is expected to deliver only partial availability by deadline.",
       "sources": [
+        {
+          "title": "Sumsub - Malta to launch digital wallet by EUDI 2026",
+          "url": "https://sumsub.com/media/news/malta-to-launch-digital-wallet-by-eudi-2026/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List - Malta",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/MT",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -680,25 +906,92 @@
       ]
     },
     {
+      "name": "Moldova",
+      "isoAlpha2": "MD",
+      "isoNumeric": "498",
+      "group": "Other",
+      "status": "Closed Pilot / LSP",
+      "walletName": "EVO Wallet",
+      "walletProvider": "",
+      "assuranceLevel": "high",
+      "lspParticipation": [
+        "WE BUILD"
+      ],
+      "launchOrPilotDate": null,
+      "notableIssuers": [],
+      "qtspPartner": null,
+      "notes": "Closed pilot with the EVO Wallet. The sandbox is closed; access requires onboarding through Moldova's national trust scheme.",
+      "sources": [
+        {
+          "title": "Radio Moldova - Moldova's path toward the EUDI Wallet",
+          "url": "https://radiomoldova.md/p/78045",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Paradym - Moldova's pragmatic path toward the EUDI Wallet",
+          "url": "https://paradym.id/articles/moldovas-pragmatic-path-toward-the-eudi-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "iGrant.io Research Lab",
+          "url": "https://www.igrant.io/",
+          "date": "2026-06-24"
+        }
+      ]
+    },
+    {
       "name": "Netherlands",
       "isoAlpha2": "NL",
       "isoNumeric": "528",
       "group": "EU",
-      "status": "Public pilot live",
+      "status": "Public Pilot",
       "walletName": "NL Wallet",
       "walletProvider": "Ministry of the Interior and Kingdom Relations",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
         "POTENTIAL",
-        "DC4EU"
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2024-10-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Public technical work and a developer repository, but the Dutch Government has publicly stated the initial release will not meet the full requirement set on time.",
+      "notes": "57 residents of the Municipality of Amsterdam and the Municipality of Nijmegen tested the first version of the NL Wallet. The Dutch Government has publicly stated the initial release will not meet the full requirement set on time.",
       "sources": [
+        {
+          "title": "EU Trust List - Netherlands",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/NL",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Biometric Update - Dutch test demonstrates integration",
+          "url": "https://www.biometricupdate.com/202601/dutch-test-demonstrates-integration-of-eudi-wallet-once-only-system",
+          "date": "2026-01-01"
+        },
+        {
+          "title": "EDI Pleio - Eerste ervaringen met de NL Wallet",
+          "url": "https://edi.pleio.nl/news/view/c573089e-57bc-45bb-bdde-5d845ff1b8f5/eerste-ervaringen-met-de-nl-wallet",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "NL Digital Government - ID Wallet",
+          "url": "https://www.nldigitalgovernment.nl/overview/identity/id-wallet/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "itsme - Google Play Store",
+          "url": "https://play.google.com/store/apps/details?id=be.bmid.itsme&hl=en_IN",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Signicat - EUDI Wallets one year to launch",
+          "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch#4-unlikely-to-happen-on-time",
+          "date": "2025-12-12"
+        },
         {
           "title": "Namirial Q1 2026 status review",
           "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
@@ -716,15 +1009,18 @@
       "isoAlpha2": "PL",
       "isoNumeric": "616",
       "group": "EU",
-      "status": "Launched in production",
+      "status": "Closed Pilot / LSP",
       "walletName": "mObywatel",
       "walletProvider": "Ministry of Digital Affairs",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
         "POTENTIAL",
-        "DC4EU"
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2023-07-14",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID",
         "mDL"
@@ -732,6 +1028,11 @@
       "qtspPartner": null,
       "notes": "mObywatel runs in production with nearly 10 million users on version 2.0. Public commitment to integrate EUDI Wallet capabilities into mObywatel by end of 2026; transition to version 3.0 carries some delivery risk.",
       "sources": [
+        {
+          "title": "EC Launchpad Demos - Poland",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/930448024/Launchpad+Demos",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -759,21 +1060,33 @@
       "isoAlpha2": "PT",
       "isoNumeric": "620",
       "group": "EU",
-      "status": "Public pilot live",
+      "status": "Closed Pilot / LSP",
       "walletName": "gov.pt Wallet",
       "walletProvider": "Agency for Administrative Modernisation (AMA)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "EWC",
-        "POTENTIAL"
+        "APTITUDE",
+        "DC4EU",
+        "POTENTIAL",
+        "WE BUILD"
       ],
-      "launchOrPilotDate": "2024-06-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Existing wallet-like citizen-facing services in production; EUDI upgrade path not yet officially confirmed per eIDEasy snapshot. Namirial places Portugal in the strong second tier.",
+      "notes": "The gov.pt app is expecting an upgrade for EUDI Wallet capabilities.",
       "sources": [
+        {
+          "title": "EU Trust List - Portugal",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/PT",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Signicat - EUDI Wallets one year to launch",
+          "url": "https://www.signicat.com/blog/eudi-wallets-only-one-year-to-launch#4-unlikely-to-happen-on-time",
+          "date": "2025-12-12"
+        },
         {
           "title": "Namirial Q1 2026 status review",
           "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
@@ -791,18 +1104,30 @@
       "isoAlpha2": "RO",
       "isoNumeric": "642",
       "group": "EU",
-      "status": "Notified eID, no wallet yet",
-      "walletName": "EUDI Wallet Romania (announced)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Authority for the Digitalization of Romania (ADR)",
       "assuranceLevel": "substantial",
       "lspParticipation": [
-        "APTITUDE"
+        "DC4EU",
+        "EWC",
+        "WE BUILD"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": "certSIGN, Trans Sped",
       "notes": "Announced project, no public sandbox. Among the late-starter group identified in early-2026 analysis.",
       "sources": [
+        {
+          "title": "EU Trust List - Romania",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/RO",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Sumsub - Romania signs Mastercard deal to develop EUDI Wallet",
+          "url": "https://sumsub.com/media/news/romania-signs-mastercard-deal-to-develop-european-digital-id-wallet/",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -825,14 +1150,14 @@
       "isoAlpha2": "SK",
       "isoNumeric": "703",
       "group": "EU",
-      "status": "Public pilot live",
+      "status": "Closed Pilot / LSP",
       "walletName": "eDOKLADY",
       "walletProvider": "Ministry of Interior",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "APTITUDE"
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2024-01-22",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID",
         "mDL"
@@ -840,6 +1165,11 @@
       "qtspPartner": null,
       "notes": "eDOKLADY in production with a published timeline. EUDIW offline verification scheduled for Q2 2026 per the Slovak Ministry of Interior.",
       "sources": [
+        {
+          "title": "EU Trust List - Slovakia",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/SK",
+          "date": "2026-06-24"
+        },
         {
           "title": "Ministry of Interior Slovakia - eDOKLADY timeline",
           "url": "https://edoklady.minv.sk/o-projekte/casovy-harmonogram-projektu/",
@@ -862,11 +1192,12 @@
       "isoAlpha2": "SI",
       "isoNumeric": "705",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "EUDI Wallet Slovenia (SI-PASS based)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Ministry of Digital Transformation",
       "assuranceLevel": "high",
       "lspParticipation": [
+        "POTENTIAL",
         "WE BUILD"
       ],
       "launchOrPilotDate": null,
@@ -885,6 +1216,11 @@
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
           "date": "2026-04-06"
+        },
+        {
+          "title": "EU Trust List Browser",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/SI",
+          "date": "2026-06-24"
         }
       ]
     },
@@ -893,16 +1229,16 @@
       "isoAlpha2": "ES",
       "isoNumeric": "724",
       "group": "EU",
-      "status": "Public pilot live",
-      "walletName": "Cartera Digital (Cl@ve based)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "Cartera Digital",
       "walletProvider": "Ministry for Digital Transformation and Civil Service",
       "assuranceLevel": "high",
       "lspParticipation": [
         "DC4EU",
-        "POTENTIAL",
-        "EWC"
+        "EWC",
+        "POTENTIAL"
       ],
-      "launchOrPilotDate": "2025-12-10",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
@@ -928,6 +1264,16 @@
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
           "date": "2026-04-06"
+        },
+        {
+          "title": "EC Launchpad Demos",
+          "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/930448024/Launchpad+Demos",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "EU Trust List Browser",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/ES",
+          "date": "2026-06-24"
         }
       ]
     },
@@ -936,12 +1282,14 @@
       "isoAlpha2": "SE",
       "isoNumeric": "752",
       "group": "EU",
-      "status": "Closed pilot or LSP only",
-      "walletName": "Digital identitetsplånbok",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Agency for Digital Government (DIGG)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID"
+        "DC4EU",
+        "EWC",
+        "WE BUILD"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
@@ -964,6 +1312,21 @@
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
           "date": "2026-04-06"
+        },
+        {
+          "title": "Biometric Update - Sweden to launch government eID in December 2026",
+          "url": "https://www.biometricupdate.com/202603/sweden-to-launch-government-eid-in-december-2026",
+          "date": "2026-03-01"
+        },
+        {
+          "title": "EU Trust List Browser",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/SE",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "Polisen - Statlig e-legitimation Sverige ID",
+          "url": "https://polisen.se/tjanster-tillstand/pass-och-nationellt-id-kort/statlig-e-legitimation-sverige-id/",
+          "date": "2026-06-24"
         }
       ]
     },
@@ -972,20 +1335,28 @@
       "isoAlpha2": "NO",
       "isoNumeric": "578",
       "group": "EEA",
-      "status": "Closed pilot or LSP only",
-      "walletName": "Norwegian EUDI Wallet (concept study)",
+      "status": "Public Pilot",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Digitaliseringsdirektoratet (Digdir)",
       "assuranceLevel": "high",
       "lspParticipation": [
-        "NOBID"
+        "DC4EU",
+        "EWC",
+        "NOBID",
+        "WE BUILD"
       ],
       "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": "BankID",
-      "notes": "Concept study run through end-2025/early-2026. Sandbox set up for practical implementation work with public and private sector partners. EEA deadline is December 2027.",
+      "notes": "Public sandbox available for the Digital lommebok. As an EEA country, Norway has an extra year for adoption (December 2027).",
       "sources": [
+        {
+          "title": "Digdir - Digital lommebok sandbox summary",
+          "url": "https://docs.digdir.no/docs/lommebok/wallet_sandbox_summary.html",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -1008,20 +1379,25 @@
       "isoAlpha2": "IS",
       "isoNumeric": "352",
       "group": "EEA",
-      "status": "Public pilot live",
-      "walletName": "National EUDI Wallet (Iceland)",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
       "walletProvider": "Digital Iceland (Stafrænt Ísland)",
       "assuranceLevel": "high",
       "lspParticipation": [
         "NOBID"
       ],
-      "launchOrPilotDate": "2026-01-01",
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
       "qtspPartner": "Idemia",
       "notes": "Launch announced for 2026 with Idemia as technology partner, one year before Iceland's EEA deadline of December 2027.",
       "sources": [
+        {
+          "title": "EU Trust List - Iceland",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/IS",
+          "date": "2026-06-24"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -1044,8 +1420,8 @@
       "isoAlpha2": "LI",
       "isoNumeric": "438",
       "group": "EEA",
-      "status": "Notified eID, no wallet yet",
-      "walletName": "Liechtenstein eID app (to be adapted)",
+      "status": "Planned for Production",
+      "walletName": "eID.li",
       "walletProvider": "Office for Information Technology (AI)",
       "assuranceLevel": "high",
       "lspParticipation": [],
@@ -1055,8 +1431,13 @@
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "Existing eID app supports identity, driving licence, QES and cross-border commuter registration. Will be adapted to EUDI Wallet; EEA deadline is December 2027.",
+      "notes": "Existing eID.li app supports identity, driving licence, QES and cross-border commuter registration. Planned for EUDI Wallet adaptation; EEA deadline is December 2027.",
       "sources": [
+        {
+          "title": "EU Trust List - Liechtenstein",
+          "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/LI",
+          "date": "2026-06-24"
+        },
         {
           "title": "Identity Week 18 months overview",
           "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
@@ -1069,17 +1450,19 @@
       "isoAlpha2": "GB",
       "isoNumeric": "826",
       "group": "Other",
-      "status": "Public pilot live",
+      "status": "No plans",
       "walletName": "GOV.UK Wallet (alongside GOV.UK One Login)",
       "walletProvider": "Government Digital Service (GDS)",
       "assuranceLevel": "substantial",
-      "lspParticipation": [],
-      "launchOrPilotDate": "2025-07-01",
+      "lspParticipation": [
+        "EWC"
+      ],
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "GOV.UK Wallet under build alongside One Login. Digital Veteran Card went live in 2025; private testing of digital driving licence under way. UK is outside the EUDI mandate but tracking interoperability.",
+      "notes": "UK is outside the EUDI mandate but tracking interoperability and laying the groundwork for future alignment. GOV.UK Wallet under build alongside One Login. Digital Veteran Card went live in 2025; private testing of digital driving licence under way.",
       "sources": [
         {
           "title": "GDS Blog - Making the government's first digital wallet a reality",
@@ -1098,12 +1481,14 @@
       "isoAlpha2": "CH",
       "isoNumeric": "756",
       "group": "Other",
-      "status": "Public pilot live",
+      "status": "Public Pilot",
       "walletName": "swiyu",
       "walletProvider": "Swiss Confederation (BIT / FOITT)",
       "assuranceLevel": "high",
-      "lspParticipation": [],
-      "launchOrPilotDate": "2025-09-15",
+      "lspParticipation": [
+        "EWC"
+      ],
+      "launchOrPilotDate": null,
       "notableIssuers": [
         "PID"
       ],
@@ -1119,6 +1504,126 @@
           "title": "Namirial Q1 2026 status review",
           "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
           "date": "2026-04-09"
+        },
+        {
+          "title": "eIDEasy April 2026 snapshot",
+          "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "swiyu GitHub organisation",
+          "url": "https://github.com/swiyu-admin-ch",
+          "date": "2026-06-24"
+        }
+      ]
+    },
+    {
+      "name": "Albania",
+      "isoAlpha2": "AL",
+      "isoNumeric": "008",
+      "group": "Other",
+      "status": "Planned for Production",
+      "walletName": "National EUDI Wallet (announced)",
+      "walletProvider": "National Authority for Electronic Certification (AKCE)",
+      "assuranceLevel": null,
+      "lspParticipation": [],
+      "launchOrPilotDate": null,
+      "notableIssuers": [],
+      "qtspPartner": null,
+      "notes": "Albania is outside the EU but pursuing EU alignment. Announced plans to introduce a national digital ID in 2026.",
+      "sources": [
+        {
+          "title": "ID Tech Wire - Albania announces 2026 launch for national digital ID",
+          "url": "https://idtechwire.com/albania-announces-2026-launch-for-national-digital-id-to-drive-eu-alignment/",
+          "date": "2026-06-24"
+        }
+      ]
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "isoAlpha2": "BA",
+      "isoNumeric": "070",
+      "group": "Other",
+      "status": "Closed Pilot / LSP",
+      "walletName": "National EUDI Wallet (announced)",
+      "walletProvider": "Agency for Identification Documents Registry and Data Exchange (IDDEEA)",
+      "assuranceLevel": null,
+      "lspParticipation": [
+        "WE BUILD"
+      ],
+      "launchOrPilotDate": null,
+      "notableIssuers": [],
+      "qtspPartner": null,
+      "notes": "Bosnia and Herzegovina is outside the EU but participating in the WE BUILD Large Scale Pilot. National digital ID app launched in 2025.",
+      "sources": [
+        {
+          "title": "Biometric Update - Bosnia and Herzegovina launches national digital ID app",
+          "url": "https://www.biometricupdate.com/202507/bosnia-and-herzegovina-launches-national-digital-id-app",
+          "date": "2025-07-01"
+        },
+        {
+          "title": "Identyum - Digital ID wallet soon available to citizens of Bosnia and Herzegovina",
+          "url": "https://identyum.com/digital-id-wallet-soon-available-to-citizens-of-bosnia-and-herzegovina/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "WE BUILD Consortium - Participating organisations",
+          "url": "https://www.webuildconsortium.eu/participating-organisations",
+          "date": "2026-06-24"
+        }
+      ]
+    },
+    {
+      "name": "Georgia",
+      "isoAlpha2": "GE",
+      "isoNumeric": "268",
+      "group": "Other",
+      "status": "Planned for Production",
+      "walletName": "National EUDI Wallet (announced)",
+      "walletProvider": null,
+      "assuranceLevel": null,
+      "lspParticipation": [],
+      "launchOrPilotDate": null,
+      "notableIssuers": [],
+      "qtspPartner": null,
+      "notes": "Georgia is outside the EU but pursuing EU alignment. Tender launched in early 2025 seeking candidates to build a national digital ID wallet.",
+      "sources": [
+        {
+          "title": "Biometric Update - Georgia seeks candidates to build digital ID wallet",
+          "url": "https://www.biometricupdate.com/202502/georgia-seeks-candidates-to-build-digital-id-wallet",
+          "date": "2025-02-01"
+        }
+      ]
+    },
+    {
+      "name": "Ukraine",
+      "isoAlpha2": "UA",
+      "isoNumeric": "804",
+      "group": "Other",
+      "status": "Closed Pilot / LSP",
+      "walletName": "Diia",
+      "walletProvider": "Ministry of Digital Transformation of Ukraine",
+      "assuranceLevel": null,
+      "lspParticipation": [
+        "APTITUDE",
+        "DC4EU",
+        "EWC",
+        "POTENTIAL"
+      ],
+      "launchOrPilotDate": null,
+      "notableIssuers": [],
+      "qtspPartner": null,
+      "notes": "Ukraine is outside the EU but participating in the APTITUDE Large Scale Pilot. Diia app being upgraded to EUDI Wallet standards.",
+      "sources": [
+        {
+          "title": "EU for Digital - Ukraine helping to develop the European Digital Identity Wallet",
+          "url": "https://eufordigital.eu/ukraine-helping-to-develop-the-european-digital-identity-wallet/",
+          "date": "2026-06-24"
+        },
+        {
+          "title": "ID Tech Wire - Ukraine adopts EU-compatible digital ID wallet framework",
+          "url": "https://idtechwire.com/ukraine-adopts-eu-compatible-digital-id-wallet-framework/",
+          "date": "2026-06-24"
         },
         {
           "title": "eIDEasy April 2026 snapshot",

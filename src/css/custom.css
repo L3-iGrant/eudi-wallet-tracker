@@ -70,9 +70,9 @@
   --status-closed-fg: #92400e;
   --status-closed-dot: #d97706;
 
-  --status-eid-only-bg: #ffedd5;
-  --status-eid-only-fg: #9a3412;
-  --status-eid-only-dot: #ea580c;
+  --status-planned-bg: #ede9fe;
+  --status-planned-fg: #5b21b6;
+  --status-planned-dot: #7c3aed;
 
   --status-no-plan-bg: #fee2e2;
   --status-no-plan-fg: #991b1b;
@@ -83,10 +83,11 @@
   --status-unknown-dot: #94a3b8;
 
   /* Map fills, Apple Maps "Standard" palette: muted, geographic, elegant */
-  --map-launched: #5bd0a6;
+  --map-launched: #15803d;
+  --map-pending: #5bd0a6;
   --map-pilot: #7fb7e5;
   --map-closed: #f5c871;
-  --map-eid-only: #ed9d63;
+  --map-planned: #a78bfa;
   --map-no-plan: #e37070;
   --map-unknown: #dce0e6;
   --map-ocean: #f6f7f9;
@@ -128,17 +129,18 @@
   --status-pilot-fg: #93c5fd;
   --status-closed-bg: rgba(245, 158, 11, 0.18);
   --status-closed-fg: #fcd34d;
-  --status-eid-only-bg: rgba(249, 115, 22, 0.2);
-  --status-eid-only-fg: #fdba74;
+  --status-planned-bg: rgba(139, 92, 246, 0.18);
+  --status-planned-fg: #c4b5fd;
   --status-no-plan-bg: rgba(239, 68, 68, 0.2);
   --status-no-plan-fg: #fca5a5;
   --status-unknown-bg: rgba(148, 163, 184, 0.18);
   --status-unknown-fg: #cbd5e1;
 
-  --map-launched: #5bd0a6;
+  --map-launched: #15803d;
+  --map-pending: #5bd0a6;
   --map-pilot: #7fb7e5;
   --map-closed: #f5c871;
-  --map-eid-only: #ed9d63;
+  --map-planned: #8b5cf6;
   --map-no-plan: #e37070;
   --map-unknown: #1f2937;
   --map-ocean: #0b0d10;
@@ -530,9 +532,9 @@ a {
   background: var(--status-closed-bg);
   color: var(--status-closed-fg);
 }
-.status-badge--eid-only {
-  background: var(--status-eid-only-bg);
-  color: var(--status-eid-only-fg);
+.status-badge--planned {
+  background: var(--status-planned-bg);
+  color: var(--status-planned-fg);
 }
 .status-badge--no-plan {
   background: var(--status-no-plan-bg);

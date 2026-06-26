@@ -13,17 +13,21 @@ This page is the editorial contract for the tracker. It defines what each status
 
 We use six categories, in display order from most advanced to least:
 
-1. **Launched in production**. A national wallet conforming to or actively converging to the EUDI Wallet rulebook is available to citizens at general-population scale. Evidence required: an official launch announcement, an app store listing, or a primary source confirming live availability.
+1. **Production (EU Notified)**. A national wallet conforming to the EUDI Wallet rulebook is available to citizens at general-population scale and is officially included on the EU trust list. Evidence required: An official launch announcement or app store listing, paired with verification of its status on the official EU trust list.
 
-2. **Public pilot live**. A publicly accessible test or beta version is available, typically with a sandbox or developer playground. Evidence required: a public URL where third parties can sign up or fetch the wallet.
+    > **What does "EU Notified" mean?** The EU trust list is the European Commission's official registry of notified eID schemes under the eIDAS regulation. Once a wallet is listed, it is recognised across all Member States. You can browse the registry at [EU Trust List Browser](https://eidas.ec.europa.eu/efda/trust-services/browser/#/).
 
-3. **Closed pilot or LSP only**. Work is happening inside a Large Scale Pilot or a closed national programme but is not yet available to the public. Evidence required: an LSP deliverable, a ministry announcement, or a published implementation plan.
+2. **Production (EU Notification Pending)**. A national wallet is available to citizens at general-population scale, but it has not yet appeared on the official EU trust list. Evidence required: An official launch announcement, app store listing, or primary source confirming live availability, alongside its current absence from the EU trust list.
 
-4. **Notified eID, no wallet yet**. The country has a notified eID under eIDAS but no published EUDI Wallet implementation programme. Evidence required: the Commission's notified eID register or an absence of wallet announcements paired with the eID notification.
+    > **What does "EU Notification Pending" mean?** The wallet is live and available to citizens but the Member State has not yet completed the EU notification process under eIDAS to have it added to the official EU trust list. This may be because the formal notification procedure is still underway or because the wallet is being operated without the official eIDAS notification having been finalised.
 
-5. **No public plan**. No public evidence of an EUDI Wallet programme, beyond participation in EU coordination groups. Used sparingly.
+3. **Public Pilot**. A publicly accessible test version, beta app, sandbox, or developer playground is live. Citizens or third-party developers can actively download, test, or integrate with the wallet environment. Evidence required: A public URL where users can sign up for the beta, fetch the wallet app, or access the developer sandbox.
 
-6. **Unknown**. We do not have enough public evidence to place the country in any of the above. Used liberally rather than guessing.
+4. **Closed Pilot / LSP**. Active testing is underway within a Large Scale Pilot (LSP) or a restricted national programme, but access is limited to a closed user group and is not yet available to the general public. Evidence required: An LSP deliverable, a ministry announcement regarding pilot cohorts, or technical implementation updates showing active closed testing.
+
+5. **Planned for Production**. The country has a confirmed political commitment, ministry announcement, or published implementation roadmap for an EUDI Wallet, but active piloting or production rollout has not yet begun. Evidence required: A published national strategy, legislative act, or official ministry timeline.
+
+6. **No plans**. No public evidence of an active EUDI Wallet implementation programme, timeline, or roadmap, beyond baseline participation in mandatory EU coordination groups. Evidence required: An absence of public wallet announcements, roadmaps, or official development updates.
 
 ## Evidence bar
 
@@ -38,6 +42,17 @@ Anonymous blog posts, vendor marketing material that doubles as analysis without
 ## Source citation
 
 Every entry must cite at least one source with a title, URL and date in `YYYY-MM-DD` format. The tracker's automation snapshots accepted source URLs to the Wayback Machine on merge so the citation survives link rot.
+
+## Large Scale Pilot (LSP) data
+
+Participation in the five EU Large Scale Pilots is the authoritative basis for the `lspParticipation` field and, combined with other evidence, can justify a **Closed Pilot / LSP** status. The member lists below were retrieved from the European Commission's EU Digital Identity Wallet Collaboration Space:
+
+- [EWC](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/920064565/LSP-EWC)
+- [POTENTIAL](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/924976339/LSP-POTENTIAL)
+- [NOBID](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/924975315/LSP-NOBID)
+- [DC4EU](https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/920064520/LSP-DC4EU)
+- [APTITUDE](https://aptitude.digital-identity-wallet.eu/our-consortium/)
+- [WE BUILD](https://www.webuildconsortium.eu/participating-organisations)
 
 ## History and corrections
 
@@ -65,6 +80,11 @@ iGrant.io is itself an identity vendor, providing Data Wallet and Organisation W
 
 ## Maintainer
 
-Maintainer name and contact: _to be filled in before launch_.
+Maintainers:
+
+- Benjamin Hansson
+- George Padayatti
+- Lal Chandran
+- Sruthi Singareddy
 
 To raise an editorial concern, [open an issue](https://github.com/L3-iGrant/eudi-wallet-tracker/issues/new/choose) or email the address on the [about page](/about).

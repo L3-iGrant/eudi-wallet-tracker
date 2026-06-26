@@ -4,11 +4,12 @@ import data from '@site/data/eudi-status.json';
 import StatusBadge from './StatusBadge';
 
 const STATUS_SHORT: Record<string, string> = {
-  'Launched in production': 'Live',
-  'Public pilot live': 'Pilot',
-  'Closed pilot or LSP only': 'Closed',
-  'Notified eID, no wallet yet': 'eID only',
-  'No public plan': 'No plan',
+  'Production (EU Notified)': 'Live',
+  'Production (EU Notification Pending)': 'Live',
+  'Public Pilot': 'Pilot',
+  'Closed Pilot / LSP': 'Closed',
+  'Planned for Production': 'Planned',
+  'No plans': 'No plan',
   'Unknown': 'Unknown',
 };
 

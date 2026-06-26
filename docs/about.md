@@ -9,9 +9,12 @@ sidebar_position: 13
 
 The EUDI Wallet Status Tracker is maintained by iGrant.io, a Swedish data-agreements and identity vendor with products in the EUDI Wallet ecosystem. The tracker is editorial. It is not an endorsement of any particular wallet provider, including iGrant.io itself.
 
-## Maintainer
+## Maintainers
 
-_To be filled in before public launch._
+- Benjamin Hansson
+- George Padayatti
+- Lal Chandran
+- Sruthi Singareddy
 
 ## Contact
 

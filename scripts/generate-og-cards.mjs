@@ -70,29 +70,32 @@ function renderEuropeSilhouette(highlightId) {
 }
 
 const STATUS_COLOUR = {
-  'Launched in production': '#5bd0a6',
-  'Public pilot live': '#7fb7e5',
-  'Closed pilot or LSP only': '#f5c871',
-  'Notified eID, no wallet yet': '#ed9d63',
-  'No public plan': '#e37070',
+  'Production (EU Notified)': '#15803d',
+  'Production (EU Notification Pending)': '#5bd0a6',
+  'Public Pilot': '#7fb7e5',
+  'Closed Pilot / LSP': '#f5c871',
+  'Planned for Production': '#a78bfa',
+  'No plans': '#e37070',
   Unknown: '#dce0e6',
 };
 
 const STATUS_FG = {
-  'Launched in production': '#166534',
-  'Public pilot live': '#1e40af',
-  'Closed pilot or LSP only': '#92400e',
-  'Notified eID, no wallet yet': '#9a3412',
-  'No public plan': '#991b1b',
+  'Production (EU Notified)': '#166534',
+  'Production (EU Notification Pending)': '#166534',
+  'Public Pilot': '#1e40af',
+  'Closed Pilot / LSP': '#92400e',
+  'Planned for Production': '#5b21b6',
+  'No plans': '#991b1b',
   Unknown: '#475569',
 };
 
 const STATUS_BG = {
-  'Launched in production': '#dcfce7',
-  'Public pilot live': '#dbeafe',
-  'Closed pilot or LSP only': '#fef3c7',
-  'Notified eID, no wallet yet': '#ffedd5',
-  'No public plan': '#fee2e2',
+  'Production (EU Notified)': '#dcfce7',
+  'Production (EU Notification Pending)': '#dcfce7',
+  'Public Pilot': '#dbeafe',
+  'Closed Pilot / LSP': '#fef3c7',
+  'Planned for Production': '#f3e8ff',
+  'No plans': '#fee2e2',
   Unknown: '#f1f5f9',
 };
 
