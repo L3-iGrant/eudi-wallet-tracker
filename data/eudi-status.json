@@ -1105,7 +1105,7 @@
       "isoNumeric": "642",
       "group": "EU",
       "status": "Closed Pilot / LSP",
-      "walletName": "National EUDI Wallet (announced)",
+      "walletName": "RoEUDIW",
       "walletProvider": "Authority for the Digitalization of Romania (ADR)",
       "assuranceLevel": "substantial",
       "lspParticipation": [
@@ -1116,7 +1116,7 @@
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": "certSIGN, Trans Sped",
-      "notes": "Announced project, no public sandbox. Among the late-starter group identified in early-2026 analysis.",
+      "notes": "Romania has formally adopted Germany's open-source EUDI Wallet solution. First phase (mobile app, PID issuance, age verification) planned for 2026. Implementation led by MEDAT, MAI, and STS.",
       "sources": [
         {
           "title": "EU Trust List - Romania",
@@ -1142,6 +1142,11 @@
           "title": "Identity Week 18 months overview",
           "url": "https://identityweek.net/18-months-to-launch-is-europe-ready-for-the-eu-digital-id-wallet/",
           "date": "2025-06-21"
+        },
+        {
+          "title": "Digi24 - Romania will use German solution for EUDI Wallet",
+          "url": "https://www.digi24.ro/stiri/economie/romania-va-folosi-solutia-germana-pentru-portofelul-european-de-identitate-digitala-ce-documente-vor-putea-fi-stocate-3834545",
+          "date": "2026-06-26"
         }
       ]
     },
