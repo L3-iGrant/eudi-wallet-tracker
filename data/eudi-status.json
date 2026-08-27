@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26",
+  "lastUpdated": "2026-08-13",
   "deadline": "2026-12-24",
   "deadlineNote": "Reg (EU) 2024/1183 obliges Member States to make at least one EUDI Wallet available within 24 months of the first implementing acts entering into force on 24 December 2024, placing the deadline at 24 December 2026.",
   "statusOrder": [
@@ -96,7 +96,7 @@
         "PID"
       ],
       "qtspPartner": "itsme (Belgian Mobile ID)",
-      "notes": "BOSA presented MyGov.be as Belgium's response to the eIDAS 2.0 wallet obligation. itsme continues to be widely used for daily authentication and is expected to plug into the EUDI ecosystem.",
+      "notes": "BOSA presented MyGov.be as Belgium's response to the eIDAS 2.0 wallet obligation. itsme continues to be widely used for daily authentication and is expected to plug into the EUDI ecosystem. The government selected Zetes to host the infrastructure for qualified e-signatures, a step aligned with eIDAS requirements that wallets expose qualified electronic signatures.",
       "sources": [
         {
           "title": "EU Trust List - Belgium",
@@ -114,6 +114,11 @@
           "date": "2025-09-15"
         },
         {
+          "title": "Biometric Update - Belgium selects Zetes to add qualified e-signatures to MyGov wallet",
+          "url": "https://www.biometricupdate.com/202607/belgium-selects-zetes-to-add-qualified-e-signatures-to-mygov-wallet",
+          "date": "2026-07-02"
+        },
+        {
           "title": "Namirial Q1 2026 status review",
           "url": "https://www.namirial.com/en/blog/stories/status-check-eudi-wallet/",
           "date": "2026-04-09"
@@ -122,6 +127,15 @@
           "title": "eIDEasy April 2026 snapshot",
           "url": "https://www.eideasy.com/blog/eu-digital-identity-wallets-status-april-2026",
           "date": "2026-04-06"
+        }
+      ],
+      "privateActivity": [
+        {
+          "company": "Zetes",
+          "role": "QTSP",
+          "product": "Qualified e-signature infrastructure for MyGov.be",
+          "date": "2026-07-02",
+          "url": "https://www.biometricupdate.com/202607/belgium-selects-zetes-to-add-qualified-e-signatures-to-mygov-wallet"
         }
       ]
     },
@@ -292,8 +306,13 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard.",
+      "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard. In August 2026 the public was invited to the first large-scale load test of the eDoklady app, ahead of the autumn municipal elections, after the system buckled under demand during the 2025 elections.",
       "sources": [
+        {
+          "title": "ID Tech - Czechia calls public into first load test of its digital ID app",
+          "url": "https://idtechwire.com/czechia-calls-public-into-first-load-test-of-its-digital-id-app/",
+          "date": "2026-08-13"
+        },
         {
           "title": "Biometric Update - Czechia's EUDI Wallet to go live in early 2027",
           "url": "https://www.biometricupdate.com/202602/czechias-eudi-wallet-to-go-live-in-early-2027",
@@ -538,8 +557,13 @@
         "PID"
       ],
       "qtspPartner": "D-Trust, Bundesdruckerei",
-      "notes": "Announced project with public sandbox. State-driven version scheduled to launch on 2 January 2027, then opening the market to private wallet providers in 2028. Sandbox and prototype challenge in progress.",
+      "notes": "Announced project with public sandbox. State-driven version scheduled to launch on 2 January 2027, then opening the market to private wallet providers in 2028. Germany has allocated 79.3 million euros to the project through 2026; the initial launch supports identification and credential presentation, with qualified signatures, pseudonymous logins and payments to follow. Critics question whether the full wallet can be ready on time as fewer than half of member states are on track for the end-2026 deadline.",
       "sources": [
+        {
+          "title": "Biometric Update - Germany's EUDI Wallet push highlights Europe's implementation gap",
+          "url": "https://www.biometricupdate.com/202608/germanys-eudi-wallet-push-highlights-europes-implementation-gap",
+          "date": "2026-08-04"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
@@ -589,8 +613,18 @@
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "Gov.gr Wallet is in closed pilot. Upgrade to EUDI Wallet officially confirmed; details on production scope still limited.",
+      "notes": "Gov.gr Wallet is in closed pilot and has expanded to thirteen documents, adding the national passport as a mobile credential for identification and domestic travel. Upgrade to EUDI Wallet officially confirmed; Greece has opened bidding on a 415 million euro contract to build a new integrated digital identity system (OPSEA), explicitly designed to be compatible with eIDAS 2.0 and the European Digital Identity Regulation, with bidding closing 10 September 2026.",
       "sources": [
+        {
+          "title": "CoinGeek - Greece opens contract for $415M digital identity system",
+          "url": "https://coingeek.com/greece-opens-contract-for-415m-digital-identity-system/",
+          "date": "2026-07-31"
+        },
+        {
+          "title": "Digital Watch Observatory - Greece adds digital passport to Gov.gr Wallet",
+          "url": "https://dig.watch/updates/greece-adds-digital-passport-to-gov-gr-wallet",
+          "date": "2026-07-14"
+        },
         {
           "title": "EU Trust List - Greece",
           "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/EL",
@@ -665,8 +699,13 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Ireland opened early public access to a test wallet in April 2026, joining France and Germany as one of the most accessible ecosystems.",
+      "notes": "Ireland opened early public access to a test wallet in April 2026, joining France and Germany as one of the most accessible ecosystems. The public consultation on the Government Digital Wallet has closed and the Department of Public Expenditure has moved into the pilot phase to stress-test the infrastructure and support mechanisms.",
       "sources": [
+        {
+          "title": "Biometric Update - Ireland digital wallet consultation closes, government moves to pilot stage",
+          "url": "https://www.biometricupdate.com/202607/ireland-digital-wallet-consultation-closes-government-moves-to-pilot-stage",
+          "date": "2026-07-02"
+        },
         {
           "title": "Gov.ie - Government Digital Wallet questions answered",
           "url": "https://www.gov.ie/en/department-of-public-expenditure-infrastructure-public-service-reform-and-digitalisation/publications/government-digital-wallet-your-questions-answered/#mygovid-and-the-government-digital-wallet",
@@ -708,8 +747,13 @@
         "EHIC"
       ],
       "qtspPartner": "Namirial, InfoCert, Aruba PEC",
-      "notes": "Italy's IT-Wallet system pairs the public IO app with accredited private wallets, with citizens activating via CIE or SPID. SPID has 41.5 million registered users, making Italy one of the most operationally advanced EUDI transition cases in Europe.",
+      "notes": "Italy's IT-Wallet system pairs the public IO app with accredited private wallets, with citizens activating via CIE or SPID. SPID has 41.5 million registered users, making Italy one of the most operationally advanced EUDI transition cases in Europe. An interministerial decree published in the Gazzetta Ufficiale on 23 July 2026 approved the national guidelines and experimental framework for IT-Wallet, setting out how digital credentials will be tested, governed and updated, with full alignment to eIDAS 2.0 the ultimate aim.",
       "sources": [
+        {
+          "title": "Biometric Update - Italy approves IT Wallet framework ahead of eIDAS rollout",
+          "url": "https://www.biometricupdate.com/202608/italy-approves-it-wallet-framework-ahead-of-eidas-rollout",
+          "date": "2026-08-12"
+        },
         {
           "title": "FIDES Community - IT-Wallet",
           "url": "https://fides.community/ecosystem-explorer/personal-wallets/?wallet=it-wallet",
@@ -808,8 +852,13 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Announced project, no public sandbox.",
+      "notes": "Announced project, no public sandbox. A state-approved EUDI-compatible wallet is expected to be usable for real services by the end of 2026, with a clear public test being a verifiable launch announcement rather than strategy documents alone.",
       "sources": [
+        {
+          "title": "Europos Komisijos informacija (via Infoerdve) - EUDI Wallet in Lithuania: what could change by 2026",
+          "url": "https://infoerdve.lt/en/eudi-wallet-in-lithuania-what-could-change-by-2026/",
+          "date": "2026-07-03"
+        },
         {
           "title": "EU Trust List - Lithuania",
           "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/LT",
@@ -876,8 +925,13 @@
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": null,
-      "notes": "Announced project, no public sandbox. Identity Week and Namirial note Malta is expected to deliver only partial availability by deadline.",
+      "notes": "The Malta Digital Innovation Authority (MDIA) has issued a call for tenders for implementing Malta's EUDI Wallet, covering secure identification, age verification, storage of driving licences and electronic signing. Identity Week and Namirial note Malta is expected to deliver only partial availability by deadline.",
       "sources": [
+        {
+          "title": "The Malta Independent - Tender issued for the implementation of the European Digital Identity Wallet",
+          "url": "https://www.independent.com.mt/articles/2026-07-13/local-news/Tender-issued-for-the-implementation-of-the-European-Digital-Identity-Wallet-6736291324",
+          "date": "2026-07-13"
+        },
         {
           "title": "Sumsub - Malta to launch digital wallet by EUDI 2026",
           "url": "https://sumsub.com/media/news/malta-to-launch-digital-wallet-by-eudi-2026/",
@@ -1116,8 +1170,13 @@
       "launchOrPilotDate": null,
       "notableIssuers": [],
       "qtspPartner": "certSIGN, Trans Sped",
-      "notes": "Romania has formally adopted Germany's open-source EUDI Wallet solution. First phase (mobile app, PID issuance, age verification) planned for 2026. Implementation led by MEDAT, MAI, and STS.",
+      "notes": "Romania has formally adopted Germany's open-source EUDI Wallet solution. First phase (mobile app, PID issuance, age verification) planned for 2026. Implementation led by MEDAT, MAI, and STS. Romania's new chip-based biometric digital ID (CEI) is now available nationwide as part of the broader effort to align with eIDAS and support cross-border travel and digital public services.",
       "sources": [
+        {
+          "title": "Biometric Update - Romania's new digital ID now available nationwide",
+          "url": "https://www.biometricupdate.com/202608/romanias-new-digital-id-now-available-nationwide",
+          "date": "2026-08-06"
+        },
         {
           "title": "EU Trust List - Romania",
           "url": "https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/RO",
@@ -1248,8 +1307,13 @@
         "PID"
       ],
       "qtspPartner": "FNMT-RCM",
-      "notes": "First wallet version leveraging Cl@ve presented at the EUDI Wallet Launchpad in December 2025. Cl@ve has over 24 million registered users and 1.1 billion annual authentications.",
+      "notes": "First wallet version leveraging Cl@ve presented at the EUDI Wallet Launchpad in December 2025. Cl@ve has over 24 million registered users and 1.1 billion annual authentications. Citizens already carry digital documents via the MiDNI and MiDGT apps; the future EUDI wallet is expected to consolidate these into a single platform recognised across the EU from 2027.",
       "sources": [
+        {
+          "title": "La Voz Canaria - License and ID in your mobile: EU implements digital wallet in 2027",
+          "url": "https://lavozcanaria.com/en/tenerife/general/license-and-id-in-your-mobile-eu-implements-digital-wallet-in-2027",
+          "date": "2026-07-26"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
