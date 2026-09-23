@@ -46,7 +46,7 @@ docs/
   tracker/                 # auto-generated per-country MDX (do not edit by hand)
 src/
   components/              # EuropeMap (with Maximise toggle), StatusTable, StatsGrid (chip row),
-                           # Countdown (weeks), RecentChanges, StatusBadge, ShareBar, Giscus, Legend
+                           # Countdown (days), RecentChanges, StatusBadge, ShareBar, Giscus, Legend
   pages/                   # / (home with map hero), /tracker (map), /tracker/table
   theme/DocItem/Footer/    # swizzled to inject ShareBar + comments
   css/custom.css           # Apple-style theme (SF / Inter, hairlines, soft shadows, status pastels)
@@ -136,7 +136,7 @@ See [`EXECUTION_PLAN.md`](EXECUTION_PLAN.md) for the phased plan (Phase 1 to 6),
 or [Issues](https://github.com/L3-iGrant/eudi-wallet-tracker/issues) for current work.
 
 Phases 1, 2 and 6 are live. The home page features the Apple-style refresh, with
-the interactive map as the hero (Maximise / Minimise / Esc), a weeks-to-deadline
+the interactive map as the hero (Maximise / Minimise / Esc), a days-to-deadline
 countdown, sleek status chip row, and editorially valuable sections in place of
 source feeds. Per-country pages render private-sector activity when present in
 `data/eudi-status.json`.

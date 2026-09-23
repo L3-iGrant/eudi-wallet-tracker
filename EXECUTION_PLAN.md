@@ -176,7 +176,7 @@ Status categories (in display order):
 ### Phase 2, interactive components (week 2)
 7. `EuropeMap.tsx`: D3 + topojson + react-simple-maps, colour-coded by status, accessible. Stable hover tooltip with hovered country brought to top of paint order so the dark slate boundary stroke is never clipped by neighbours. Toolbar with Maximise toggle (and explicit Minimise / Exit full screen control + Esc) framed as a card with a soft gradient and grid pattern.
 8. `StatusTable.tsx`: TanStack-style table with column filters, wrapped in a hairline-bordered card.
-9. `Countdown.tsx`: live countdown to 24 December 2026, expressed in **weeks** (not days) on an Apple-style neutral surface card with a small status dot.
+9. `Countdown.tsx`: live countdown to 24 December 2026, expressed in **days** on an Apple-style neutral surface card with a small status dot.
 10. `RecentChanges.tsx`: most recent dated position per country (date + country + status badge + wallet name). Source titles are deliberately not surfaced; sources remain on country pages.
 11. `StatusBadge.tsx`: reusable status pill, used on map tooltips, country pages, table cells. Refined pastel surfaces with a leading status dot.
 12. `StatsGrid.tsx`: sleek inline status chip row (dot + count + label) in a pill container, sitting just above the map.

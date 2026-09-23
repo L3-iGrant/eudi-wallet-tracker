@@ -17,12 +17,12 @@ export default function Countdown({target = '2026-12-24'}: {target?: string}) {
   const targetDate = new Date(`${target}T00:00:00Z`);
   const ms = targetDate.getTime() - now.getTime();
   const days = Math.max(0, Math.floor(ms / (1000 * 60 * 60 * 24)));
-  const weeks = Math.max(0, Math.round(days / 7));
+  const unit = days === 1 ? 'day' : 'days';
 
   return (
-    <div className="countdown-card" role="status" aria-label={`${weeks} weeks to ${target}`}>
-      <span className="countdown-card__eyebrow">Weeks to deadline</span>
-      <span className="countdown-card__number">{weeks.toLocaleString('en-GB')}</span>
+    <div className="countdown-card" role="status" aria-label={`${days} ${unit} to ${target}`}>
+      <span className="countdown-card__eyebrow">{unit} to deadline</span>
+      <span className="countdown-card__number">{days.toLocaleString('en-GB')}</span>
       <span className="countdown-card__target">{formatTargetDate(target)}</span>
     </div>
   );

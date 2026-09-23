@@ -28,6 +28,13 @@ function escapeMdx(s) {
   return String(s).replace(/[{}<>]/g, (c) => ({'{': '\\{', '}': '\\}', '<': '&lt;', '>': '&gt;'}[c]));
 }
 
+// Wrap a value as a double-quoted YAML scalar so front-matter stays valid even
+// when the text contains YAML indicators such as ": " (colon + space), a
+// leading "#", quotes, or brackets.
+function yamlString(s) {
+  return '"' + String(s ?? '').replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
+}
+
 function badgeSvg(country) {
   const status = country.status;
   const colour = {
@@ -171,7 +178,7 @@ function renderCountry(c) {
 id: ${slugged}
 slug: /tracker/${slugged}
 title: ${c.name}
-description: ${escapeMdx(description)}
+description: ${yamlString(escapeMdx(description))}
 sidebar_label: ${c.name}
 image: /img/og/${c.isoAlpha2}.png
 keywords: [EUDI Wallet, ${c.name}, ${c.walletName ?? ''}, eIDAS 2]
