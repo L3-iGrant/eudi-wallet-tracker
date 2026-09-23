@@ -109,7 +109,7 @@ export default function Home() {
             <p className="tracker-hero__lede">
               Live adoption across the region: who has launched as per the EU
               Trust List, who is in public pilot, and who is still preparing to
-              ship the EU Digital Identity Wallet. The number of weeks until the
+              ship the EU Digital Identity Wallet. The number of days until the
               deadline indicates the EUDI Wallet roll-out to the European Union
               Member States, in which each country must offer a state-backed
               EUDI Wallet to its citizens.

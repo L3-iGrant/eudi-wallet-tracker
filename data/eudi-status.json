@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13",
+  "lastUpdated": "2026-09-23",
   "deadline": "2026-12-24",
   "deadlineNote": "Reg (EU) 2024/1183 obliges Member States to make at least one EUDI Wallet available within 24 months of the first implementing acts entering into force on 24 December 2024, placing the deadline at 24 December 2026.",
   "statusOrder": [
@@ -306,8 +306,13 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard. In August 2026 the public was invited to the first large-scale load test of the eDoklady app, ahead of the autumn municipal elections, after the system buckled under demand during the 2025 elections.",
+      "notes": "DIA-led announced project, no public sandbox. Namirial Q1 2026 places Czechia in the middle band, no longer a laggard. In August 2026 the public was invited to the first large-scale load test of the eDoklady app, ahead of the autumn municipal elections, after the system buckled under demand during the 2025 elections. In early June 2026 the DIA became one of the first member states to circulate a draft national certification scheme for the EUDI Wallet to other EU states for comment; the draft drew no substantial objections, and applications to accredit certification bodies open in the second half of 2026. The scheme sets how compliance is verified for wallet and PID providers, the PID role being one the DIA will hold in Czechia.",
       "sources": [
+        {
+          "title": "DIA - Draft EUDIW certification scheme shared with EU member states",
+          "url": "https://www.dia.gov.cz/cs/aktuality/dia-poskytla-navrh-certifikacniho-schematu-eudiw-ke-stanovisku-ostatnim-clenskym-statum-eu",
+          "date": "2026-09-10"
+        },
         {
           "title": "ID Tech - Czechia calls public into first load test of its digital ID app",
           "url": "https://idtechwire.com/czechia-calls-public-into-first-load-test-of-its-digital-id-app/",
@@ -464,12 +469,17 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Public developer repository linked to DVV's wallet work, no confirmed sandbox.",
+      "notes": "DVV leads the national wallet, with a public developer repository linked to its work but no confirmed government sandbox. The national wallet is expected to launch in early 2027, alongside a relying party register. Separately, an independent EUDI ecosystem sandbox (eudi-wallet.fi), which states it is not affiliated with DVV, Traficom, the Ministry of Finance or the European Commission, is live for organisations to trial reference wallets and test credentials across payment, strong customer authentication, electronic signature, identity and age verification use cases.",
       "sources": [
         {
           "title": "DVV - European Digital Identity Wallet",
           "url": "https://dvv.fi/en/european-digital-identity-wallet",
           "date": "2026-06-24"
+        },
+        {
+          "title": "eudi-wallet.fi - Finnish EUDI ecosystem sandbox (independent initiative)",
+          "url": "https://eudi-wallet.fi/en",
+          "date": "2026-09-23"
         },
         {
           "title": "EU Trust List - Finland",
@@ -544,7 +554,8 @@
       "isoNumeric": "276",
       "group": "EU",
       "status": "Public Pilot",
-      "walletName": "National EUDI Wallet (announced)",
+      "walletName": "D-You",
+      "walletProvider": "Federal Ministry for Digital and State Modernisation (BMDS)",
       "lspParticipation": [
         "APTITUDE",
         "DC4EU",
@@ -557,8 +568,13 @@
         "PID"
       ],
       "qtspPartner": "D-Trust, Bundesdruckerei",
-      "notes": "Announced project with public sandbox. State-driven version scheduled to launch on 2 January 2027, then opening the market to private wallet providers in 2028. Germany has allocated 79.3 million euros to the project through 2026; the initial launch supports identification and credential presentation, with qualified signatures, pseudonymous logins and payments to follow. Critics question whether the full wallet can be ready on time as fewer than half of member states are on track for the end-2026 deadline.",
+      "notes": "Announced project with a public sandbox, branded D-You from September 2026. The state-driven version is scheduled to launch on 2 January 2027, then to open the market to private wallet providers in 2028. Germany has allocated 79.3 million euros to the project through 2026; the initial launch supports identification and credential presentation, with qualified signatures, pseudonymous logins and payments to follow. The source code has been published and a bug bounty programme is opening, with a PIN reset service due back in October 2026. Critics question whether the full wallet can be ready on time as fewer than half of member states are on track for the end-2026 deadline.",
       "sources": [
+        {
+          "title": "heise online - German EUDI Wallet is now called D-You",
+          "url": "https://www.heise.de/en/news/German-EUDI-Wallet-is-now-called-D-You-11447776.html",
+          "date": "2026-09-10"
+        },
         {
           "title": "Biometric Update - Germany's EUDI Wallet push highlights Europe's implementation gap",
           "url": "https://www.biometricupdate.com/202608/germanys-eudi-wallet-push-highlights-europes-implementation-gap",
@@ -1063,7 +1079,7 @@
       "isoAlpha2": "PL",
       "isoNumeric": "616",
       "group": "EU",
-      "status": "Closed Pilot / LSP",
+      "status": "Public Pilot",
       "walletName": "mObywatel",
       "walletProvider": "Ministry of Digital Affairs",
       "assuranceLevel": "high",
@@ -1080,8 +1096,13 @@
         "mDL"
       ],
       "qtspPartner": null,
-      "notes": "mObywatel runs in production with nearly 10 million users on version 2.0. Public commitment to integrate EUDI Wallet capabilities into mObywatel by end of 2026; transition to version 3.0 carries some delivery risk.",
+      "notes": "mObywatel runs in production with nearly 10 million users on version 2.0, alongside a public commitment to fold EUDI Wallet capabilities into the app by the end of 2026. On 16 September 2026 the Ministry of Digital Affairs opened the official EUDI Wallet sandbox (Sandbox EPTC), a free testing environment that gives organisations a demonstration build of the mObywatel Europa application to integrate against and verify identity data before launch. Priority sectors named for onboarding include finance, insurance, telecommunications, transport, education, healthcare and retail. The transition to version 3.0 still carries some delivery risk.",
       "sources": [
+        {
+          "title": "Ministerstwo Cyfryzacji - Poland launches EUDI Wallet sandbox",
+          "url": "https://www.gov.pl/web/cyfryzacja/polska-uruchomila-sandbox-europejskiego-portfela-tozsamosci-cyfrowej-firmy-moga-juz-testowac-przyszle-uslugi-cyfrowej-identyfikacji",
+          "date": "2026-09-16"
+        },
         {
           "title": "EC Launchpad Demos - Poland",
           "url": "https://ec.europa.eu/digital-building-blocks/sites/spaces/EUDIGITALIDENTITYWALLET/pages/930448024/Launchpad+Demos",
@@ -1365,8 +1386,13 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "Announced project, no public sandbox. Namirial places Sweden in the second tier on the strength of public mandate, sandbox work and implementation structure.",
+      "notes": "Announced project. DIGG has published a phased timeline: a first version of the wallet lands on a test platform in December 2026 for service providers and issuers to evaluate, alongside the first set of certification requirements; a broader launch of the state wallet as a high-assurance e-identification built on SverigeID follows during 2027, adding attribute attestations and further functions; certification readiness is targeted for 2028, with full EUDI Wallet certification in 2029. Namirial places Sweden in the second tier on the strength of public mandate, sandbox work and implementation structure.",
       "sources": [
+        {
+          "title": "DIGG - Digital identity wallet timeline",
+          "url": "https://www.digg.se/digitala-tjanster/digital-identitetsplanbok/tidsplan",
+          "date": "2026-09-23"
+        },
         {
           "title": "iGrant.io Research Lab",
           "url": "https://www.igrant.io/",
