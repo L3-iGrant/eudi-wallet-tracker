@@ -1846,7 +1846,7 @@ body.is-embed .europe-map__zoom {
 .tracker-table thead th:nth-child(2) { width: 18%; }   /* Wallet */
 .tracker-table thead th:nth-child(3) { width: auto; }  /* Status (absorbs leftover, with note) */
 .tracker-table thead th:nth-child(4) { width: 7%; }    /* LoA */
-.tracker-table thead th:nth-child(5) { width: 10%; }   /* Date */
+.tracker-table thead th:nth-child(5) { width: 10%; }   /* Updated */
 .tracker-table thead th:nth-child(6) { width: 8%; }    /* Sources */
 .tracker-table .status-note {
   margin-top: 0.35rem;

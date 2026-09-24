@@ -469,17 +469,12 @@
         "PID"
       ],
       "qtspPartner": null,
-      "notes": "DVV leads the national wallet, with a public developer repository linked to its work but no confirmed government sandbox. The national wallet is expected to launch in early 2027, alongside a relying party register. Separately, an independent EUDI ecosystem sandbox (eudi-wallet.fi), which states it is not affiliated with DVV, Traficom, the Ministry of Finance or the European Commission, is live for organisations to trial reference wallets and test credentials across payment, strong customer authentication, electronic signature, identity and age verification use cases.",
+      "notes": "DVV leads the national wallet, with a public developer repository linked to its work but no confirmed government sandbox. The national wallet is expected to launch in early 2027, alongside a relying party register.",
       "sources": [
         {
           "title": "DVV - European Digital Identity Wallet",
           "url": "https://dvv.fi/en/european-digital-identity-wallet",
           "date": "2026-06-24"
-        },
-        {
-          "title": "eudi-wallet.fi - Finnish EUDI ecosystem sandbox (independent initiative)",
-          "url": "https://eudi-wallet.fi/en",
-          "date": "2026-09-23"
         },
         {
           "title": "EU Trust List - Finland",
