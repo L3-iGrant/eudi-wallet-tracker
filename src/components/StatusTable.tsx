@@ -16,6 +16,17 @@ function slug(name: string): string {
     .replace(/^-|-$/g, '');
 }
 
+// The newest date among a country's sources, i.e. when we last had fresh
+// evidence for that row. Returns '' when no source carries a date.
+// ISO (YYYY-MM-DD) strings compare correctly with `>`.
+function latestSourceDate(c: Country): string {
+  const dates = (c.sources || [])
+    .map((s: any) => s.date)
+    .filter(Boolean) as string[];
+  if (!dates.length) return '';
+  return dates.reduce((max, d) => (d > max ? d : max));
+}
+
 export default function StatusTable() {
   const [q, setQ] = useState('');
   const [status, setStatus] = useState<string>('');
@@ -31,8 +42,10 @@ export default function StatusTable() {
       .filter((c: Country) => !loa || c.assuranceLevel === loa)
       .filter((c: Country) => !group || c.group === group)
       .sort((a: Country, b: Country) => {
-        const av = String(a[sortKey] ?? '');
-        const bv = String(b[sortKey] ?? '');
+        const getVal = (c: Country) =>
+          sortKey === 'latestSourceDate' ? latestSourceDate(c) : String(c[sortKey] ?? '');
+        const av = getVal(a);
+        const bv = getVal(b);
         return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
       });
   }, [q, status, loa, group, sortKey, sortDir]);
@@ -99,7 +112,7 @@ export default function StatusTable() {
               <th onClick={() => sortBy('walletName')}>Wallet</th>
               <th onClick={() => sortBy('status')}>Status</th>
               <th onClick={() => sortBy('assuranceLevel')}>LoA</th>
-              <th onClick={() => sortBy('launchOrPilotDate')}>Date</th>
+              <th onClick={() => sortBy('latestSourceDate')}>Updated</th>
               <th>Sources</th>
             </tr>
           </thead>
@@ -125,7 +138,7 @@ export default function StatusTable() {
                     {noteShort && <div className="row-meta status-note">{noteShort}</div>}
                   </td>
                   <td>{c.assuranceLevel ?? '-'}</td>
-                  <td>{c.launchOrPilotDate ?? '-'}</td>
+                  <td>{latestSourceDate(c) || '-'}</td>
                   <td>{(c.sources || []).length}</td>
                 </tr>
               );
