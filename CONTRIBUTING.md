@@ -23,6 +23,8 @@ The dataset is the one in `data/eudi-status.json`. Everything else (per-country 
   Wallet) goes in `privateActivity[]`. Roles are restricted to: `Wallet Provider`,
   `Issuer`, `Relying Party`, `QTSP`, `Verifier`, `Conformance`, `LSP partner`,
   `Open-source contributor`, `Other`.
+- A public test environment for integrators goes in `sandbox` (`name` and `url` required;
+  `operator`, `audience` and `since` optional). The methodology sets out what qualifies.
 
 See the full [methodology](docs/methodology.md) for the evidence bar and review cadence.
 

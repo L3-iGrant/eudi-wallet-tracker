@@ -23,7 +23,22 @@ type CountryRow = {
     url?: string;
     since?: string;
   };
+  sandbox?: Sandbox;
 };
+
+type Sandbox = {
+  name: string;
+  url: string;
+  operator?: string;
+  audience?: string;
+  since?: string;
+};
+
+type SandboxRow = CountryRow & {sandbox: Sandbox};
+
+function hasSandbox(c: CountryRow): c is SandboxRow {
+  return Boolean(c.sandbox);
+}
 
 function slug(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -37,6 +52,7 @@ export default function Home() {
   const closedPilot = countries.filter((c) => c.status === 'Closed Pilot / LSP').length;
   const highLoa = countries.filter((c) => c.assuranceLevel === 'high').length;
   const eu = countries.filter((c) => c.group === 'EU').length;
+  const sandboxes = countries.filter(hasSandbox).sort((a, b) => a.name.localeCompare(b.name));
 
   const datasetJsonLd = {
     '@context': 'https://schema.org',
@@ -86,6 +102,7 @@ export default function Home() {
       'Level of Assurance',
       'Launch or pilot date',
       'Wallet provider',
+      'Public sandbox availability',
     ],
   };
 
@@ -170,6 +187,44 @@ export default function Home() {
                   </span>
                 </Link>
               ))}
+          </div>
+        </section>
+
+        <section className="tracker-section">
+          <span className="tracker-section__eyebrow">Open for testing</span>
+          <h2 className="tracker-section__title">Public sandboxes you can test against</h2>
+          <p className="tracker-section__lede">
+            Jurisdictions running a publicly announced test environment where issuers, relying parties or
+            wallet providers can integrate before launch, plus the body operating it.
+          </p>
+          <div className="stats-grid" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'}}>
+            {sandboxes.map((c) => (
+              <div key={c.isoAlpha2} className="stat-card">
+                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem'}}>
+                  <Link
+                    to={`/tracker/${slug(c.name)}`}
+                    style={{fontWeight: 600, fontSize: '1.05rem', color: 'inherit', textDecoration: 'none'}}
+                  >
+                    {c.name}
+                  </Link>
+                  <span className="status-badge status-badge--pilot">Sandbox</span>
+                </div>
+                <span style={{marginTop: '0.45rem', fontSize: '0.95rem'}}>{c.sandbox.name}</span>
+                <span className="stat-card__label" style={{marginTop: '0.2rem'}}>
+                  {c.sandbox.operator ?? c.walletProvider ?? ''}
+                  {c.sandbox.since ? ` · open since ${c.sandbox.since.slice(0, 7)}` : ''}
+                </span>
+                {c.sandbox.audience && <span className="stat-card__label">{c.sandbox.audience}</span>}
+                <a
+                  href={c.sandbox.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{marginTop: '0.5rem', fontSize: '0.88rem', fontWeight: 500}}
+                >
+                  Open the sandbox
+                </a>
+              </div>
+            ))}
           </div>
         </section>
 

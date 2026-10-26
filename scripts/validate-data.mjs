@@ -114,6 +114,21 @@ for (const c of data.countries ?? []) {
       }
     }
   }
+  if (c.sandbox != null) {
+    const sb = c.sandbox;
+    if (typeof sb !== 'object' || Array.isArray(sb)) {
+      errors.push(`${tag} sandbox must be an object`);
+    } else {
+      if (!sb.name) errors.push(`${tag} sandbox missing name`);
+      if (!sb.url) errors.push(`${tag} sandbox missing url`);
+      if (sb.url && !/^https?:\/\//.test(sb.url)) {
+        errors.push(`${tag} sandbox url must start with http(s)`);
+      }
+      if (sb.since && !/^\d{4}-\d{2}-\d{2}$/.test(sb.since)) {
+        errors.push(`${tag} sandbox since must be YYYY-MM-DD: ${sb.since}`);
+      }
+    }
+  }
 }
 
 if (errors.length) {
