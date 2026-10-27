@@ -119,6 +119,10 @@ function renderCountry(c) {
     .map((s) => `- [${s.title}](${s.url}) (${s.date})`)
     .join('\n');
   const issuers = (c.notableIssuers || []).join(', ') || 'None recorded';
+  const sandbox = c.sandbox
+    ? `<a href="${c.sandbox.url}" target="_blank" rel="noopener">${escapeMdx(c.sandbox.name)}</a>` +
+      (c.sandbox.since ? ` (since ${c.sandbox.since})` : '')
+    : '-';
   const privateActivity = renderPrivateActivity(c);
   const igrantActivity = renderIgrantActivity(c);
   const description = c.notes
@@ -208,6 +212,7 @@ ${igrantActivity}
   <div><dt>Provider</dt><dd>${escapeMdx(c.walletProvider) || '-'}</dd></div>
   <div><dt>Assurance level</dt><dd>${c.assuranceLevel ?? '-'}</dd></div>
   <div><dt>Launch / pilot date</dt><dd>${c.launchOrPilotDate ?? '-'}</dd></div>
+  <div><dt>Sandbox</dt><dd>${sandbox}</dd></div>
   <div><dt>Notable issuers</dt><dd>${issuers}</dd></div>
   <div><dt>QTSP partner</dt><dd>${escapeMdx(c.qtspPartner) || '-'}</dd></div>
 </dl>

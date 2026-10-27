@@ -42,10 +42,16 @@ export default function StatusTable() {
       .filter((c: Country) => !loa || c.assuranceLevel === loa)
       .filter((c: Country) => !group || c.group === group)
       .sort((a: Country, b: Country) => {
-        const getVal = (c: Country) =>
-          sortKey === 'latestSourceDate' ? latestSourceDate(c) : String(c[sortKey] ?? '');
+        const getVal = (c: Country) => {
+          if (sortKey === 'latestSourceDate') return latestSourceDate(c);
+          if (sortKey === 'sandbox') return c.sandbox?.name ?? '';
+          return String(c[sortKey] ?? '');
+        };
         const av = getVal(a);
         const bv = getVal(b);
+        // Rows without a value sort last in both directions.
+        if (!av && bv) return 1;
+        if (av && !bv) return -1;
         return sortDir === 'asc' ? av.localeCompare(bv) : bv.localeCompare(av);
       });
   }, [q, status, loa, group, sortKey, sortDir]);
@@ -111,6 +117,7 @@ export default function StatusTable() {
               <th onClick={() => sortBy('name')}>Country</th>
               <th onClick={() => sortBy('walletName')}>Wallet</th>
               <th onClick={() => sortBy('status')}>Status</th>
+              <th onClick={() => sortBy('sandbox')}>Sandbox</th>
               <th onClick={() => sortBy('assuranceLevel')}>LoA</th>
               <th onClick={() => sortBy('latestSourceDate')}>Updated</th>
               <th>Sources</th>
@@ -136,6 +143,18 @@ export default function StatusTable() {
                   <td>
                     <StatusBadge status={c.status} />
                     {noteShort && <div className="row-meta status-note">{noteShort}</div>}
+                  </td>
+                  <td>
+                    {c.sandbox ? (
+                      <>
+                        <a href={c.sandbox.url} target="_blank" rel="noopener noreferrer">
+                          {c.sandbox.name}
+                        </a>
+                        {c.sandbox.since && <div className="row-meta">since {c.sandbox.since.slice(0, 7)}</div>}
+                      </>
+                    ) : (
+                      '-'
+                    )}
                   </td>
                   <td>{c.assuranceLevel ?? '-'}</td>
                   <td>{latestSourceDate(c) || '-'}</td>

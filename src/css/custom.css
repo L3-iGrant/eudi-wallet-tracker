@@ -1843,11 +1843,12 @@ body.is-embed .europe-map__zoom {
 }
 /* Explicit column widths in priority order. Columns sum to 100%. */
 .tracker-table thead th:nth-child(1) { width: 14%; }   /* Country */
-.tracker-table thead th:nth-child(2) { width: 18%; }   /* Wallet */
+.tracker-table thead th:nth-child(2) { width: 17%; }   /* Wallet */
 .tracker-table thead th:nth-child(3) { width: auto; }  /* Status (absorbs leftover, with note) */
-.tracker-table thead th:nth-child(4) { width: 7%; }    /* LoA */
-.tracker-table thead th:nth-child(5) { width: 10%; }   /* Updated */
-.tracker-table thead th:nth-child(6) { width: 8%; }    /* Sources */
+.tracker-table thead th:nth-child(4) { width: 13%; }   /* Sandbox */
+.tracker-table thead th:nth-child(5) { width: 7%; }    /* LoA */
+.tracker-table thead th:nth-child(6) { width: 10%; }   /* Updated */
+.tracker-table thead th:nth-child(7) { width: 8%; }    /* Sources */
 .tracker-table .status-note {
   margin-top: 0.35rem;
   line-height: 1.4;

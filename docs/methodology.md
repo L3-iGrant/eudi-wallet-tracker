@@ -54,6 +54,12 @@ Participation in the five EU Large Scale Pilots is the authoritative basis for t
 - [APTITUDE](https://aptitude.digital-identity-wallet.eu/our-consortium/)
 - [WE BUILD](https://www.webuildconsortium.eu/participating-organisations)
 
+## Public sandboxes
+
+The `sandbox` field records a publicly announced test environment, run by or for the national wallet provider, that organisations outside the wallet project can use to integrate before launch: issuers, relying parties, private wallet providers or developers. It appears on the home page, in the table view and on the country profile.
+
+To qualify, the environment must be announced on an official page, be open to any eligible organisation (registration or a request for access is acceptable), and be reachable through a public URL that explains how to take part. Closed pilots with hand-picked participants, citizen beta apps with no integration surface, and test environments that are only planned do not qualify. A sandbox does not on its own change a country's status.
+
 ## History and corrections
 
 - The `history` array on every country is **append-only**. Status changes are new entries, not edits.
